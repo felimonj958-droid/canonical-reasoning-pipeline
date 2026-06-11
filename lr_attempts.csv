@@ -1,0 +1,5 @@
+question_id,exam,selected_answer,is_correct,time_taken_sec,confidence
+demo_lr_1,lsat,A,0,60,3
+demo_lr_1,lsat,B,1,50,4
+demo_lr_2,lsat,C,0,75,2
+demo_lr_3,lsat,D,1,90,5

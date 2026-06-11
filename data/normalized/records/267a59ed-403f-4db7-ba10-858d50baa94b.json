@@ -1,0 +1,60 @@
+{
+  "record_id": "267a59ed-403f-4db7-ba10-858d50baa94b",
+  "schema_version": "1.0.0",
+  "source": {
+    "modality": "generated_text",
+    "source_file": "data/raw_text/sample.txt",
+    "source_uri": null,
+    "page_ref": null,
+    "image_ref": null,
+    "capture_device": null,
+    "ocr_engine": "none",
+    "ocr_run_id": null,
+    "created_at": "2026-05-18T18:12:28.573541Z"
+  },
+  "lsat": {
+    "exam": "LSAT",
+    "prep_test": "DEMO",
+    "section": "logical_reasoning",
+    "section_number": null,
+    "question_number": null,
+    "passage_id": null,
+    "question_type": null,
+    "difficulty": null
+  },
+  "content": {
+    "passage": null,
+    "stimulus": null,
+    "question_stem": "A survey of commuters shows that most people who take the train to work\nreport lower stress levels than people who drive. Therefore, anyone who\nwants to reduce their stress should commute by train.\n((A)) The survey did not ask commuters about their income levels.\n((B)) People who choose to take the train may already be less stressed for other reasons.\n((C)) Train schedules change more often than highway traffic patterns.\n((D)) Some people cannot afford to commute by train.\n((E)) Many workplaces do not reimburse employees for train fares.",
+    "answer_choices": [],
+    "correct_answer": null,
+    "explanation": null,
+    "raw_text": "A survey of commuters shows that most people who take the train to work\nreport lower stress levels than people who drive. Therefore, anyone who\nwants to reduce their stress should commute by train.\n\n(A) The survey did not ask commuters about their income levels.\n(B) People who choose to take the train may already be less stressed for other reasons.\n(C) Train schedules change more often than highway traffic patterns.\n(D) Some people cannot afford to commute by train.\n(E) Many workplaces do not reimburse employees for train fares.\n",
+    "normalized_text": "A survey of commuters shows that most people who take the train to work\nreport lower stress levels than people who drive. Therefore, anyone who\nwants to reduce their stress should commute by train.\n((A)) The survey did not ask commuters about their income levels.\n((B)) People who choose to take the train may already be less stressed for other reasons.\n((C)) Train schedules change more often than highway traffic patterns.\n((D)) Some people cannot afford to commute by train.\n((E)) Many workplaces do not reimburse employees for train fares."
+  },
+  "ocr": {
+    "mean_confidence": null,
+    "min_line_confidence": null,
+    "low_confidence_spans": [],
+    "image_quality": {
+      "blur_score": null,
+      "skew_degrees": null,
+      "resolution_dpi": null,
+      "quality_flags": []
+    }
+  },
+  "classification": {
+    "strategy": "straight",
+    "labels": [],
+    "ambiguous": false,
+    "token_count": 0,
+    "chunks": []
+  },
+  "validation": {
+    "status": "valid",
+    "errors": [],
+    "warnings": [],
+    "duplicate_candidates": [],
+    "review_reason": null
+  }
+}
