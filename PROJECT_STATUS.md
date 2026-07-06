@@ -112,6 +112,85 @@ The synthetic corpus currently contains a mix of:
 
 Scaffold records should not be treated as training-quality synthetic data.
 
+
+## Milestone: LLM-as-judge evaluation calibrated on 100-item OpenAI batch (July 6, 2026)
+
+The synthetic LR lane now has a first-class quality-scoring layer: an LLM-as-judge with a 5-dimension anchored rubric, batch-level MLflow logging, and Markdown report generation. The baseline was tuned through two calibration passes after discovering measurement bugs — the final numbers are defensible signal, not artifacts.
+
+### What shipped
+
+**Evaluation infrastructure**
+- 5-dimension rubric in `src/evaluate/judge_rubric.py`: `argument_coherence`, `flaw_fidelity`, `question_stem_quality`, `distractor_plausibility`, `correct_answer_precision`
+- Anchored scoring (1–5 with per-level definitions) plus explicit calibration rules ("score against real LSAT, not synthetic curve"; tie-break lower; reserve 5 for LSAT-indistinguishable items)
+- `JudgeScore` Pydantic model with `total` and `is_high_quality` (threshold = 20/25)
+- Per-record judge call with strict JSON output parsing and error-tolerant `JudgeResult` status (`scored` / `parse_error` / `runtime_error`)
+- Batch runner in `src/evaluate/run_evaluation.py` with `synthetic_lr_evaluation` MLflow experiment, nested run per item, and aggregate metrics logged
+- Prefix-match fallback in cost estimator to handle versioned OpenAI model IDs (`gpt-4o-2024-08-06` → `gpt-4o` pricing)
+
+**Reporting**
+- Markdown report renderer in `scripts/render_batch_report.py` with summary block, per-dimension means, per-config breakdown, and sample high/low items with judge notes
+- Reports written to `data/reports/` alongside eval JSONs in `data/evaluations/`
+
+### Verified
+
+- 75 tests passing, 1 skipped
+- End-to-end: 100-item batch evaluated on gpt-4o with anchored rubric
+- Judge model: `gpt-4o-2024-08-06`
+- Judge cost: $0.31 per 100 items
+- Zero parse errors, zero runtime errors
+
+### Calibration story (two bugs found, two fixes)
+
+Initial baseline commit (`b67bfdf`) reported mean 13.89/25 with 0% high-quality. Investigation revealed two distinct measurement bugs:
+
+**Bug 1 — judge prompt read flat keys** (fixed in `986e035`)
+`build_judge_prompt` used `record_dict.get("stimulus", "")` but canonical records nest content under `record.content.stimulus`. Every judge prompt was sent with blank stimulus, question, and choices — the judge was hallucinating scores from `flaw_type` and `difficulty` labels alone.
+
+Effect after fix: mean 13.89 → 22.68 on the same 100 items.
+
+**Bug 2 — gpt-4o-mini rubber-stamped items** (fixed in `e846c37`)
+Once the judge could see items, gpt-4o-mini at temperature 0.0 scored 100/100 items as high-quality with a 22–24 range (2-point spread). No discrimination.
+
+Fix: rewrote `JUDGE_PROMPT_TEMPLATE` with explicit per-dimension anchors and calibration rules, and switched the judge to gpt-4o via `JUDGE_MODEL` env var.
+
+Effect after fix: mean 22.68 → 18.66 with a 13–22 range (9-point spread), 36% high-quality rate.
+
+### Final baseline (100-item OpenAI batch)
+
+| Metric | Value |
+|---|---|
+| Items evaluated | 100 |
+| Mean score | 18.66 / 25 |
+| Median | 19.0 |
+| Min / Max | 13 / 22 |
+| High-quality rate (≥20) | 36% |
+
+**Dimension means:**
+
+| Dimension | Mean |
+|---|---|
+| Question stem quality | 3.98 |
+| Correct answer precision | 3.87 |
+| Flaw fidelity | 3.80 |
+| Argument coherence | 3.68 |
+| Distractor plausibility | 3.33 |
+
+**Per-config breakdown:**
+
+| Config | Avg score | High-quality rate |
+|---|---|---|
+| necessary_vs_sufficient_easy | 19.8 | 56% |
+| causal_easy | 18.9 | 24% |
+| causal_medium | 18.8 | 48% |
+| necessary_vs_sufficient_medium | 17.1 | 16% |
+
+### Next up (Session 1.5)
+
+- Tighten distractor prompt guidance to produce flaw-adjacent wrong answers rather than generic critiques (target: lift `distractor_plausibility` from 3.33 → ≥3.8)
+- Diagnose why `necessary_vs_sufficient_medium` lags all other configs (17.1 vs 18.8–19.8)
+- Report renderer: swap `content.question` fallback to `content.question_stem` so reports stop showing "not captured" placeholder
+- Optional: archive 163 legacy pre-refactor records (no `generation` metadata) into `data/legacy/` so future batches never sample from them
+
 ### Local runtime constraints
 
 Synthetic generation currently runs locally via Ollama using `qwen3:8b`.

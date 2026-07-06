@@ -36,7 +36,8 @@ The primary identity of this repository is:
 - canonical record mapping under a stable Pydantic schema,
 - strict deterministic validation and review-queue routing,
 - reproducible, versioned dataset releases via DVC,
-- generation and acceptance tracking via MLflow.
+- generation and acceptance tracking via MLflow,
+- LLM-as-judge quality scoring on a calibrated 5-dimension rubric with Markdown reports.
 
 Public reasoning datasets (Hugging Face, GitHub) are treated as **secondary**:
 they exist as external calibration and comparison lanes, not as the repo's
@@ -75,6 +76,21 @@ Implemented capabilities:
 - batch harness at `src/normalize/run_synthetic_lr_batch.py` for tiny sweeps
   across flaw type and difficulty, with aggregate summary reporting and
   per-item runtime error tolerance
+
+
+### Latest baseline
+
+100-item synthetic LR batch generated with gpt-4o-mini and evaluated by an
+LLM judge (gpt-4o, anchored 5-dimension rubric):
+
+- mean quality score: 18.66 / 25
+- high-quality rate (≥ 20): 36%
+- weakest dimension: distractor plausibility (3.33 / 5)
+- strongest dimension: question stem quality (3.98 / 5)
+- judge cost: $0.31 per 100 items
+
+Latest report and eval JSON live under `data/reports/` and
+`data/evaluations/`. Full milestone log in `PROJECT_STATUS.md`.
 
 ## Generation backends
 
@@ -246,7 +262,7 @@ Key data folders:
 
 Current local suite:
 
-- `41 passed, 1 skipped` (live Ollama integration test is opt-in)
+- `75 passed, 1 skipped` (live Ollama integration test is opt-in)
 
 Coverage includes:
 
@@ -272,12 +288,13 @@ python -m uvicorn src.api.main:app --reload
 
 Near-term:
 
-- introduce `src/llm_client/` provider-agnostic layer and route synthetic LR
-  through it
-- wire MLflow around the synthetic LR batch harness to track params,
-  acceptance metrics, and batch artifacts
-- add DVC tracking for `data/normalized/records/` and formalize dataset
-  snapshots
+- tighten distractor prompt guidance to lift `distractor_plausibility`
+  score on the synthetic LR baseline
+- diagnose the `necessary_vs_sufficient_medium` per-config gap
+- add a comparison harness against a public LR/reasoning dataset
+  (e.g. ReClor) for external calibration
+- expose the pipeline behind a FastAPI service (`/generate`, `/evaluate`,
+  `/health`)
 
 Medium-term:
 
