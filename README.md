@@ -157,6 +157,37 @@ TRACKING_DISABLED=1 python -m src.normalize.run_synthetic_lr_batch
 Or programmatically: `run_synthetic_lr_batch(..., track=False)`.
 
 
+## Data versioning (DVC)
+
+The canonical records dataset (`data/normalized/records/`) is versioned with DVC. Actual JSON files live in DVC's local cache; git tracks only the `.dvc` pointer file.
+
+### Current dataset
+
+- 300 canonical records across text-lane + synthetic-LR lanes
+- ~1.1 MB total, hashed as one directory (`records.dvc`)
+- Local cache only; no remote configured yet
+
+### Working with the dataset
+
+```bash
+# Check status
+dvc status
+
+# After adding or regenerating records
+dvc add data/normalized/records
+git add data/normalized/records.dvc
+git commit -m "data: <what changed>"
+
+# To restore the dataset matching a specific commit
+git checkout <sha>
+dvc checkout
+```
+
+### What DVC does not track (yet)
+
+- No remote storage — if you need to share the dataset across machines, set one up with `dvc remote add`
+- No `dvc.yaml` pipeline — the batch script isn't a formal DVC stage yet
+
 ## Canonical record
 
 The canonical record is defined with nested Pydantic models in

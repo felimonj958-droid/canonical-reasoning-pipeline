@@ -198,3 +198,39 @@ The synthetic LR lane now runs against the OpenAI API (gpt-4o-mini) via a plugga
 - Pipe `GenerationMeta` (prompt_tokens, completion_tokens, latency_ms) into MLflow metrics
 - Larger real batch (`n_per_config=5–10`) with cost visibility
 - DVC init on `data/normalized/records/`
+
+## Milestone: Larger real batch + DVC versioning (July 6, 2026)
+
+### 100-item synthetic LR batch
+
+Generated a 100-item synthetic LR batch to stress-test the API-backed pipeline at 5x the previous scale.
+
+Results:
+- **100/100 valid** (acceptance rate 1.0)
+- **Cost**: $0.014909 (~$0.000149 per item)
+- **Tokens**: 55,224 total (40,500 prompt + 14,724 completion)
+- **Latency**: p95 3.85s per item, matching earlier smaller-batch p95
+- **Runtime errors**: 0
+- **Duration**: ~3.5 minutes total
+
+All metrics captured in MLflow (run `09b88dafe553...`). Cost model in `MODEL_PRICING_USD_PER_MTOK` proved accurate to the dollar vs earlier smaller-batch extrapolation.
+
+### DVC initialized
+
+`data/normalized/records/` is now versioned by DVC:
+- 300 canonical records tracked as one directory hash
+- Local cache only (1.7 MB); no remote yet
+- Un-tracked 21 records that had been committed to git in the initial commit before .gitignore covered them
+- DVC analytics opted out
+
+### Verified
+
+- 58 tests passing, 1 skipped
+- `dvc status` clean
+- `git status` clean
+
+### Next up
+
+- Optional: configure a DVC remote (S3 / GDrive / external drive)
+- Explore RC (Reading Comprehension) generation lane
+- Consider `dvc.yaml` pipeline for reproducible batch stages
