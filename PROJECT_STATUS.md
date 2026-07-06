@@ -2,7 +2,7 @@
 
 ## Current state
 
-The text-lane vertical slice is complete and manually verified. The repository can ingest one Logical Reasoning text payload through the API, map it into the canonical record shape, validate it, route it, persist it, and return the saved record.[cite:284][memory:130]
+The text-lane vertical slice is complete and manually verified. The repository can ingest one Logical Reasoning text payload through the API, map it into the canonical record shape, validate it, route it, persist it, and return the saved record.
 
 The synthetic Logical Reasoning lane is now a first-class slice that maps into the same canonical record + persistence flow as OCR/text lanes and includes a first-pass content-quality layer.
 
@@ -13,7 +13,7 @@ Verified during the June 2026 working sessions when:
 - `pytest` reported all deterministic tests passing
 - FastAPI ingest endpoints responded successfully to health and ingest requests
 - synthetic LR canonical and persistence tests passed
-- synthetic content-quality tests and quality-lane integration tests passed[memory:130][cite:10]
+- synthetic content-quality tests and quality-lane integration tests passed[
 
 ## Working commands
 
