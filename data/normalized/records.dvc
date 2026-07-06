@@ -1,0 +1,6 @@
+outs:
+- md5: 944c884da9eec4d1b7212418b142520c.dir
+  size: 1118741
+  nfiles: 300
+  hash: md5
+  path: records
