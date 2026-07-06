@@ -25,11 +25,20 @@ JUDGE_MODEL_PRICING_USD_PER_MTOK = {
     "gpt-4o-mini": {"input": 0.15, "output": 0.60},
     "gpt-4o-mini-2024-07-18": {"input": 0.15, "output": 0.60},
     "gpt-4o": {"input": 2.50, "output": 10.00},
+    "gpt-4o-2024-08-06": {"input": 2.50, "output": 10.00},
+    "gpt-4o-2024-05-13": {"input": 5.00, "output": 15.00},
+    "gpt-4o-2024-11-20": {"input": 2.50, "output": 10.00},
 }
 
 
 def _estimate_judge_cost(model: str, prompt_tokens: int, completion_tokens: int) -> float:
     pricing = JUDGE_MODEL_PRICING_USD_PER_MTOK.get(model)
+    # Fallback: prefix match for versioned model IDs (e.g. gpt-4o-2024-08-06 -> gpt-4o)
+    if not pricing:
+        for base_model, base_pricing in JUDGE_MODEL_PRICING_USD_PER_MTOK.items():
+            if model.startswith(base_model):
+                pricing = base_pricing
+                break
     if not pricing:
         return 0.0
     return (
@@ -130,7 +139,7 @@ def evaluate_batch(
         raise ValueError(f"No records found via batch summary at {batch_summary_path}")
 
     client = get_llm_client()
-    judge_model = os.getenv("JUDGE_MODEL", "gpt-4o-mini")
+    judge_model = os.getenv("JUDGE_MODEL", "gpt-4o")
     judge_model_expected = judge_model
     batch_name = batch_summary_path.stem
     run_name = f"eval_{batch_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"

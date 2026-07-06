@@ -1,0 +1,1828 @@
+{
+  "run_name": "eval_batch_openai_25per_20260706_095732_20260706_133046",
+  "source_batch": "batch_openai_25per_20260706_095732",
+  "judge_model": "gpt-4o-2024-08-06",
+  "aggregates": {
+    "items_evaluated": 100,
+    "items_scored": 100,
+    "items_parse_error": 0,
+    "items_runtime_error": 0,
+    "score_total_mean": 18.66,
+    "score_total_median": 19.0,
+    "score_total_min": 13,
+    "score_total_max": 22,
+    "high_quality_count": 36,
+    "high_quality_rate": 0.36,
+    "dimension_means": {
+      "argument_coherence": 3.68,
+      "flaw_fidelity": 3.8,
+      "question_stem_quality": 3.98,
+      "distractor_plausibility": 3.33,
+      "correct_answer_precision": 3.87
+    }
+  },
+  "judge_cost_usd": 0.305692,
+  "judge_tokens_total": 98403,
+  "results": [
+    {
+      "record_id": "321954e7-0754-49e1-abca-1aa5892ace81",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the flaw."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the flaw.",
+      "error": "",
+      "prompt_tokens": 897,
+      "completion_tokens": 84,
+      "latency_seconds": 2.8486950830556452
+    },
+    {
+      "record_id": "8bbb45fb-a064-4f14-af35-fa519bd6ea66",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 904,
+      "completion_tokens": 79,
+      "latency_seconds": 2.706822707783431
+    },
+    {
+      "record_id": "7388e083-9179-44ed-be8d-0f2890e8bc59",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 896,
+      "completion_tokens": 79,
+      "latency_seconds": 1.658828874817118
+    },
+    {
+      "record_id": "ff772bdf-9d90-487d-a440-7d9a256edee7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed.",
+      "error": "",
+      "prompt_tokens": 911,
+      "completion_tokens": 79,
+      "latency_seconds": 1.199234874919057
+    },
+    {
+      "record_id": "a884d625-66eb-4521-b527-11eb5eb5d624",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 886,
+      "completion_tokens": 78,
+      "latency_seconds": 1.3609074580017477
+    },
+    {
+      "record_id": "dfc5a320-385c-43aa-b05f-3ef4f6a2a6f8",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed.",
+      "error": "",
+      "prompt_tokens": 915,
+      "completion_tokens": 79,
+      "latency_seconds": 1.2908527080435306
+    },
+    {
+      "record_id": "890ef59b-c6c3-43e4-b10a-fe8f1878f9aa",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 891,
+      "completion_tokens": 78,
+      "latency_seconds": 1.1305480420123786
+    },
+    {
+      "record_id": "9fb94f6f-bc21-44a9-a3fe-b8a33211f581",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 911,
+      "completion_tokens": 79,
+      "latency_seconds": 1.3694218748714775
+    },
+    {
+      "record_id": "d61b7426-19c0-44c4-a36a-c9a7306b4449",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 904,
+      "completion_tokens": 74,
+      "latency_seconds": 1.0205082918982953
+    },
+    {
+      "record_id": "75e469ef-d2c6-41e5-8a81-47b684495ac4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The correct answer precision is weakened by the choice not directly addressing the causal flaw."
+      },
+      "score_total": 18,
+      "notes": "The correct answer precision is weakened by the choice not directly addressing the causal flaw.",
+      "error": "",
+      "prompt_tokens": 884,
+      "completion_tokens": 77,
+      "latency_seconds": 1.0263659579213709
+    },
+    {
+      "record_id": "58cf9ea4-f850-4bb4-ba58-108fbe5767c1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 890,
+      "completion_tokens": 79,
+      "latency_seconds": 1.1237561251036823
+    },
+    {
+      "record_id": "0e72bbeb-7ecb-45f9-bd3b-8554a441af2e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 896,
+      "completion_tokens": 79,
+      "latency_seconds": 0.977383584016934
+    },
+    {
+      "record_id": "22623573-fe04-4776-8846-5b79d3263f01",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is the correct_answer_precision, as the correct answer identifies the flaw cleanly but with minor imprecision."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is the correct_answer_precision, as the correct answer identifies the flaw cleanly but with minor imprecision.",
+      "error": "",
+      "prompt_tokens": 901,
+      "completion_tokens": 81,
+      "latency_seconds": 1.1746449589263648
+    },
+    {
+      "record_id": "ba21ca6f-f42f-4904-b53c-40aa3c0e1e7f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 2,
+        "notes": "The weakest dimension is flaw_fidelity, as the argument does not clearly commit the causal flaw it claims."
+      },
+      "score_total": 13,
+      "notes": "The weakest dimension is flaw_fidelity, as the argument does not clearly commit the causal flaw it claims.",
+      "error": "",
+      "prompt_tokens": 890,
+      "completion_tokens": 82,
+      "latency_seconds": 1.0217929161153734
+    },
+    {
+      "record_id": "47abab04-09c3-4cc3-9a1a-51a46eee764b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is argument_coherence, as the argument is somewhat bland and over-broad."
+      },
+      "score_total": 18,
+      "notes": "The weakest dimension is argument_coherence, as the argument is somewhat bland and over-broad.",
+      "error": "",
+      "prompt_tokens": 913,
+      "completion_tokens": 80,
+      "latency_seconds": 1.3344069169834256
+    },
+    {
+      "record_id": "1e9f2d26-099c-4fbd-af70-835b033a9230",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 899,
+      "completion_tokens": 75,
+      "latency_seconds": 1.1026097920257598
+    },
+    {
+      "record_id": "4e7958d9-158b-464b-8da7-2de1d289a957",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 914,
+      "completion_tokens": 79,
+      "latency_seconds": 1.114164707949385
+    },
+    {
+      "record_id": "13e064ff-434f-4393-9b30-37941107d2a9",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 909,
+      "completion_tokens": 75,
+      "latency_seconds": 0.9495877081062645
+    },
+    {
+      "record_id": "964ea0da-814f-415e-ab3e-53fb99edadc9",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 886,
+      "completion_tokens": 79,
+      "latency_seconds": 1.7507887079846114
+    },
+    {
+      "record_id": "c95fb33a-1d4c-4ed9-a22e-4817334366e1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible.",
+      "error": "",
+      "prompt_tokens": 908,
+      "completion_tokens": 78,
+      "latency_seconds": 1.3159242498222739
+    },
+    {
+      "record_id": "14ee02b8-7bda-4239-b669-d4804891626a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible except for B."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible except for B.",
+      "error": "",
+      "prompt_tokens": 896,
+      "completion_tokens": 77,
+      "latency_seconds": 3.2727202088572085
+    },
+    {
+      "record_id": "446724c0-03c1-4a19-b968-792bfbf5a8d7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate on a skim."
+      },
+      "score_total": 18,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate on a skim.",
+      "error": "",
+      "prompt_tokens": 900,
+      "completion_tokens": 78,
+      "latency_seconds": 1.244548083981499
+    },
+    {
+      "record_id": "e41251bc-47c4-49ff-85b4-614e3d34a040",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed.",
+      "error": "",
+      "prompt_tokens": 900,
+      "completion_tokens": 79,
+      "latency_seconds": 1.5336817081551999
+    },
+    {
+      "record_id": "f1863e45-bc56-4e59-828f-bc73928e75f4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not as tightly executed as a textbook LSAT example."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not as tightly executed as a textbook LSAT example.",
+      "error": "",
+      "prompt_tokens": 897,
+      "completion_tokens": 82,
+      "latency_seconds": 1.3315592920407653
+    },
+    {
+      "record_id": "a903d60f-f841-42e9-a44c-69f0b01dc5cf",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 906,
+      "completion_tokens": 79,
+      "latency_seconds": 1.068161292001605
+    },
+    {
+      "record_id": "5ce919b0-8931-4635-afce-ba75c60d7640",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the causal flaw."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the causal flaw.",
+      "error": "",
+      "prompt_tokens": 903,
+      "completion_tokens": 81,
+      "latency_seconds": 1.3893891249317676
+    },
+    {
+      "record_id": "cec86947-e576-4fab-8018-9a2bb4b0dd35",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not as sharply defined as in official LSAT items."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not as sharply defined as in official LSAT items.",
+      "error": "",
+      "prompt_tokens": 917,
+      "completion_tokens": 82,
+      "latency_seconds": 1.2270491658709943
+    },
+    {
+      "record_id": "3bb15f81-133d-4aab-b71b-f4a4c17ed255",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate."
+      },
+      "score_total": 18,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 918,
+      "completion_tokens": 79,
+      "latency_seconds": 1.3328887079842389
+    },
+    {
+      "record_id": "7611fefe-82e5-49e3-9292-60642213ff07",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 898,
+      "completion_tokens": 79,
+      "latency_seconds": 1.3325652498751879
+    },
+    {
+      "record_id": "41df8e5f-3377-43d4-8978-8b06810883ff",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 906,
+      "completion_tokens": 79,
+      "latency_seconds": 1.125866083195433
+    },
+    {
+      "record_id": "20e76a7a-d3ab-44d8-80c9-d1d0bc5a9308",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible."
+      },
+      "score_total": 18,
+      "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible.",
+      "error": "",
+      "prompt_tokens": 899,
+      "completion_tokens": 78,
+      "latency_seconds": 1.4306849169079214
+    },
+    {
+      "record_id": "98e3b907-b6a2-404d-b1a6-8a83222569ad",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is not clearly instantiated."
+      },
+      "score_total": 16,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is not clearly instantiated.",
+      "error": "",
+      "prompt_tokens": 919,
+      "completion_tokens": 77,
+      "latency_seconds": 1.7939064998645335
+    },
+    {
+      "record_id": "b814d0fb-a54a-4d98-b05a-66950a2141d8",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 903,
+      "completion_tokens": 75,
+      "latency_seconds": 1.0121454161126167
+    },
+    {
+      "record_id": "51328364-1ac8-4c91-a110-bd48bfc80d3f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the causal flaw."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the causal flaw.",
+      "error": "",
+      "prompt_tokens": 904,
+      "completion_tokens": 85,
+      "latency_seconds": 1.2132193751167506
+    },
+    {
+      "record_id": "bde03256-51b9-46ef-812d-3887b2047427",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is the correct answer precision, as it identifies the flaw cleanly but with minor imprecision."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is the correct answer precision, as it identifies the flaw cleanly but with minor imprecision.",
+      "error": "",
+      "prompt_tokens": 914,
+      "completion_tokens": 83,
+      "latency_seconds": 1.2055147921200842
+    },
+    {
+      "record_id": "c99b747f-77b3-4786-b045-d2b97f0cc77f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed.",
+      "error": "",
+      "prompt_tokens": 899,
+      "completion_tokens": 79,
+      "latency_seconds": 1.330921667162329
+    },
+    {
+      "record_id": "d11102f5-44ed-4905-aced-20f63c554ae4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 907,
+      "completion_tokens": 79,
+      "latency_seconds": 1.0240625839214772
+    },
+    {
+      "record_id": "7f4b49b0-43b5-4585-b91d-7178a73ff8c6",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is not clearly instantiated."
+      },
+      "score_total": 16,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is not clearly instantiated.",
+      "error": "",
+      "prompt_tokens": 909,
+      "completion_tokens": 77,
+      "latency_seconds": 1.1259545420762151
+    },
+    {
+      "record_id": "cd6418d1-33d0-41fd-a9fc-028ffdf2e1d1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the flaw."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the flaw.",
+      "error": "",
+      "prompt_tokens": 913,
+      "completion_tokens": 84,
+      "latency_seconds": 1.432748958002776
+    },
+    {
+      "record_id": "41d73a0a-d3d4-47e9-adba-73768a999ee5",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed.",
+      "error": "",
+      "prompt_tokens": 899,
+      "completion_tokens": 79,
+      "latency_seconds": 1.2272745419759303
+    },
+    {
+      "record_id": "2bb1d9c0-1226-44e5-8f91-bc06c22bc1ce",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is the correct_answer_precision, as the correct answer could be more precise in identifying the causal flaw."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is the correct_answer_precision, as the correct answer could be more precise in identifying the causal flaw.",
+      "error": "",
+      "prompt_tokens": 902,
+      "completion_tokens": 80,
+      "latency_seconds": 1.4318017079494894
+    },
+    {
+      "record_id": "d077a8f2-c5cf-45ef-9c66-40d75139d5a5",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, with most options being easy to eliminate."
+      },
+      "score_total": 18,
+      "notes": "Distractor plausibility is the weakest dimension, with most options being easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 905,
+      "completion_tokens": 78,
+      "latency_seconds": 1.0257564999628812
+    },
+    {
+      "record_id": "8f11456e-daf0-442b-bbaf-329f6a397cc3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed.",
+      "error": "",
+      "prompt_tokens": 903,
+      "completion_tokens": 79,
+      "latency_seconds": 1.1315402500331402
+    },
+    {
+      "record_id": "aef3999e-7937-40de-8e32-c0898d5f3362",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible."
+      },
+      "score_total": 18,
+      "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible.",
+      "error": "",
+      "prompt_tokens": 914,
+      "completion_tokens": 78,
+      "latency_seconds": 1.3256392918992788
+    },
+    {
+      "record_id": "331521c3-2f29-4171-8939-1dbdfa891aa3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed.",
+      "error": "",
+      "prompt_tokens": 897,
+      "completion_tokens": 75,
+      "latency_seconds": 1.0242750830948353
+    },
+    {
+      "record_id": "6bc77c92-9ffd-4e6d-bd0e-a5cb27df6a2c",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is not clearly instantiated, making the argument's flaw less precise."
+      },
+      "score_total": 16,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is not clearly instantiated, making the argument's flaw less precise.",
+      "error": "",
+      "prompt_tokens": 916,
+      "completion_tokens": 81,
+      "latency_seconds": 1.3113633750472218
+    },
+    {
+      "record_id": "7d23aa14-dd11-4dc4-90cc-d4f8992b5e60",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not perfectly executed.",
+      "error": "",
+      "prompt_tokens": 906,
+      "completion_tokens": 79,
+      "latency_seconds": 1.3529674171004444
+    },
+    {
+      "record_id": "9a826943-7609-4c74-909d-caf013851391",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is not clearly instantiated."
+      },
+      "score_total": 16,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is not clearly instantiated.",
+      "error": "",
+      "prompt_tokens": 890,
+      "completion_tokens": 77,
+      "latency_seconds": 2.3005181248299778
+    },
+    {
+      "record_id": "4b60f2ff-c092-4064-bf3f-25bae619c231",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 902,
+      "completion_tokens": 79,
+      "latency_seconds": 1.17775245802477
+    },
+    {
+      "record_id": "be748823-1540-46e6-bec1-0623a691cf33",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is correct_answer_precision, as the correct answer is slightly imprecise in naming the flaw."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is correct_answer_precision, as the correct answer is slightly imprecise in naming the flaw.",
+      "error": "",
+      "prompt_tokens": 896,
+      "completion_tokens": 83,
+      "latency_seconds": 1.7406060840003192
+    },
+    {
+      "record_id": "5598e344-a2b4-438b-8757-21e5486d99a2",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument does not clearly commit the necessary vs. sufficient flaw, weakening flaw fidelity."
+      },
+      "score_total": 15,
+      "notes": "The argument does not clearly commit the necessary vs. sufficient flaw, weakening flaw fidelity.",
+      "error": "",
+      "prompt_tokens": 913,
+      "completion_tokens": 78,
+      "latency_seconds": 1.0245598338078707
+    },
+    {
+      "record_id": "f7e00382-b481-4c4f-9330-9b4fb7201d6b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The weakest dimension is question_stem_quality, which is clean but not verbatim LSAT phrasing."
+      },
+      "score_total": 22,
+      "notes": "The weakest dimension is question_stem_quality, which is clean but not verbatim LSAT phrasing.",
+      "error": "",
+      "prompt_tokens": 891,
+      "completion_tokens": 78,
+      "latency_seconds": 1.5331436670385301
+    },
+    {
+      "record_id": "2c0586f8-856b-4f28-8359-a5dfd603dffe",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing."
+      },
+      "score_total": 22,
+      "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing.",
+      "error": "",
+      "prompt_tokens": 901,
+      "completion_tokens": 82,
+      "latency_seconds": 1.2341233750339597
+    },
+    {
+      "record_id": "b8d05ffd-381a-47c1-ace1-1866d23687cf",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing."
+      },
+      "score_total": 22,
+      "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing.",
+      "error": "",
+      "prompt_tokens": 889,
+      "completion_tokens": 82,
+      "latency_seconds": 1.4039327919017524
+    },
+    {
+      "record_id": "5ce4c872-7b2b-44d5-9e53-3e1101c490b1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 5,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 21,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 887,
+      "completion_tokens": 74,
+      "latency_seconds": 1.0524782079737633
+    },
+    {
+      "record_id": "e75631f6-e7ee-4b59-bf5e-892660a89f61",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible.",
+      "error": "",
+      "prompt_tokens": 899,
+      "completion_tokens": 78,
+      "latency_seconds": 1.0510460000950843
+    },
+    {
+      "record_id": "d0757bef-d9c2-4e4c-a378-752dd62643ba",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 914,
+      "completion_tokens": 78,
+      "latency_seconds": 1.9168442499358207
+    },
+    {
+      "record_id": "b23c7317-48ac-4b7d-b82a-a7890652b437",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 904,
+      "completion_tokens": 78,
+      "latency_seconds": 1.237266916083172
+    },
+    {
+      "record_id": "8fb579cb-c073-4640-8837-5ac9da577ba0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 908,
+      "completion_tokens": 78,
+      "latency_seconds": 1.328737000003457
+    },
+    {
+      "record_id": "c590aa60-a104-4a44-a119-38be880ed9ad",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 907,
+      "completion_tokens": 78,
+      "latency_seconds": 1.3226060410961509
+    },
+    {
+      "record_id": "b89f27a5-f0fa-4e4b-a721-89de8b57a0de",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 5,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate."
+      },
+      "score_total": 21,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 888,
+      "completion_tokens": 79,
+      "latency_seconds": 1.9108084170147777
+    },
+    {
+      "record_id": "b6558947-3abb-4086-9d37-e59888d85a36",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 900,
+      "completion_tokens": 75,
+      "latency_seconds": 1.3723732919897884
+    },
+    {
+      "record_id": "ca1a9fd5-ca80-4000-8a4e-54080b645b94",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 948,
+      "completion_tokens": 75,
+      "latency_seconds": 1.0781191249843687
+    },
+    {
+      "record_id": "7b0ac58f-2f7c-44c3-9cd2-fd08a95375ea",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage.",
+      "error": "",
+      "prompt_tokens": 910,
+      "completion_tokens": 85,
+      "latency_seconds": 1.3742738331202418
+    },
+    {
+      "record_id": "d8cb313f-52ae-4095-a22c-5f275763796b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage.",
+      "error": "",
+      "prompt_tokens": 901,
+      "completion_tokens": 85,
+      "latency_seconds": 1.2297201659530401
+    },
+    {
+      "record_id": "7c455ffd-756b-423d-95b9-298df77d2d6a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 5,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 21,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 916,
+      "completion_tokens": 78,
+      "latency_seconds": 1.5971764579880983
+    },
+    {
+      "record_id": "e2af080f-c0a0-4bfb-ad8d-b2b4e1eb8e6b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "The argument coherence is the weakest dimension due to its over-broad and somewhat vague terms."
+      },
+      "score_total": 18,
+      "notes": "The argument coherence is the weakest dimension due to its over-broad and somewhat vague terms.",
+      "error": "",
+      "prompt_tokens": 884,
+      "completion_tokens": 79,
+      "latency_seconds": 1.3712951249908656
+    },
+    {
+      "record_id": "63ec6f06-7e95-4fcb-95f5-cee0a86d2c01",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 886,
+      "completion_tokens": 78,
+      "latency_seconds": 1.0774527499452233
+    },
+    {
+      "record_id": "4c88e58d-b595-40af-bc6f-80a54a83152a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing."
+      },
+      "score_total": 22,
+      "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing.",
+      "error": "",
+      "prompt_tokens": 891,
+      "completion_tokens": 82,
+      "latency_seconds": 1.5832640829030424
+    },
+    {
+      "record_id": "368845c9-f451-45ef-b647-6cc66cc1db42",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing."
+      },
+      "score_total": 22,
+      "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing.",
+      "error": "",
+      "prompt_tokens": 889,
+      "completion_tokens": 82,
+      "latency_seconds": 1.130225374829024
+    },
+    {
+      "record_id": "4ab14fea-86f1-4eb3-b418-80a3f607a2da",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument does not clearly commit the necessary vs. sufficient flaw, weakening flaw fidelity."
+      },
+      "score_total": 15,
+      "notes": "The argument does not clearly commit the necessary vs. sufficient flaw, weakening flaw fidelity.",
+      "error": "",
+      "prompt_tokens": 918,
+      "completion_tokens": 78,
+      "latency_seconds": 1.0195839579682797
+    },
+    {
+      "record_id": "b937dfdf-1880-4e4d-a8dc-e44e361b0ca4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage.",
+      "error": "",
+      "prompt_tokens": 928,
+      "completion_tokens": 85,
+      "latency_seconds": 1.1264017920475453
+    },
+    {
+      "record_id": "2549effe-30c1-4434-8257-e3bbdc2e45f2",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing."
+      },
+      "score_total": 22,
+      "notes": "The weakest dimension is the question stem quality, which is clean but not verbatim LSAT phrasing.",
+      "error": "",
+      "prompt_tokens": 896,
+      "completion_tokens": 82,
+      "latency_seconds": 1.0247244578786194
+    },
+    {
+      "record_id": "1f051053-051f-4efb-b6e9-bc516a6e2b51",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument coherence is strong, but the flaw fidelity could be more explicit in demonstrating the necessary vs. sufficient flaw."
+      },
+      "score_total": 20,
+      "notes": "The argument coherence is strong, but the flaw fidelity could be more explicit in demonstrating the necessary vs. sufficient flaw.",
+      "error": "",
+      "prompt_tokens": 897,
+      "completion_tokens": 84,
+      "latency_seconds": 1.1301040418911725
+    },
+    {
+      "record_id": "4524dc77-eb9f-4ad5-8247-ca2309fed760",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the flaw is clear but not perfectly executed."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the flaw is clear but not perfectly executed.",
+      "error": "",
+      "prompt_tokens": 899,
+      "completion_tokens": 78,
+      "latency_seconds": 1.736736125079915
+    },
+    {
+      "record_id": "2e45c2fe-858e-4896-9821-9ce21706d927",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the argument commits the flaw clearly but with minor slippage."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the argument commits the flaw clearly but with minor slippage.",
+      "error": "",
+      "prompt_tokens": 920,
+      "completion_tokens": 81,
+      "latency_seconds": 1.2284664169419557
+    },
+    {
+      "record_id": "188611da-6490-448f-982a-e86f5208ff3b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "The argument coherence is the weakest dimension due to its over-broad and somewhat vague terms."
+      },
+      "score_total": 18,
+      "notes": "The argument coherence is the weakest dimension due to its over-broad and somewhat vague terms.",
+      "error": "",
+      "prompt_tokens": 899,
+      "completion_tokens": 79,
+      "latency_seconds": 1.1085384171456099
+    },
+    {
+      "record_id": "acfed0de-ab59-4183-bbfd-544c15a546c0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument coherence is strong, but the flaw fidelity could be more explicit in demonstrating the necessary vs. sufficient confusion."
+      },
+      "score_total": 20,
+      "notes": "The argument coherence is strong, but the flaw fidelity could be more explicit in demonstrating the necessary vs. sufficient confusion.",
+      "error": "",
+      "prompt_tokens": 915,
+      "completion_tokens": 84,
+      "latency_seconds": 1.2459877920337021
+    },
+    {
+      "record_id": "0ea98eaa-6a73-40f5-8b97-c95f8e20a0d7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument coherence is weakened by vague terms and the flaw fidelity is muddled, affecting overall clarity."
+      },
+      "score_total": 16,
+      "notes": "The argument coherence is weakened by vague terms and the flaw fidelity is muddled, affecting overall clarity.",
+      "error": "",
+      "prompt_tokens": 916,
+      "completion_tokens": 81,
+      "latency_seconds": 1.0682898750528693
+    },
+    {
+      "record_id": "31d3abd2-0081-4036-8c90-850ef7cf1b45",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "The argument coherence is weakened by the over-broad conclusion about focusing on diet."
+      },
+      "score_total": 17,
+      "notes": "The argument coherence is weakened by the over-broad conclusion about focusing on diet.",
+      "error": "",
+      "prompt_tokens": 925,
+      "completion_tokens": 77,
+      "latency_seconds": 1.033300792099908
+    },
+    {
+      "record_id": "77fc9f04-bc31-482f-8858-e76cb9fa3c6b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The flaw fidelity is weak as the argument does not clearly commit the necessary vs. sufficient flaw."
+      },
+      "score_total": 17,
+      "notes": "The flaw fidelity is weak as the argument does not clearly commit the necessary vs. sufficient flaw.",
+      "error": "",
+      "prompt_tokens": 913,
+      "completion_tokens": 76,
+      "latency_seconds": 1.3210102920420468
+    },
+    {
+      "record_id": "56c9b660-fe45-455e-8a88-4f5ed5988da3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage.",
+      "error": "",
+      "prompt_tokens": 895,
+      "completion_tokens": 85,
+      "latency_seconds": 1.2887269160710275
+    },
+    {
+      "record_id": "bc1b6ec6-4180-46f6-9be7-2c1aa508f694",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument coherence is weakened by its over-broad conclusion, affecting flaw fidelity and correct answer precision."
+      },
+      "score_total": 16,
+      "notes": "The argument coherence is weakened by its over-broad conclusion, affecting flaw fidelity and correct answer precision.",
+      "error": "",
+      "prompt_tokens": 902,
+      "completion_tokens": 81,
+      "latency_seconds": 1.3306528751272708
+    },
+    {
+      "record_id": "72fc4f34-fa20-4822-96a5-ce7ae685afd4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The weakest dimension is flaw_fidelity, as the argument does not clearly instantiate the necessary vs. sufficient flaw."
+      },
+      "score_total": 14,
+      "notes": "The weakest dimension is flaw_fidelity, as the argument does not clearly instantiate the necessary vs. sufficient flaw.",
+      "error": "",
+      "prompt_tokens": 918,
+      "completion_tokens": 79,
+      "latency_seconds": 1.5376434591598809
+    },
+    {
+      "record_id": "726363df-9837-4c1d-9e75-98e0162ab1a0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument coherence is weak due to over-broad premises, affecting flaw fidelity and correct answer precision."
+      },
+      "score_total": 16,
+      "notes": "The argument coherence is weak due to over-broad premises, affecting flaw fidelity and correct answer precision.",
+      "error": "",
+      "prompt_tokens": 908,
+      "completion_tokens": 81,
+      "latency_seconds": 1.228980999905616
+    },
+    {
+      "record_id": "441f4608-a3c1-47df-b568-b5e71d684b9e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the argument commits the necessary vs. sufficient flaw clearly but with minor slippage.",
+      "error": "",
+      "prompt_tokens": 927,
+      "completion_tokens": 85,
+      "latency_seconds": 1.3832559168804437
+    },
+    {
+      "record_id": "4397cb42-c71d-44b1-a9a2-1a84a5143ec7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible."
+      },
+      "score_total": 18,
+      "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible.",
+      "error": "",
+      "prompt_tokens": 900,
+      "completion_tokens": 78,
+      "latency_seconds": 1.0711041251197457
+    },
+    {
+      "record_id": "38e3eb67-6130-4043-ac55-16437a8b4c4d",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The weakest dimension is flaw_fidelity, as the argument commits the necessary vs. sufficient flaw weakly and with muddled premises."
+      },
+      "score_total": 16,
+      "notes": "The weakest dimension is flaw_fidelity, as the argument commits the necessary vs. sufficient flaw weakly and with muddled premises.",
+      "error": "",
+      "prompt_tokens": 911,
+      "completion_tokens": 83,
+      "latency_seconds": 1.184924292145297
+    },
+    {
+      "record_id": "7441a8f6-2d73-4f21-b0d2-71ca0ed25f4a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument coherence is weakened by the over-broad conclusion that exercising will always lead to weight loss, which is not tightly connected to the premises."
+      },
+      "score_total": 16,
+      "notes": "The argument coherence is weakened by the over-broad conclusion that exercising will always lead to weight loss, which is not tightly connected to the premises.",
+      "error": "",
+      "prompt_tokens": 905,
+      "completion_tokens": 90,
+      "latency_seconds": 1.361911915941164
+    },
+    {
+      "record_id": "be14d9fb-d35e-40fe-97aa-427dcac824a3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is distractor plausibility, as most distractors are easy to eliminate."
+      },
+      "score_total": 18,
+      "notes": "The weakest dimension is distractor plausibility, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 879,
+      "completion_tokens": 79,
+      "latency_seconds": 1.1402122077997774
+    },
+    {
+      "record_id": "6eb5f24d-040d-4b2c-978b-71a78cd7fe75",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 893,
+      "completion_tokens": 79,
+      "latency_seconds": 1.5936176250688732
+    },
+    {
+      "record_id": "d521a45e-5c51-4842-9f33-1aa991147577",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument coherence is weakened by vague terms and the flaw fidelity is muddled, affecting overall clarity."
+      },
+      "score_total": 16,
+      "notes": "The argument coherence is weakened by vague terms and the flaw fidelity is muddled, affecting overall clarity.",
+      "error": "",
+      "prompt_tokens": 921,
+      "completion_tokens": 81,
+      "latency_seconds": 1.8564431250561029
+    },
+    {
+      "record_id": "4c3ff684-554a-486f-a78c-8fd93e99927d",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The weakest dimension is flaw_fidelity, as the argument's flaw is not clearly a necessary vs. sufficient confusion."
+      },
+      "score_total": 16,
+      "notes": "The weakest dimension is flaw_fidelity, as the argument's flaw is not clearly a necessary vs. sufficient confusion.",
+      "error": "",
+      "prompt_tokens": 903,
+      "completion_tokens": 80,
+      "latency_seconds": 2.0758507079444826
+    },
+    {
+      "record_id": "d3efdef4-b029-4103-95ff-16bd271f486e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument's structure is unclear, making the necessary vs. sufficient flaw weakly instantiated."
+      },
+      "score_total": 14,
+      "notes": "The argument's structure is unclear, making the necessary vs. sufficient flaw weakly instantiated.",
+      "error": "",
+      "prompt_tokens": 912,
+      "completion_tokens": 79,
+      "latency_seconds": 2.4578231249470264
+    },
+    {
+      "record_id": "7454ecd2-069d-4a89-8ec2-9131903eb462",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The weakest dimension is flaw_fidelity, as the argument does not clearly commit the necessary vs. sufficient flaw."
+      },
+      "score_total": 14,
+      "notes": "The weakest dimension is flaw_fidelity, as the argument does not clearly commit the necessary vs. sufficient flaw.",
+      "error": "",
+      "prompt_tokens": 902,
+      "completion_tokens": 83,
+      "latency_seconds": 1.3991204579360783
+    },
+    {
+      "record_id": "c7dbb14d-ff19-45fb-9121-204249ef38fa",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easily eliminated.",
+      "error": "",
+      "prompt_tokens": 920,
+      "completion_tokens": 78,
+      "latency_seconds": 2.079841666854918
+    },
+    {
+      "record_id": "3d454aa6-6032-4fb8-832b-52df9f7bd3d0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "The argument coherence is weakened by the vague connection between premises and conclusion."
+      },
+      "score_total": 17,
+      "notes": "The argument coherence is weakened by the vague connection between premises and conclusion.",
+      "error": "",
+      "prompt_tokens": 905,
+      "completion_tokens": 75,
+      "latency_seconds": 2.3450450839009136
+    },
+    {
+      "record_id": "44a8f938-8561-4eb2-86d4-942572b3b98e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are easy to eliminate.",
+      "error": "",
+      "prompt_tokens": 897,
+      "completion_tokens": 79,
+      "latency_seconds": 2.1416295408271253
+    },
+    {
+      "record_id": "6d1d607c-ffe3-457c-a252-22e6a0c32dce",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 3,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 3,
+        "notes": "The argument coherence is weakened by over-broad assumptions, affecting flaw fidelity and correct answer precision."
+      },
+      "score_total": 17,
+      "notes": "The argument coherence is weakened by over-broad assumptions, affecting flaw fidelity and correct answer precision.",
+      "error": "",
+      "prompt_tokens": 931,
+      "completion_tokens": 80,
+      "latency_seconds": 1.8652336250524968
+    },
+    {
+      "record_id": "669d5cf8-82ef-4951-8788-1e3d2b4ff76f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The weakest dimension is flaw_fidelity, as the argument does not clearly commit the necessary vs. sufficient flaw."
+      },
+      "score_total": 15,
+      "notes": "The weakest dimension is flaw_fidelity, as the argument does not clearly commit the necessary vs. sufficient flaw.",
+      "error": "",
+      "prompt_tokens": 921,
+      "completion_tokens": 83,
+      "latency_seconds": 1.6367240000981838
+    }
+  ]
+}

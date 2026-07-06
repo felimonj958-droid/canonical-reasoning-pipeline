@@ -1,0 +1,118 @@
+{
+  "run_name": "eval_batch_openai_25per_20260706_095732_20260706_132738",
+  "source_batch": "batch_openai_25per_20260706_095732",
+  "judge_model": "gpt-4o-2024-08-06",
+  "aggregates": {
+    "items_evaluated": 5,
+    "items_scored": 5,
+    "items_parse_error": 0,
+    "items_runtime_error": 0,
+    "score_total_mean": 19.6,
+    "score_total_median": 20,
+    "score_total_min": 19,
+    "score_total_max": 20,
+    "high_quality_count": 3,
+    "high_quality_rate": 0.6,
+    "dimension_means": {
+      "argument_coherence": 4,
+      "flaw_fidelity": 4,
+      "question_stem_quality": 4,
+      "distractor_plausibility": 3.6,
+      "correct_answer_precision": 4
+    }
+  },
+  "judge_cost_usd": 0.0,
+  "judge_tokens_total": 4901,
+  "results": [
+    {
+      "record_id": "321954e7-0754-49e1-abca-1aa5892ace81",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the flaw."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is the correct_answer_precision, as the correct answer is slightly imprecise in naming the flaw.",
+      "error": "",
+      "prompt_tokens": 897,
+      "completion_tokens": 84,
+      "latency_seconds": 5.681745916139334
+    },
+    {
+      "record_id": "8bbb45fb-a064-4f14-af35-fa519bd6ea66",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not as sharply defined as in top-tier LSAT items."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not as sharply defined as in top-tier LSAT items.",
+      "error": "",
+      "prompt_tokens": 904,
+      "completion_tokens": 87,
+      "latency_seconds": 2.139441875042394
+    },
+    {
+      "record_id": "7388e083-9179-44ed-be8d-0f2890e8bc59",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most distractors are not very tempting.",
+      "error": "",
+      "prompt_tokens": 896,
+      "completion_tokens": 79,
+      "latency_seconds": 1.359369874931872
+    },
+    {
+      "record_id": "ff772bdf-9d90-487d-a440-7d9a256edee7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not textbook perfect."
+      },
+      "score_total": 20,
+      "notes": "The weakest dimension is flaw fidelity, as the causal flaw is clear but not textbook perfect.",
+      "error": "",
+      "prompt_tokens": 911,
+      "completion_tokens": 79,
+      "latency_seconds": 1.199347416171804
+    },
+    {
+      "record_id": "a884d625-66eb-4521-b527-11eb5eb5d624",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible."
+      },
+      "score_total": 19,
+      "notes": "Distractor plausibility is the weakest dimension, as most options are easily dismissible.",
+      "error": "",
+      "prompt_tokens": 886,
+      "completion_tokens": 78,
+      "latency_seconds": 1.13088074978441
+    }
+  ]
+}
