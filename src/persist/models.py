@@ -102,6 +102,24 @@ class ContentInfo(BaseModel):
     normalized_text: str
 
 
+class GenerationMeta(BaseModel):
+    """Metadata about how a synthetic record was generated.
+
+    Present on synthetic records; absent (None) on ingested records.
+    """
+
+    backend: str                      # e.g. "ollama", "openai"
+    model: str                        # e.g. "qwen3:8b", "gpt-4o-mini"
+    flaw_type: Optional[str] = None
+    difficulty: Optional[str] = None
+    prompt_version: Optional[str] = None
+    temperature: Optional[float] = None
+    max_tokens: Optional[int] = None
+    prompt_tokens: Optional[int] = None
+    completion_tokens: Optional[int] = None
+    latency_seconds: Optional[float] = None
+
+
 class CanonicalRecord(BaseModel):
     record_id: str = Field(default_factory=lambda: str(uuid4()))
     schema_version: str = "1.0.0"
@@ -111,4 +129,4 @@ class CanonicalRecord(BaseModel):
     ocr: OCRInfo = Field(default_factory=OCRInfo)
     classification: ClassificationInfo = Field(default_factory=ClassificationInfo)
     validation: ValidationInfo = Field(default_factory=ValidationInfo)
-
+    generation: Optional[GenerationMeta] = None  # synthetic records only

@@ -1,4 +1,66 @@
-.venv/
+# ---- Python ----
 __pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ---- Virtual envs ----
+.venv/
+venv/
+env/
+
+# ---- Secrets / env ----
+.env
+.env.*
+!.env.example
+.envrc.local
+
+# ---- OS / editor ----
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ---- Notebooks ----
+.ipynb_checkpoints/
+
+# ---- MLflow (local tracking) ----
+mlruns/
+mlartifacts/
+
+# ---- DVC ----
+# keep .dvc/config committed; ignore local state + cache
+/.dvc/cache
+/.dvc/tmp
+/.dvc/plots
+*.dvc.lock.tmp
+
+# ---- Data lanes ----
+# Official LSAC material: private, local-only
+data/raw_lsac/
+data/private/
+
+# Synthetic + normalized outputs: version via DVC, not git
+data/normalized/records/*.json
+data/normalized/batches/
+data/synthetic/
+!data/normalized/records/.gitkeep
+
+# ---- Model / cache dirs ----
+.ollama/
+models/
+*.gguf
+
+# ---- Logs ----
+*.log
+logs/
