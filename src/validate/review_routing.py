@@ -9,8 +9,13 @@ def choose_destination(record: CanonicalRecord) -> tuple[str, str | None]:
         return "normalized", None
 
     errors = set(record.validation.errors or [])
+    review_reason = record.validation.review_reason
 
-    if {
+    if review_reason == "synthetic_low_quality":
+        reason = "synthetic_low_quality"
+    elif any(error.startswith("synthetic_quality:") for error in errors):
+        reason = "synthetic_low_quality"
+    elif {
         "invalid_choice_count",
         "invalid_choice_labels",
     } & errors:
