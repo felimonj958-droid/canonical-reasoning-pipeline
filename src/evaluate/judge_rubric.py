@@ -97,11 +97,19 @@ def build_judge_prompt(record_dict: dict) -> str:
     flaw_type = record_dict.get("flaw_type") or gen.get("flaw_type") or "unknown"
     difficulty = record_dict.get("difficulty") or gen.get("difficulty") or "unknown"
 
-    stimulus = record_dict.get("stimulus", "").strip()
-    question = record_dict.get("question", "").strip()
-    correct = record_dict.get("correct_answer", "").strip()
+    # Support both nested (canonical) and flat structures.
+    content = record_dict.get("content") or {}
 
-    choices = record_dict.get("answer_choices", [])
+    stimulus = (content.get("stimulus") or record_dict.get("stimulus") or "").strip()
+    question = (
+        content.get("question_stem")
+        or record_dict.get("question")
+        or record_dict.get("question_stem")
+        or ""
+    ).strip()
+    correct_raw = content.get("correct_answer") or record_dict.get("correct_answer") or ""
+    correct = str(correct_raw).strip()
+    choices = content.get("answer_choices") or record_dict.get("answer_choices") or []
     choices_str = "\n".join(
         f"{c.get('label', '?')}. {c.get('text', '').strip()}" for c in choices
     )

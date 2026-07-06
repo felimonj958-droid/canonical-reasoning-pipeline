@@ -1,0 +1,118 @@
+{
+  "run_name": "eval_batch_openai_25per_20260706_095732_20260706_131255",
+  "source_batch": "batch_openai_25per_20260706_095732",
+  "judge_model": "gpt-4o-mini-2024-07-18",
+  "aggregates": {
+    "items_evaluated": 5,
+    "items_scored": 5,
+    "items_parse_error": 0,
+    "items_runtime_error": 0,
+    "score_total_mean": 23,
+    "score_total_median": 23,
+    "score_total_min": 23,
+    "score_total_max": 23,
+    "high_quality_count": 5,
+    "high_quality_rate": 1.0,
+    "dimension_means": {
+      "argument_coherence": 4,
+      "flaw_fidelity": 5,
+      "question_stem_quality": 5,
+      "distractor_plausibility": 4,
+      "correct_answer_precision": 5
+    }
+  },
+  "judge_cost_usd": 0.000556,
+  "judge_tokens_total": 2478,
+  "results": [
+    {
+      "record_id": "321954e7-0754-49e1-abca-1aa5892ace81",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 412,
+      "completion_tokens": 81,
+      "latency_seconds": 3.551292832940817
+    },
+    {
+      "record_id": "8bbb45fb-a064-4f14-af35-fa519bd6ea66",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 419,
+      "completion_tokens": 83,
+      "latency_seconds": 2.068264333065599
+    },
+    {
+      "record_id": "7388e083-9179-44ed-be8d-0f2890e8bc59",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 411,
+      "completion_tokens": 83,
+      "latency_seconds": 2.06318616704084
+    },
+    {
+      "record_id": "ff772bdf-9d90-487d-a440-7d9a256edee7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 426,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5946566248312593
+    },
+    {
+      "record_id": "a884d625-66eb-4521-b527-11eb5eb5d624",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 401,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5326405828818679
+    }
+  ]
+}

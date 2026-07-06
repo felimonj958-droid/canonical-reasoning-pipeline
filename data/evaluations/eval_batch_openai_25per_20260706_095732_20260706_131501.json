@@ -1,0 +1,1828 @@
+{
+  "run_name": "eval_batch_openai_25per_20260706_095732_20260706_131501",
+  "source_batch": "batch_openai_25per_20260706_095732",
+  "judge_model": "gpt-4o-mini-2024-07-18",
+  "aggregates": {
+    "items_evaluated": 100,
+    "items_scored": 100,
+    "items_parse_error": 0,
+    "items_runtime_error": 0,
+    "score_total_mean": 22.68,
+    "score_total_median": 23.0,
+    "score_total_min": 22,
+    "score_total_max": 24,
+    "high_quality_count": 100,
+    "high_quality_rate": 1.0,
+    "dimension_means": {
+      "argument_coherence": 4.12,
+      "flaw_fidelity": 5,
+      "question_stem_quality": 4.56,
+      "distractor_plausibility": 4,
+      "correct_answer_precision": 5
+    }
+  },
+  "judge_cost_usd": 0.011155,
+  "judge_tokens_total": 50013,
+  "results": [
+    {
+      "record_id": "321954e7-0754-49e1-abca-1aa5892ace81",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 412,
+      "completion_tokens": 81,
+      "latency_seconds": 2.607457541162148
+    },
+    {
+      "record_id": "8bbb45fb-a064-4f14-af35-fa519bd6ea66",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 419,
+      "completion_tokens": 84,
+      "latency_seconds": 1.5625059579033405
+    },
+    {
+      "record_id": "7388e083-9179-44ed-be8d-0f2890e8bc59",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight without overreaching.",
+      "error": "",
+      "prompt_tokens": 411,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5811007090378553
+    },
+    {
+      "record_id": "ff772bdf-9d90-487d-a440-7d9a256edee7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 426,
+      "completion_tokens": 81,
+      "latency_seconds": 1.610563833033666
+    },
+    {
+      "record_id": "a884d625-66eb-4521-b527-11eb5eb5d624",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 401,
+      "completion_tokens": 83,
+      "latency_seconds": 1.5524785839952528
+    },
+    {
+      "record_id": "dfc5a320-385c-43aa-b05f-3ef4f6a2a6f8",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 430,
+      "completion_tokens": 83,
+      "latency_seconds": 1.4295504170004278
+    },
+    {
+      "record_id": "890ef59b-c6c3-43e4-b10a-fe8f1878f9aa",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 406,
+      "completion_tokens": 83,
+      "latency_seconds": 1.7912333328276873
+    },
+    {
+      "record_id": "9fb94f6f-bc21-44a9-a3fe-b8a33211f581",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 426,
+      "completion_tokens": 81,
+      "latency_seconds": 1.3248263329733163
+    },
+    {
+      "record_id": "d61b7426-19c0-44c4-a36a-c9a7306b4449",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 419,
+      "completion_tokens": 81,
+      "latency_seconds": 1.4419457078911364
+    },
+    {
+      "record_id": "75e469ef-d2c6-41e5-8a81-47b684495ac4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 399,
+      "completion_tokens": 83,
+      "latency_seconds": 1.5341212078928947
+    },
+    {
+      "record_id": "58cf9ea4-f850-4bb4-ba58-108fbe5767c1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 405,
+      "completion_tokens": 81,
+      "latency_seconds": 1.468742041150108
+    },
+    {
+      "record_id": "0e72bbeb-7ecb-45f9-bd3b-8554a441af2e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal claim, while the correct answer accurately identifies the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal claim, while the correct answer accurately identifies the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 411,
+      "completion_tokens": 81,
+      "latency_seconds": 1.4963119169697165
+    },
+    {
+      "record_id": "22623573-fe04-4776-8846-5b79d3263f01",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 416,
+      "completion_tokens": 83,
+      "latency_seconds": 1.6442734580487013
+    },
+    {
+      "record_id": "ba21ca6f-f42f-4904-b53c-40aa3c0e1e7f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 405,
+      "completion_tokens": 83,
+      "latency_seconds": 1.8385290410369635
+    },
+    {
+      "record_id": "47abab04-09c3-4cc3-9a1a-51a46eee764b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying it."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying it.",
+      "error": "",
+      "prompt_tokens": 428,
+      "completion_tokens": 77,
+      "latency_seconds": 2.353430666960776
+    },
+    {
+      "record_id": "1e9f2d26-099c-4fbd-af70-835b033a9230",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is clear and logically structured, and the correct answer accurately identifies the causal flaw without overreaching."
+      },
+      "score_total": 24,
+      "notes": "The argument is clear and logically structured, and the correct answer accurately identifies the causal flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 414,
+      "completion_tokens": 79,
+      "latency_seconds": 1.5353867919184268
+    },
+    {
+      "record_id": "4e7958d9-158b-464b-8da7-2de1d289a957",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 429,
+      "completion_tokens": 84,
+      "latency_seconds": 1.5366918749641627
+    },
+    {
+      "record_id": "13e064ff-434f-4393-9b30-37941107d2a9",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 424,
+      "completion_tokens": 81,
+      "latency_seconds": 1.6418288331478834
+    },
+    {
+      "record_id": "964ea0da-814f-415e-ab3e-53fb99edadc9",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 401,
+      "completion_tokens": 83,
+      "latency_seconds": 1.5340306251309812
+    },
+    {
+      "record_id": "c95fb33a-1d4c-4ed9-a22e-4817334366e1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 423,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5320389580447227
+    },
+    {
+      "record_id": "14ee02b8-7bda-4239-b669-d4804891626a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the assumption made."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the assumption made.",
+      "error": "",
+      "prompt_tokens": 411,
+      "completion_tokens": 78,
+      "latency_seconds": 2.251907957950607
+    },
+    {
+      "record_id": "446724c0-03c1-4a19-b968-792bfbf5a8d7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 415,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5394636250566691
+    },
+    {
+      "record_id": "e41251bc-47c4-49ff-85b4-614e3d34a040",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the assumption made."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the assumption made.",
+      "error": "",
+      "prompt_tokens": 415,
+      "completion_tokens": 78,
+      "latency_seconds": 1.5331656250637025
+    },
+    {
+      "record_id": "f1863e45-bc56-4e59-828f-bc73928e75f4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 412,
+      "completion_tokens": 83,
+      "latency_seconds": 1.5376119159627706
+    },
+    {
+      "record_id": "a903d60f-f841-42e9-a44c-69f0b01dc5cf",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 421,
+      "completion_tokens": 83,
+      "latency_seconds": 1.536241166992113
+    },
+    {
+      "record_id": "5ce919b0-8931-4635-afce-ba75c60d7640",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight of other contributing factors."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight of other contributing factors.",
+      "error": "",
+      "prompt_tokens": 418,
+      "completion_tokens": 81,
+      "latency_seconds": 2.0838322080671787
+    },
+    {
+      "record_id": "cec86947-e576-4fab-8018-9a2bb4b0dd35",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 432,
+      "completion_tokens": 83,
+      "latency_seconds": 1.6013070000335574
+    },
+    {
+      "record_id": "3bb15f81-133d-4aab-b71b-f4a4c17ed255",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight without overreaching.",
+      "error": "",
+      "prompt_tokens": 433,
+      "completion_tokens": 81,
+      "latency_seconds": 1.6385377501137555
+    },
+    {
+      "record_id": "7611fefe-82e5-49e3-9292-60642213ff07",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight without overreaching.",
+      "error": "",
+      "prompt_tokens": 413,
+      "completion_tokens": 81,
+      "latency_seconds": 1.7425197090487927
+    },
+    {
+      "record_id": "41df8e5f-3377-43d4-8978-8b06810883ff",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 421,
+      "completion_tokens": 83,
+      "latency_seconds": 1.4336183331906796
+    },
+    {
+      "record_id": "20e76a7a-d3ab-44d8-80c9-d1d0bc5a9308",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 414,
+      "completion_tokens": 81,
+      "latency_seconds": 2.043763417052105
+    },
+    {
+      "record_id": "98e3b907-b6a2-404d-b1a6-8a83222569ad",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 434,
+      "completion_tokens": 81,
+      "latency_seconds": 1.4941443330608308
+    },
+    {
+      "record_id": "b814d0fb-a54a-4d98-b05a-66950a2141d8",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 418,
+      "completion_tokens": 84,
+      "latency_seconds": 1.4434044170193374
+    },
+    {
+      "record_id": "51328364-1ac8-4c91-a110-bd48bfc80d3f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 419,
+      "completion_tokens": 81,
+      "latency_seconds": 1.7730741249397397
+    },
+    {
+      "record_id": "bde03256-51b9-46ef-812d-3887b2047427",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight without overreaching.",
+      "error": "",
+      "prompt_tokens": 429,
+      "completion_tokens": 81,
+      "latency_seconds": 1.536660083103925
+    },
+    {
+      "record_id": "c99b747f-77b3-4786-b045-d2b97f0cc77f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the issue without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the issue without overreaching.",
+      "error": "",
+      "prompt_tokens": 414,
+      "completion_tokens": 81,
+      "latency_seconds": 1.703638708917424
+    },
+    {
+      "record_id": "d11102f5-44ed-4905-aced-20f63c554ae4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 422,
+      "completion_tokens": 84,
+      "latency_seconds": 1.989578708074987
+    },
+    {
+      "record_id": "7f4b49b0-43b5-4585-b91d-7178a73ff8c6",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal claim, while the correct answer accurately identifies the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal claim, while the correct answer accurately identifies the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 424,
+      "completion_tokens": 81,
+      "latency_seconds": 1.6304635829292238
+    },
+    {
+      "record_id": "cd6418d1-33d0-41fd-a9fc-028ffdf2e1d1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal claim, while the correct answer accurately identifies the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal claim, while the correct answer accurately identifies the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 428,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5352921250741929
+    },
+    {
+      "record_id": "41d73a0a-d3d4-47e9-adba-73768a999ee5",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 414,
+      "completion_tokens": 84,
+      "latency_seconds": 1.5381998328957707
+    },
+    {
+      "record_id": "2bb1d9c0-1226-44e5-8f91-bc06c22bc1ce",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the correct answer accurately identifies the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the correct answer accurately identifies the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 417,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5337525000795722
+    },
+    {
+      "record_id": "d077a8f2-c5cf-45ef-9c66-40d75139d5a5",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and answer choices are well-constructed and plausible."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and answer choices are well-constructed and plausible.",
+      "error": "",
+      "prompt_tokens": 420,
+      "completion_tokens": 82,
+      "latency_seconds": 1.6413687081076205
+    },
+    {
+      "record_id": "8f11456e-daf0-442b-bbaf-329f6a397cc3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 418,
+      "completion_tokens": 83,
+      "latency_seconds": 1.8412462919950485
+    },
+    {
+      "record_id": "aef3999e-7937-40de-8e32-c0898d5f3362",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight of alternative explanations."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the oversight of alternative explanations.",
+      "error": "",
+      "prompt_tokens": 429,
+      "completion_tokens": 80,
+      "latency_seconds": 1.4620637078769505
+    },
+    {
+      "record_id": "331521c3-2f29-4171-8939-1dbdfa891aa3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the assumption made."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer precisely identifying the assumption made.",
+      "error": "",
+      "prompt_tokens": 412,
+      "completion_tokens": 78,
+      "latency_seconds": 1.400535791181028
+    },
+    {
+      "record_id": "6bc77c92-9ffd-4e6d-bd0e-a5cb27df6a2c",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the correct answer precisely identifies the oversight without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the correct answer precisely identifies the oversight without overreaching.",
+      "error": "",
+      "prompt_tokens": 431,
+      "completion_tokens": 81,
+      "latency_seconds": 1.6410769999492913
+    },
+    {
+      "record_id": "7d23aa14-dd11-4dc4-90cc-d4f8992b5e60",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the assumption made."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the assumption made.",
+      "error": "",
+      "prompt_tokens": 421,
+      "completion_tokens": 78,
+      "latency_seconds": 1.2909012909512967
+    },
+    {
+      "record_id": "9a826943-7609-4c74-909d-caf013851391",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the correct answer accurately identifies the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the correct answer accurately identifies the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 405,
+      "completion_tokens": 81,
+      "latency_seconds": 1.609058375004679
+    },
+    {
+      "record_id": "4b60f2ff-c092-4064-bf3f-25bae619c231",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a causal flaw, while the question stem and correct answer are well-phrased and precise.",
+      "error": "",
+      "prompt_tokens": 417,
+      "completion_tokens": 83,
+      "latency_seconds": 1.8179060420952737
+    },
+    {
+      "record_id": "be748823-1540-46e6-bec1-0623a691cf33",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a causal flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 411,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5724966251291335
+    },
+    {
+      "record_id": "5598e344-a2b4-438b-8757-21e5486d99a2",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents its premises and conclusion, while the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents its premises and conclusion, while the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 427,
+      "completion_tokens": 86,
+      "latency_seconds": 1.5461189171765
+    },
+    {
+      "record_id": "f7e00382-b481-4c4f-9330-9b4fb7201d6b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is clear and follows logically, accurately identifying the flaw in necessary vs. sufficient reasoning."
+      },
+      "score_total": 24,
+      "notes": "The argument is clear and follows logically, accurately identifying the flaw in necessary vs. sufficient reasoning.",
+      "error": "",
+      "prompt_tokens": 405,
+      "completion_tokens": 76,
+      "latency_seconds": 1.584788375068456
+    },
+    {
+      "record_id": "2c0586f8-856b-4f28-8359-a5dfd603dffe",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 415,
+      "completion_tokens": 81,
+      "latency_seconds": 1.741037332918495
+    },
+    {
+      "record_id": "b8d05ffd-381a-47c1-ace1-1866d23687cf",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is clear and follows logically, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer."
+      },
+      "score_total": 24,
+      "notes": "The argument is clear and follows logically, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer.",
+      "error": "",
+      "prompt_tokens": 403,
+      "completion_tokens": 85,
+      "latency_seconds": 1.6516653751023114
+    },
+    {
+      "record_id": "5ce4c872-7b2b-44d5-9e53-3e1101c490b1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the flaw of confusing necessary and sufficient conditions."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents the flaw of confusing necessary and sufficient conditions.",
+      "error": "",
+      "prompt_tokens": 401,
+      "completion_tokens": 73,
+      "latency_seconds": 1.9657224998809397
+    },
+    {
+      "record_id": "e75631f6-e7ee-4b59-bf5e-892660a89f61",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a flawed reasoning based on necessary versus sufficient conditions, and the correct answer accurately identifies this flaw."
+      },
+      "score_total": 22,
+      "notes": "The argument clearly presents a flawed reasoning based on necessary versus sufficient conditions, and the correct answer accurately identifies this flaw.",
+      "error": "",
+      "prompt_tokens": 413,
+      "completion_tokens": 80,
+      "latency_seconds": 1.4791355410125107
+    },
+    {
+      "record_id": "d0757bef-d9c2-4e4c-a378-752dd62643ba",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 428,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5486086660530418
+    },
+    {
+      "record_id": "b23c7317-48ac-4b7d-b82a-a7890652b437",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is clear and follows logically, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer."
+      },
+      "score_total": 24,
+      "notes": "The argument is clear and follows logically, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer.",
+      "error": "",
+      "prompt_tokens": 418,
+      "completion_tokens": 85,
+      "latency_seconds": 2.6709916251711547
+    },
+    {
+      "record_id": "8fb579cb-c073-4640-8837-5ac9da577ba0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with the question stem and correct answer accurately reflecting LSAT standards."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with the question stem and correct answer accurately reflecting LSAT standards.",
+      "error": "",
+      "prompt_tokens": 422,
+      "completion_tokens": 84,
+      "latency_seconds": 1.641653334023431
+    },
+    {
+      "record_id": "c590aa60-a104-4a44-a119-38be880ed9ad",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 421,
+      "completion_tokens": 81,
+      "latency_seconds": 1.4317191671580076
+    },
+    {
+      "record_id": "b89f27a5-f0fa-4e4b-a721-89de8b57a0de",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a flawed reasoning regarding necessary and sufficient conditions, and the question stem is well-phrased for LSAT standards."
+      },
+      "score_total": 23,
+      "notes": "The argument clearly presents a flawed reasoning regarding necessary and sufficient conditions, and the question stem is well-phrased for LSAT standards.",
+      "error": "",
+      "prompt_tokens": 402,
+      "completion_tokens": 84,
+      "latency_seconds": 1.6739459577947855
+    },
+    {
+      "record_id": "b6558947-3abb-4086-9d37-e59888d85a36",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is clear and logically structured, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer."
+      },
+      "score_total": 24,
+      "notes": "The argument is clear and logically structured, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer.",
+      "error": "",
+      "prompt_tokens": 414,
+      "completion_tokens": 85,
+      "latency_seconds": 2.0113460840657353
+    },
+    {
+      "record_id": "ca1a9fd5-ca80-4000-8a4e-54080b645b94",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a logical structure, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer."
+      },
+      "score_total": 24,
+      "notes": "The argument clearly presents a logical structure, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer.",
+      "error": "",
+      "prompt_tokens": 462,
+      "completion_tokens": 85,
+      "latency_seconds": 6.200918624876067
+    },
+    {
+      "record_id": "7b0ac58f-2f7c-44c3-9cd2-fd08a95375ea",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is clear and follows logically, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer."
+      },
+      "score_total": 24,
+      "notes": "The argument is clear and follows logically, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer.",
+      "error": "",
+      "prompt_tokens": 424,
+      "completion_tokens": 85,
+      "latency_seconds": 1.6551975409965962
+    },
+    {
+      "record_id": "d8cb313f-52ae-4095-a22c-5f275763796b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 415,
+      "completion_tokens": 81,
+      "latency_seconds": 1.7734960832167417
+    },
+    {
+      "record_id": "7c455ffd-756b-423d-95b9-298df77d2d6a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is clear and follows logically, accurately identifies the flaw, and the distractors are plausible but can be distinguished."
+      },
+      "score_total": 24,
+      "notes": "The argument is clear and follows logically, accurately identifies the flaw, and the distractors are plausible but can be distinguished.",
+      "error": "",
+      "prompt_tokens": 430,
+      "completion_tokens": 81,
+      "latency_seconds": 1.4662735830061138
+    },
+    {
+      "record_id": "e2af080f-c0a0-4bfb-ad8d-b2b4e1eb8e6b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 398,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5773190839681774
+    },
+    {
+      "record_id": "63ec6f06-7e95-4fcb-95f5-cee0a86d2c01",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is clear and follows logically, accurately identifying the flaw related to necessary versus sufficient conditions."
+      },
+      "score_total": 24,
+      "notes": "The argument is clear and follows logically, accurately identifying the flaw related to necessary versus sufficient conditions.",
+      "error": "",
+      "prompt_tokens": 400,
+      "completion_tokens": 76,
+      "latency_seconds": 1.5160708329640329
+    },
+    {
+      "record_id": "4c88e58d-b595-40af-bc6f-80a54a83152a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a flawed reasoning regarding necessary and sufficient conditions, and the question stem is well-phrased for LSAT standards."
+      },
+      "score_total": 23,
+      "notes": "The argument clearly presents a flawed reasoning regarding necessary and sufficient conditions, and the question stem is well-phrased for LSAT standards.",
+      "error": "",
+      "prompt_tokens": 405,
+      "completion_tokens": 84,
+      "latency_seconds": 1.7289638749789447
+    },
+    {
+      "record_id": "368845c9-f451-45ef-b647-6cc66cc1db42",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a logical structure, and the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching."
+      },
+      "score_total": 24,
+      "notes": "The argument clearly presents a logical structure, and the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 403,
+      "completion_tokens": 82,
+      "latency_seconds": 1.8120542499236763
+    },
+    {
+      "record_id": "4ab14fea-86f1-4eb3-b418-80a3f607a2da",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the flaw of confusing necessary and sufficient conditions."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents the flaw of confusing necessary and sufficient conditions.",
+      "error": "",
+      "prompt_tokens": 432,
+      "completion_tokens": 73,
+      "latency_seconds": 1.4079621250275522
+    },
+    {
+      "record_id": "b937dfdf-1880-4e4d-a8dc-e44e361b0ca4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a flawed reasoning regarding necessary and sufficient conditions, and the correct answer accurately identifies this flaw."
+      },
+      "score_total": 23,
+      "notes": "The argument clearly presents a flawed reasoning regarding necessary and sufficient conditions, and the correct answer accurately identifies this flaw.",
+      "error": "",
+      "prompt_tokens": 442,
+      "completion_tokens": 79,
+      "latency_seconds": 1.4080117498524487
+    },
+    {
+      "record_id": "2549effe-30c1-4434-8257-e3bbdc2e45f2",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 410,
+      "completion_tokens": 82,
+      "latency_seconds": 1.6704487090464681
+    },
+    {
+      "record_id": "1f051053-051f-4efb-b6e9-bc516a6e2b51",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a logical structure, accurately identifies the flaw, and the distractors are plausible but not overly misleading."
+      },
+      "score_total": 24,
+      "notes": "The argument clearly presents a logical structure, accurately identifies the flaw, and the distractors are plausible but not overly misleading.",
+      "error": "",
+      "prompt_tokens": 411,
+      "completion_tokens": 81,
+      "latency_seconds": 1.6396244999486953
+    },
+    {
+      "record_id": "4524dc77-eb9f-4ad5-8247-ca2309fed760",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 413,
+      "completion_tokens": 84,
+      "latency_seconds": 1.7411508748773485
+    },
+    {
+      "record_id": "2e45c2fe-858e-4896-9821-9ce21706d927",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a flaw related to necessary vs. sufficient conditions, with the correct answer accurately identifying this flaw."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a flaw related to necessary vs. sufficient conditions, with the correct answer accurately identifying this flaw.",
+      "error": "",
+      "prompt_tokens": 434,
+      "completion_tokens": 83,
+      "latency_seconds": 1.980628333054483
+    },
+    {
+      "record_id": "188611da-6490-448f-982a-e86f5208ff3b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument presents a clear structure, accurately identifies the flaw, and the distractors are plausible yet can be distinguished."
+      },
+      "score_total": 22,
+      "notes": "The argument presents a clear structure, accurately identifies the flaw, and the distractors are plausible yet can be distinguished.",
+      "error": "",
+      "prompt_tokens": 413,
+      "completion_tokens": 80,
+      "latency_seconds": 1.6958444998599589
+    },
+    {
+      "record_id": "acfed0de-ab59-4183-bbfd-544c15a546c0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents its premises and conclusion, accurately identifies the flaw type, and the correct answer precisely captures the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents its premises and conclusion, accurately identifies the flaw type, and the correct answer precisely captures the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 429,
+      "completion_tokens": 88,
+      "latency_seconds": 1.9346774579025805
+    },
+    {
+      "record_id": "0ea98eaa-6a73-40f5-8b97-c95f8e20a0d7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument presents a clear structure and the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument presents a clear structure and the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 430,
+      "completion_tokens": 80,
+      "latency_seconds": 2.259991083992645
+    },
+    {
+      "record_id": "31d3abd2-0081-4036-8c90-850ef7cf1b45",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and correctly identifies the flaw type, while the distractors are plausible but can be distinguished from the correct answer."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and correctly identifies the flaw type, while the distractors are plausible but can be distinguished from the correct answer.",
+      "error": "",
+      "prompt_tokens": 439,
+      "completion_tokens": 83,
+      "latency_seconds": 1.5910099579486996
+    },
+    {
+      "record_id": "77fc9f04-bc31-482f-8858-e76cb9fa3c6b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly identifies the flaw as necessary vs. sufficient, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly identifies the flaw as necessary vs. sufficient, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 427,
+      "completion_tokens": 82,
+      "latency_seconds": 1.4909724171739072
+    },
+    {
+      "record_id": "56c9b660-fe45-455e-8a88-4f5ed5988da3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the flaw of confusing necessary and sufficient conditions."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents the flaw of confusing necessary and sufficient conditions.",
+      "error": "",
+      "prompt_tokens": 409,
+      "completion_tokens": 73,
+      "latency_seconds": 1.7410344588570297
+    },
+    {
+      "record_id": "bc1b6ec6-4180-46f6-9be7-2c1aa508f694",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a logical structure and the correct answer accurately identifies the necessary vs. sufficient flaw."
+      },
+      "score_total": 22,
+      "notes": "The argument clearly presents a logical structure and the correct answer accurately identifies the necessary vs. sufficient flaw.",
+      "error": "",
+      "prompt_tokens": 416,
+      "completion_tokens": 77,
+      "latency_seconds": 1.4774075839668512
+    },
+    {
+      "record_id": "72fc4f34-fa20-4822-96a5-ce7ae685afd4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the flaw of confusing necessary and sufficient conditions."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents the flaw of confusing necessary and sufficient conditions.",
+      "error": "",
+      "prompt_tokens": 432,
+      "completion_tokens": 73,
+      "latency_seconds": 1.3888146250974387
+    },
+    {
+      "record_id": "726363df-9837-4c1d-9e75-98e0162ab1a0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly identifies the flaw as necessary vs. sufficient, with plausible distractors."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly identifies the flaw as necessary vs. sufficient, with plausible distractors.",
+      "error": "",
+      "prompt_tokens": 422,
+      "completion_tokens": 77,
+      "latency_seconds": 1.711135207908228
+    },
+    {
+      "record_id": "441f4608-a3c1-47df-b568-b5e71d684b9e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer precisely identifying the flaw."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer precisely identifying the flaw.",
+      "error": "",
+      "prompt_tokens": 441,
+      "completion_tokens": 80,
+      "latency_seconds": 1.8625789158977568
+    },
+    {
+      "record_id": "4397cb42-c71d-44b1-a9a2-1a84a5143ec7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 414,
+      "completion_tokens": 84,
+      "latency_seconds": 1.7948510411661118
+    },
+    {
+      "record_id": "38e3eb67-6130-4043-ac55-16437a8b4c4d",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a logical structure, and the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument clearly presents a logical structure, and the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 425,
+      "completion_tokens": 82,
+      "latency_seconds": 1.9020886661019176
+    },
+    {
+      "record_id": "7441a8f6-2d73-4f21-b0d2-71ca0ed25f4a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 5,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is clear and logically structured, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer."
+      },
+      "score_total": 23,
+      "notes": "The argument is clear and logically structured, accurately identifies the flaw, and the distractors are plausible but can be distinguished from the correct answer.",
+      "error": "",
+      "prompt_tokens": 419,
+      "completion_tokens": 85,
+      "latency_seconds": 1.9474052500445396
+    },
+    {
+      "record_id": "be14d9fb-d35e-40fe-97aa-427dcac824a3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer accurately identifying this flaw."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer accurately identifying this flaw.",
+      "error": "",
+      "prompt_tokens": 393,
+      "completion_tokens": 80,
+      "latency_seconds": 1.842064999975264
+    },
+    {
+      "record_id": "6eb5f24d-040d-4b2c-978b-71a78cd7fe75",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer accurately identifying the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer accurately identifying the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 407,
+      "completion_tokens": 84,
+      "latency_seconds": 2.3546633331570774
+    },
+    {
+      "record_id": "d521a45e-5c51-4842-9f33-1aa991147577",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents its premises and conclusion, while the correct answer accurately identifies the flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents its premises and conclusion, while the correct answer accurately identifies the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 435,
+      "completion_tokens": 82,
+      "latency_seconds": 1.7394381668418646
+    },
+    {
+      "record_id": "4c3ff684-554a-486f-a78c-8fd93e99927d",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer precisely identifying this flaw."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer precisely identifying this flaw.",
+      "error": "",
+      "prompt_tokens": 417,
+      "completion_tokens": 80,
+      "latency_seconds": 1.537036458030343
+    },
+    {
+      "record_id": "d3efdef4-b029-4103-95ff-16bd271f486e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents the necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 426,
+      "completion_tokens": 81,
+      "latency_seconds": 1.6381867921445519
+    },
+    {
+      "record_id": "7454ecd2-069d-4a89-8ec2-9131903eb462",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and correctly identifies the flaw as a confusion of necessary and sufficient conditions."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and correctly identifies the flaw as a confusion of necessary and sufficient conditions.",
+      "error": "",
+      "prompt_tokens": 416,
+      "completion_tokens": 75,
+      "latency_seconds": 1.5773925001267344
+    },
+    {
+      "record_id": "c7dbb14d-ff19-45fb-9121-204249ef38fa",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 434,
+      "completion_tokens": 81,
+      "latency_seconds": 2.3118698329199106
+    },
+    {
+      "record_id": "3d454aa6-6032-4fb8-832b-52df9f7bd3d0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument presents a clear structure and the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching."
+      },
+      "score_total": 22,
+      "notes": "The argument presents a clear structure and the correct answer accurately identifies the necessary vs. sufficient flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 419,
+      "completion_tokens": 80,
+      "latency_seconds": 1.434349749935791
+    },
+    {
+      "record_id": "44a8f938-8561-4eb2-86d4-942572b3b98e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument clearly presents a flawed reasoning regarding necessary and sufficient conditions, and the correct answer accurately identifies this flaw."
+      },
+      "score_total": 22,
+      "notes": "The argument clearly presents a flawed reasoning regarding necessary and sufficient conditions, and the correct answer accurately identifies this flaw.",
+      "error": "",
+      "prompt_tokens": 411,
+      "completion_tokens": 79,
+      "latency_seconds": 1.4332562079653144
+    },
+    {
+      "record_id": "6d1d607c-ffe3-457c-a252-22e6a0c32dce",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect."
+      },
+      "score_total": 22,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with distractors that are plausible but ultimately incorrect.",
+      "error": "",
+      "prompt_tokens": 445,
+      "completion_tokens": 81,
+      "latency_seconds": 2.253197125159204
+    },
+    {
+      "record_id": "669d5cf8-82ef-4951-8788-1e3d2b4ff76f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 5,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer precisely identifying the flaw."
+      },
+      "score_total": 23,
+      "notes": "The argument is coherent and clearly presents a necessary vs. sufficient flaw, with the correct answer precisely identifying the flaw.",
+      "error": "",
+      "prompt_tokens": 435,
+      "completion_tokens": 80,
+      "latency_seconds": 1.5376872918568552
+    }
+  ]
+}
