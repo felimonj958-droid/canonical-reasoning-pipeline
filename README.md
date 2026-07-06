@@ -108,6 +108,55 @@ latency, so batches remain reproducible and comparable across backends.
 
 Additional API backends (Anthropic, Together, DeepSeek) can be
 registered in `src/llm_client/__init__.py` following the same pattern.
+
+## Experiment tracking (MLflow)
+
+Every synthetic-generation batch is tracked in MLflow. Runs are stored locally under `mlruns/` (gitignored) — no server required.
+
+### What's tracked
+
+Each `run_synthetic_lr_batch` invocation creates:
+
+- **One parent run** per batch, named `batch_<backend>_<n>per_<timestamp>`
+  - Params: `backend`, `model`, `n_per_config`, `num_configs`, `config_names`, `persist`
+  - Tags: `git_sha`, `backend`, `pipeline=synthetic_lr`
+  - Metrics: `total_items`, `total_valid`, `total_needs_review`, `total_runtime_errors`, `acceptance_rate`
+  - Artifact: the batch summary JSON (`data/normalized/batches/<run_name>.json`)
+- **One nested run per config** (e.g., `causal_easy`, `necessary_vs_sufficient_medium`)
+  - Tags: `flaw_type`, `difficulty`
+  - Metrics: `lane_items`, `lane_valid`, `lane_needs_review`, `lane_runtime_errors`, `lane_quality_ok`, `lane_acceptance_rate`
+
+### Running a tracked batch
+
+```bash
+python -m src.normalize.run_synthetic_lr_batch
+```
+
+### Viewing runs
+
+```bash
+# CLI: list experiments and runs
+mlflow experiments search
+mlflow runs list --experiment-id <id>
+
+# UI: browse runs in a browser
+mlflow ui --backend-store-uri file:./mlruns --port 5001
+# then open http://localhost:5001
+```
+
+Note: macOS uses port 5000 for AirPlay Receiver by default, so we use 5001.
+
+### Disabling tracking
+
+For tests, CI, or ad-hoc runs where you don't want to write to `mlruns/`:
+
+```bash
+TRACKING_DISABLED=1 python -m src.normalize.run_synthetic_lr_batch
+```
+
+Or programmatically: `run_synthetic_lr_batch(..., track=False)`.
+
+
 ## Canonical record
 
 The canonical record is defined with nested Pydantic models in

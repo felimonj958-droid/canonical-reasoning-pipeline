@@ -157,3 +157,44 @@ New coverage:
   branch when needed)
 - MLflow around `run_synthetic_lr_batch` for run tracking
 - DVC init for `data/normalized/records/`
+
+
+## Milestone: API-backed generation + MLflow tracking (July 2026)
+
+The synthetic LR lane now runs against the OpenAI API (gpt-4o-mini) via a pluggable LLMClient protocol, and every batch is instrumented with MLflow.
+
+### What shipped
+
+**Generation backends**
+- `LLMClient` protocol in `src/llm_client/base.py` with `GenerationRequest`/`GenerationResponse` dataclasses
+- `OllamaClient` (local) and `OpenAIClient` (API) implementations with lazy SDK imports + cached clients
+- Factory `get_llm_client()` dispatches on `LLM_BACKEND` env var (defaults to ollama)
+- `GenerationMeta` recorded on every `CanonicalRecord` (backend, model, tokens, latency)
+- direnv + `.env` for local env-var management (`.env.example` committed as template)
+
+**Experiment tracking**
+- `src/tracking/MLflowTracker` context manager with lazy mlflow import + `TRACKING_DISABLED` no-op mode
+- `run_synthetic_lr_batch` wrapped with parent-run + nested-run-per-config instrumentation
+- Batch summaries persisted to `data/normalized/batches/` and logged as run artifacts
+- Git SHA tagged on every run for code traceability
+
+### Verified
+
+- 49 tests passing, 1 skipped (Ollama integration, opt-in)
+- Live smoke: 4/4 valid via gpt-4o-mini, ~$0.0006 total cost, ~2.3s latency per item
+- MLflow UI confirms parent + 4 nested runs per batch with expected params, metrics, and artifacts
+
+### Comparison vs local baseline
+
+| | Qwen 3 8B (Ollama) | gpt-4o-mini (OpenAI) |
+|---|---|---|
+| Valid records (of 4) | 2 | 4 |
+| Routed to review | 2 | 0 |
+| Runtime | multi-minute | ~10s |
+| Cost | free (local) | ~$0.0006 |
+
+### Next up
+
+- Pipe `GenerationMeta` (prompt_tokens, completion_tokens, latency_ms) into MLflow metrics
+- Larger real batch (`n_per_config=5–10`) with cost visibility
+- DVC init on `data/normalized/records/`
