@@ -1,0 +1,1828 @@
+{
+  "run_name": "eval_batch_openai_25per_20260706_095732_20260706_111509",
+  "source_batch": "batch_openai_25per_20260706_095732",
+  "judge_model": "gpt-4o-mini-2024-07-18",
+  "aggregates": {
+    "items_evaluated": 100,
+    "items_scored": 100,
+    "items_parse_error": 0,
+    "items_runtime_error": 0,
+    "score_total_mean": 13.89,
+    "score_total_median": 15.0,
+    "score_total_min": 5,
+    "score_total_max": 19,
+    "high_quality_count": 0,
+    "high_quality_rate": 0.0,
+    "dimension_means": {
+      "argument_coherence": 2.61,
+      "flaw_fidelity": 2.33,
+      "question_stem_quality": 3.18,
+      "distractor_plausibility": 2.9,
+      "correct_answer_precision": 2.87
+    }
+  },
+  "judge_cost_usd": 0.009064,
+  "judge_tokens_total": 36369,
+  "results": [
+    {
+      "record_id": "321954e7-0754-49e1-abca-1aa5892ace81",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the flaw type is not accurately represented."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the flaw type is not accurately represented.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 79,
+      "latency_seconds": 2.5709394169971347
+    },
+    {
+      "record_id": "8bbb45fb-a064-4f14-af35-fa519bd6ea66",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, and the causal flaw is not clearly established."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, and the causal flaw is not clearly established.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 75,
+      "latency_seconds": 1.297643959056586
+    },
+    {
+      "record_id": "7388e083-9179-44ed-be8d-0f2890e8bc59",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, and the identified flaw does not align well with the causal claim."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, and the identified flaw does not align well with the causal claim.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 79,
+      "latency_seconds": 1.5525418329052627
+    },
+    {
+      "record_id": "ff772bdf-9d90-487d-a440-7d9a256edee7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 1.661422833101824
+    },
+    {
+      "record_id": "a884d625-66eb-4521-b527-11eb5eb5d624",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 1.418180292006582
+    },
+    {
+      "record_id": "dfc5a320-385c-43aa-b05f-3ef4f6a2a6f8",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5706922500394285
+    },
+    {
+      "record_id": "890ef59b-c6c3-43e4-b10a-fe8f1878f9aa",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 1.5967192922253162
+    },
+    {
+      "record_id": "9fb94f6f-bc21-44a9-a3fe-b8a33211f581",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 1.3315144169609994
+    },
+    {
+      "record_id": "d61b7426-19c0-44c4-a36a-c9a7306b4449",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 1.8025734580587596
+    },
+    {
+      "record_id": "75e469ef-d2c6-41e5-8a81-47b684495ac4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 1.7089149998500943
+    },
+    {
+      "record_id": "58cf9ea4-f850-4bb4-ba58-108fbe5767c1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 3.151094750035554
+    },
+    {
+      "record_id": "0e72bbeb-7ecb-45f9-bd3b-8554a441af2e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 1.421684208093211
+    },
+    {
+      "record_id": "22623573-fe04-4776-8846-5b79d3263f01",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 1.469516291981563
+    },
+    {
+      "record_id": "ba21ca6f-f42f-4904-b53c-40aa3c0e1e7f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 1.356267583090812
+    },
+    {
+      "record_id": "47abab04-09c3-4cc3-9a1a-51a46eee764b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a basic causal flaw but lacks depth in coherence and clarity."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a basic causal flaw but lacks depth in coherence and clarity.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 73,
+      "latency_seconds": 1.683045709040016
+    },
+    {
+      "record_id": "1e9f2d26-099c-4fbd-af70-835b033a9230",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 1.5335232499055564
+    },
+    {
+      "record_id": "4e7958d9-158b-464b-8da7-2de1d289a957",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the question stem is reasonably authentic."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the question stem is reasonably authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 78,
+      "latency_seconds": 1.6407756668049842
+    },
+    {
+      "record_id": "13e064ff-434f-4393-9b30-37941107d2a9",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 1.4336555830668658
+    },
+    {
+      "record_id": "964ea0da-814f-415e-ab3e-53fb99edadc9",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 2.0489528339821845
+    },
+    {
+      "record_id": "c95fb33a-1d4c-4ed9-a22e-4817334366e1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 1.737262750044465
+    },
+    {
+      "record_id": "14ee02b8-7bda-4239-b669-d4804891626a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, and the identified flaw does not align well with the causal claim."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, and the identified flaw does not align well with the causal claim.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 79,
+      "latency_seconds": 1.4331326249521226
+    },
+    {
+      "record_id": "446724c0-03c1-4a19-b968-792bfbf5a8d7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the flaw type is not accurately represented."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the flaw type is not accurately represented.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 79,
+      "latency_seconds": 1.5355903750751168
+    },
+    {
+      "record_id": "e41251bc-47c4-49ff-85b4-614e3d34a040",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 82,
+      "latency_seconds": 1.584411040879786
+    },
+    {
+      "record_id": "f1863e45-bc56-4e59-828f-bc73928e75f4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, and the identified flaw does not align well with the causal claim."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, and the identified flaw does not align well with the causal claim.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 79,
+      "latency_seconds": 1.6949572919402272
+    },
+    {
+      "record_id": "a903d60f-f841-42e9-a44c-69f0b01dc5cf",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the flaw type is not accurately represented."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the flaw type is not accurately represented.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 79,
+      "latency_seconds": 1.371430957922712
+    },
+    {
+      "record_id": "5ce919b0-8931-4635-afce-ba75c60d7640",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is identified correctly, the question stem could be more authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is identified correctly, the question stem could be more authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 88,
+      "latency_seconds": 1.3923437919002026
+    },
+    {
+      "record_id": "cec86947-e576-4fab-8018-9a2bb4b0dd35",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more specific to enhance clarity."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more specific to enhance clarity.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 83,
+      "latency_seconds": 1.311162083176896
+    },
+    {
+      "record_id": "3bb15f81-133d-4aab-b71b-f4a4c17ed255",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument is generally coherent but lacks some clarity, and while it commits a causal flaw, the question stem and answer choices could be more refined."
+      },
+      "score_total": 18,
+      "notes": "The argument is generally coherent but lacks some clarity, and while it commits a causal flaw, the question stem and answer choices could be more refined.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 87,
+      "latency_seconds": 1.4305626670829952
+    },
+    {
+      "record_id": "7611fefe-82e5-49e3-9292-60642213ff07",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem and answer choices could be more refined."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem and answer choices could be more refined.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 86,
+      "latency_seconds": 1.355668667005375
+    },
+    {
+      "record_id": "41df8e5f-3377-43d4-8978-8b06810883ff",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 80,
+      "latency_seconds": 1.3279470829293132
+    },
+    {
+      "record_id": "20e76a7a-d3ab-44d8-80c9-d1d0bc5a9308",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem could be more authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem could be more authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 84,
+      "latency_seconds": 1.5376217919401824
+    },
+    {
+      "record_id": "98e3b907-b6a2-404d-b1a6-8a83222569ad",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem and answer choices could be more refined."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem and answer choices could be more refined.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 87,
+      "latency_seconds": 1.5353627908043563
+    },
+    {
+      "record_id": "b814d0fb-a54a-4d98-b05a-66950a2141d8",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem and answer choices could be more refined."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem and answer choices could be more refined.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 86,
+      "latency_seconds": 1.3613386668730527
+    },
+    {
+      "record_id": "51328364-1ac8-4c91-a110-bd48bfc80d3f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is present, the question stem could be more authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is present, the question stem could be more authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 87,
+      "latency_seconds": 1.4893608328420669
+    },
+    {
+      "record_id": "bde03256-51b9-46ef-812d-3887b2047427",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is present, the question stem could be more authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is present, the question stem could be more authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 87,
+      "latency_seconds": 1.4484444172121584
+    },
+    {
+      "record_id": "c99b747f-77b3-4786-b045-d2b97f0cc77f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is present, the question stem could be more LSAT-like."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is present, the question stem could be more LSAT-like.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 89,
+      "latency_seconds": 2.0501145420130342
+    },
+    {
+      "record_id": "d11102f5-44ed-4905-aced-20f63c554ae4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem could be more authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth, and while the flaw is present, the question stem could be more authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 84,
+      "latency_seconds": 5.936775667127222
+    },
+    {
+      "record_id": "7f4b49b0-43b5-4585-b91d-7178a73ff8c6",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 80,
+      "latency_seconds": 1.4349867501296103
+    },
+    {
+      "record_id": "cd6418d1-33d0-41fd-a9fc-028ffdf2e1d1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more specific to enhance clarity."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more specific to enhance clarity.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 83,
+      "latency_seconds": 1.2965050840284675
+    },
+    {
+      "record_id": "41d73a0a-d3d4-47e9-adba-73768a999ee5",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 80,
+      "latency_seconds": 1.7741620840970427
+    },
+    {
+      "record_id": "2bb1d9c0-1226-44e5-8f91-bc06c22bc1ce",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 80,
+      "latency_seconds": 1.244451958918944
+    },
+    {
+      "record_id": "d077a8f2-c5cf-45ef-9c66-40d75139d5a5",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is moderately authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 80,
+      "latency_seconds": 1.6206350419670343
+    },
+    {
+      "record_id": "8f11456e-daf0-442b-bbaf-329f6a397cc3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more aligned with LSAT standards."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more aligned with LSAT standards.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 85,
+      "latency_seconds": 1.6392565839923918
+    },
+    {
+      "record_id": "aef3999e-7937-40de-8e32-c0898d5f3362",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more specific to align with LSAT standards."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more specific to align with LSAT standards.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 86,
+      "latency_seconds": 2.6628538330551237
+    },
+    {
+      "record_id": "331521c3-2f29-4171-8939-1dbdfa891aa3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 1.33112462493591
+    },
+    {
+      "record_id": "6bc77c92-9ffd-4e6d-bd0e-a5cb27df6a2c",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 1.3300144579261541
+    },
+    {
+      "record_id": "7d23aa14-dd11-4dc4-90cc-d4f8992b5e60",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is identified correctly, the question stem could be more authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is identified correctly, the question stem could be more authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 88,
+      "latency_seconds": 1.945623999927193
+    },
+    {
+      "record_id": "9a826943-7609-4c74-909d-caf013851391",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is present, the question stem could be more authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is present, the question stem could be more authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 87,
+      "latency_seconds": 1.3629937921650708
+    },
+    {
+      "record_id": "4b60f2ff-c092-4064-bf3f-25bae619c231",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies a flaw without being overly specific.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 1.301679041935131
+    },
+    {
+      "record_id": "be748823-1540-46e6-bec1-0623a691cf33",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is identified correctly, the question stem could be more authentic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and while the flaw is identified correctly, the question stem could be more authentic.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 88,
+      "latency_seconds": 1.3509599580429494
+    },
+    {
+      "record_id": "5598e344-a2b4-438b-8757-21e5486d99a2",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.7178405418526381
+    },
+    {
+      "record_id": "f7e00382-b481-4c4f-9330-9b4fb7201d6b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a clear argument and does not effectively demonstrate the necessary vs. sufficient flaw."
+      },
+      "score_total": 9,
+      "notes": "The item lacks a clear argument and does not effectively demonstrate the necessary vs. sufficient flaw.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 75,
+      "latency_seconds": 5.121651791036129
+    },
+    {
+      "record_id": "2c0586f8-856b-4f28-8359-a5dfd603dffe",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 2,
+        "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented."
+      },
+      "score_total": 10,
+      "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.533702041953802
+    },
+    {
+      "record_id": "b8d05ffd-381a-47c1-ace1-1866d23687cf",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 2,
+        "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented."
+      },
+      "score_total": 10,
+      "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 4.406126042129472
+    },
+    {
+      "record_id": "5ce4c872-7b2b-44d5-9e53-3e1101c490b1",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.7066622080747038
+    },
+    {
+      "record_id": "e75631f6-e7ee-4b59-bf5e-892660a89f61",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.97833316703327
+    },
+    {
+      "record_id": "d0757bef-d9c2-4e4c-a378-752dd62643ba",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 2,
+        "notes": "The stimulus lacks a clear argument structure, making it difficult to identify the flaw accurately."
+      },
+      "score_total": 10,
+      "notes": "The stimulus lacks a clear argument structure, making it difficult to identify the flaw accurately.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 74,
+      "latency_seconds": 1.3320260839536786
+    },
+    {
+      "record_id": "b23c7317-48ac-4b7d-b82a-a7890652b437",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 1,
+        "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the provided information."
+      },
+      "score_total": 9,
+      "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the provided information.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 78,
+      "latency_seconds": 1.6368270409293473
+    },
+    {
+      "record_id": "8fb579cb-c073-4640-8837-5ac9da577ba0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 2,
+        "notes": "The stimulus lacks a clear argument structure, making it difficult to assess the flaw accurately."
+      },
+      "score_total": 10,
+      "notes": "The stimulus lacks a clear argument structure, making it difficult to assess the flaw accurately.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 74,
+      "latency_seconds": 1.3317967921029776
+    },
+    {
+      "record_id": "c590aa60-a104-4a44-a119-38be880ed9ad",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 2,
+        "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented."
+      },
+      "score_total": 10,
+      "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.4327574169728905
+    },
+    {
+      "record_id": "b89f27a5-f0fa-4e4b-a721-89de8b57a0de",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 2,
+        "notes": "The item lacks a clear argument and the flaw type does not align with the provided information."
+      },
+      "score_total": 10,
+      "notes": "The item lacks a clear argument and the flaw type does not align with the provided information.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 75,
+      "latency_seconds": 1.7401691251434386
+    },
+    {
+      "record_id": "b6558947-3abb-4086-9d37-e59888d85a36",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.4337727918755263
+    },
+    {
+      "record_id": "ca1a9fd5-ca80-4000-8a4e-54080b645b94",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.331035332987085
+    },
+    {
+      "record_id": "7b0ac58f-2f7c-44c3-9cd2-fd08a95375ea",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.2290063339751214
+    },
+    {
+      "record_id": "d8cb313f-52ae-4095-a22c-5f275763796b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.4331384578254074
+    },
+    {
+      "record_id": "7c455ffd-756b-423d-95b9-298df77d2d6a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.4828071249648929
+    },
+    {
+      "record_id": "e2af080f-c0a0-4bfb-ad8d-b2b4e1eb8e6b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.691892792005092
+    },
+    {
+      "record_id": "63ec6f06-7e95-4fcb-95f5-cee0a86d2c01",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a clear argument and does not effectively demonstrate the necessary vs. sufficient flaw."
+      },
+      "score_total": 9,
+      "notes": "The item lacks a clear argument and does not effectively demonstrate the necessary vs. sufficient flaw.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 75,
+      "latency_seconds": 1.5401043330784887
+    },
+    {
+      "record_id": "4c88e58d-b595-40af-bc6f-80a54a83152a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.5335948332212865
+    },
+    {
+      "record_id": "368845c9-f451-45ef-b647-6cc66cc1db42",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 78,
+      "latency_seconds": 1.3304077498614788
+    },
+    {
+      "record_id": "4ab14fea-86f1-4eb3-b418-80a3f607a2da",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 78,
+      "latency_seconds": 1.5359927921090275
+    },
+    {
+      "record_id": "b937dfdf-1880-4e4d-a8dc-e44e361b0ca4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 1,
+        "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented."
+      },
+      "score_total": 9,
+      "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.3326990001369268
+    },
+    {
+      "record_id": "2549effe-30c1-4434-8257-e3bbdc2e45f2",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.3277383330278099
+    },
+    {
+      "record_id": "1f051053-051f-4efb-b6e9-bc516a6e2b51",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 1,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 1,
+        "distractor_plausibility": 1,
+        "correct_answer_precision": 1,
+        "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively."
+      },
+      "score_total": 5,
+      "notes": "The item lacks a complete stimulus, question, and answer choices, making it impossible to evaluate effectively.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.5379305840469897
+    },
+    {
+      "record_id": "4524dc77-eb9f-4ad5-8247-ca2309fed760",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 2,
+        "flaw_fidelity": 1,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 2,
+        "correct_answer_precision": 2,
+        "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented."
+      },
+      "score_total": 10,
+      "notes": "The stimulus lacks a clear argument structure, and the flaw type does not align with the argument presented.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 4.503771624993533
+    },
+    {
+      "record_id": "2e45c2fe-858e-4896-9821-9ce21706d927",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.3161824999842793
+    },
+    {
+      "record_id": "188611da-6490-448f-982a-e86f5208ff3b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.244802667060867
+    },
+    {
+      "record_id": "acfed0de-ab59-4183-bbfd-544c15a546c0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.331335292197764
+    },
+    {
+      "record_id": "0ea98eaa-6a73-40f5-8b97-c95f8e20a0d7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.3759258340578526
+    },
+    {
+      "record_id": "31d3abd2-0081-4036-8c90-850ef7cf1b45",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument is somewhat coherent but lacks clarity in its premises, and while it does commit the necessary vs. sufficient flaw, the question stem and answer choices could be more refined."
+      },
+      "score_total": 18,
+      "notes": "The argument is somewhat coherent but lacks clarity in its premises, and while it does commit the necessary vs. sufficient flaw, the question stem and answer choices could be more refined.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 93,
+      "latency_seconds": 1.6948398330714554
+    },
+    {
+      "record_id": "77fc9f04-bc31-482f-8858-e76cb9fa3c6b",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is somewhat coherent but lacks clarity in its premises, while the correct answer accurately identifies the flaw."
+      },
+      "score_total": 19,
+      "notes": "The argument is somewhat coherent but lacks clarity in its premises, while the correct answer accurately identifies the flaw.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 78,
+      "latency_seconds": 1.4332962499465793
+    },
+    {
+      "record_id": "56c9b660-fe45-455e-8a88-4f5ed5988da3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.5349917919375002
+    },
+    {
+      "record_id": "bc1b6ec6-4180-46f6-9be7-2c1aa508f694",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.1817368329502642
+    },
+    {
+      "record_id": "72fc4f34-fa20-4822-96a5-ce7ae685afd4",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, making it difficult to assess the flaw accurately."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, making it difficult to assess the flaw accurately.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 75,
+      "latency_seconds": 1.2170509579591453
+    },
+    {
+      "record_id": "726363df-9837-4c1d-9e75-98e0162ab1a0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear connection to the necessary vs. sufficient flaw, and the answer choices do not effectively challenge the test-taker."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear connection to the necessary vs. sufficient flaw, and the answer choices do not effectively challenge the test-taker.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 89,
+      "latency_seconds": 1.4923034170642495
+    },
+    {
+      "record_id": "441f4608-a3c1-47df-b568-b5e71d684b9e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.6383388750255108
+    },
+    {
+      "record_id": "4397cb42-c71d-44b1-a9a2-1a84a5143ec7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.433951749932021
+    },
+    {
+      "record_id": "38e3eb67-6130-4043-ac55-16437a8b4c4d",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.3741169581189752
+    },
+    {
+      "record_id": "7441a8f6-2d73-4f21-b0d2-71ca0ed25f4a",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is generic."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem is generic.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 79,
+      "latency_seconds": 1.290752250002697
+    },
+    {
+      "record_id": "be14d9fb-d35e-40fe-97aa-427dcac824a3",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.4285123329609632
+    },
+    {
+      "record_id": "6eb5f24d-040d-4b2c-978b-71a78cd7fe75",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 2,
+        "notes": "The argument lacks clarity in its premises and conclusion, and the identified flaw does not accurately reflect the necessary vs. sufficient distinction."
+      },
+      "score_total": 14,
+      "notes": "The argument lacks clarity in its premises and conclusion, and the identified flaw does not accurately reflect the necessary vs. sufficient distinction.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 82,
+      "latency_seconds": 1.3312284590210766
+    },
+    {
+      "record_id": "d521a45e-5c51-4842-9f33-1aa991147577",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, making it difficult to assess the flaw accurately."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, making it difficult to assess the flaw accurately.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 75,
+      "latency_seconds": 1.4345935829915106
+    },
+    {
+      "record_id": "4c3ff684-554a-486f-a78c-8fd93e99927d",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.6398150420282036
+    },
+    {
+      "record_id": "d3efdef4-b029-4103-95ff-16bd271f486e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument is generally coherent but lacks clarity in its premises, and while it commits the necessary vs. sufficient flaw, the question stem and answer choices could be more refined."
+      },
+      "score_total": 18,
+      "notes": "The argument is generally coherent but lacks clarity in its premises, and while it commits the necessary vs. sufficient flaw, the question stem and answer choices could be more refined.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 92,
+      "latency_seconds": 2.559176875045523
+    },
+    {
+      "record_id": "7454ecd2-069d-4a89-8ec2-9131903eb462",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear conclusion, and the flaw type is not accurately represented."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear conclusion, and the flaw type is not accurately represented.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 78,
+      "latency_seconds": 1.9459573330823332
+    },
+    {
+      "record_id": "c7dbb14d-ff19-45fb-9121-204249ef38fa",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The argument is somewhat coherent but lacks clarity in its premises, while the correct answer accurately identifies the flaw without overreaching."
+      },
+      "score_total": 19,
+      "notes": "The argument is somewhat coherent but lacks clarity in its premises, while the correct answer accurately identifies the flaw without overreaching.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 83,
+      "latency_seconds": 1.8452395407948643
+    },
+    {
+      "record_id": "3d454aa6-6032-4fb8-832b-52df9f7bd3d0",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.772564916871488
+    },
+    {
+      "record_id": "44a8f938-8561-4eb2-86d4-942572b3b98e",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, leading to a misidentification of the flaw type.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 77,
+      "latency_seconds": 1.6031475001946092
+    },
+    {
+      "record_id": "6d1d607c-ffe3-457c-a252-22e6a0c32dce",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 3,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more specific to enhance clarity."
+      },
+      "score_total": 18,
+      "notes": "The argument presents a somewhat clear structure but lacks depth in its premises, and the question stem could be more specific to enhance clarity.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 83,
+      "latency_seconds": 1.5383877500426024
+    },
+    {
+      "record_id": "669d5cf8-82ef-4951-8788-1e3d2b4ff76f",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks clarity in its premises and conclusion, and the flaw type is not accurately represented."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks clarity in its premises and conclusion, and the flaw type is not accurately represented.",
+      "error": "",
+      "prompt_tokens": 286,
+      "completion_tokens": 81,
+      "latency_seconds": 1.5344807079527527
+    }
+  ]
+}

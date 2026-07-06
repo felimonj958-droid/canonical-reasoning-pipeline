@@ -1,0 +1,118 @@
+{
+  "run_name": "eval_batch_openai_25per_20260706_095732_20260706_111213",
+  "source_batch": "batch_openai_25per_20260706_095732",
+  "judge_model": "gpt-4o-mini-2024-07-18",
+  "aggregates": {
+    "items_evaluated": 5,
+    "items_scored": 5,
+    "items_parse_error": 0,
+    "items_runtime_error": 0,
+    "score_total_mean": 15.2,
+    "score_total_median": 15,
+    "score_total_min": 15,
+    "score_total_max": 16,
+    "high_quality_count": 0,
+    "high_quality_rate": 0.0,
+    "dimension_means": {
+      "argument_coherence": 3,
+      "flaw_fidelity": 2.4,
+      "question_stem_quality": 3.6,
+      "distractor_plausibility": 3,
+      "correct_answer_precision": 3.2
+    }
+  },
+  "judge_cost_usd": 0.000448,
+  "judge_tokens_total": 1800,
+  "results": [
+    {
+      "record_id": "321954e7-0754-49e1-abca-1aa5892ace81",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 3.5108761668670923
+    },
+    {
+      "record_id": "8bbb45fb-a064-4f14-af35-fa519bd6ea66",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, and the causal flaw is not clearly demonstrated."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, and the causal flaw is not clearly demonstrated.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 75,
+      "latency_seconds": 1.526564917061478
+    },
+    {
+      "record_id": "7388e083-9179-44ed-be8d-0f2890e8bc59",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 4,
+        "question_stem_quality": 2,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 4,
+        "notes": "The argument presents a basic causal flaw but lacks clarity in the question stem and some distractors are less compelling."
+      },
+      "score_total": 16,
+      "notes": "The argument presents a basic causal flaw but lacks clarity in the question stem and some distractors are less compelling.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 79,
+      "latency_seconds": 1.7333251249510795
+    },
+    {
+      "record_id": "ff772bdf-9d90-487d-a440-7d9a256edee7",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad."
+      },
+      "score_total": 15,
+      "notes": "The argument presents some coherence but lacks a clear causal connection, and the correct answer identifies the flaw without being overly broad.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 81,
+      "latency_seconds": 1.7764010410755873
+    },
+    {
+      "record_id": "a884d625-66eb-4521-b527-11eb5eb5d624",
+      "status": "scored",
+      "score": {
+        "argument_coherence": 3,
+        "flaw_fidelity": 2,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 3,
+        "notes": "The argument lacks clarity in its premises, and the identified flaw does not align well with the causal claim."
+      },
+      "score_total": 15,
+      "notes": "The argument lacks clarity in its premises, and the identified flaw does not align well with the causal claim.",
+      "error": "",
+      "prompt_tokens": 281,
+      "completion_tokens": 79,
+      "latency_seconds": 1.874669625191018
+    }
+  ]
+}
