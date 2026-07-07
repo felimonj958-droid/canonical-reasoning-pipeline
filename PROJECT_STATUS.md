@@ -191,6 +191,40 @@ Effect after fix: mean 22.68 → 18.66 with a 13–22 range (9-point spread), 36
 - Report renderer: swap `content.question` fallback to `content.question_stem` so reports stop showing "not captured" placeholder
 - Optional: archive 163 legacy pre-refactor records (no `generation` metadata) into `data/legacy/` so future batches never sample from them
 
+## Milestone: Distractor prompt v2 + position rotation (July 7, 2026)
+
+### What shipped
+- Prompt bumped `lr_flaw_v1` → `lr_flaw_v2` in `src/generate/synthetic_lr.py`
+- Per-flaw distractor role guidance: CORRECT, TRAP-A (adjacent flaw), TRAP-B (right family wrong scope), TRAP-C (surface-plausible non-flaw), WEAK
+- Randomized correct-answer position A–E per item via `correct_position` kwarg (fixes v1 position bias where 4/4 dry-run correct answers landed at A)
+- `--n-per-config` CLI flag added to `src/normalize/run_synthetic_lr_batch.py`
+
+### v2 vs v1 baseline (100-item OpenAI batch, judge = gpt-4o)
+| Metric | v1 | v2 | Δ |
+|---|---|---|---|
+| Mean total | 18.66 | 19.32 | +0.66 |
+| Median | — | 20.0 | — |
+| High-quality rate | 36% | 61% | +25pp |
+| Distractor plausibility | 3.33 | 3.58 | +0.25 |
+| Flaw fidelity | — | 4.01 | — |
+| Argument coherence | — | 3.75 | — |
+| Question stem quality | — | 3.97 | — |
+| Correct-answer precision | — | 4.01 | — |
+
+### Artifacts
+- Batch: `data/normalized/batches/batch_openai_25per_20260707_092511.json`
+- Eval: `data/evaluations/eval_batch_openai_25per_20260707_092511_20260707_093043.json`
+- Judge cost: $0.31 / 100 items; generation cost: $0.023 / 100 items
+
+### Verified
+- 75 tests pass, 1 skipped (Ollama opt-in)
+- 100/100 items valid, 100/100 pass quality gate, 2 non-blocking `weak_argument_signals`
+- Correct-answer positions verified rotating across A–E in dry-run
+
+### Next up (Session 2)
+- ReClor comparison harness — measure v2 prompt quality against an external LR benchmark
+- Consider Session 1.6 distractor tightening only if ReClor gap suggests it
+
 ### Local runtime constraints
 
 Synthetic generation currently runs locally via Ollama using `qwen3:8b`.
