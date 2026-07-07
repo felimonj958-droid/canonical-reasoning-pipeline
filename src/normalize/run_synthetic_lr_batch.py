@@ -292,7 +292,18 @@ def _write_summary(
 
 
 if __name__ == "__main__":
-    batch = run_synthetic_lr_batch(n_per_config=1, persist=True)
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Run synthetic LR generation batch.")
+    parser.add_argument(
+        "--n-per-config",
+        type=int,
+        default=1,
+        help="Number of items to generate per (flaw_type, difficulty) config. Default: 1 (dry-run).",
+    )
+    args = parser.parse_args()
+
+    batch = run_synthetic_lr_batch(n_per_config=args.n_per_config, persist=True)
     print("=== Summary ===")
     for k, v in batch["summary"].items():
         print(f"{k}: {v}")

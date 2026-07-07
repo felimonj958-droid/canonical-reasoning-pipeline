@@ -20,13 +20,14 @@ SUPPORTED_DIFFICULTIES = {
 
 ANSI_ESCAPE_RE = re.compile(r"\x1b\[[0-9;?]*[ -/]*[@-~]")
 
-DEFAULT_PROMPT_VERSION = "lr_flaw_v1"
+DEFAULT_PROMPT_VERSION = "lr_flaw_v2"
 
 
 def build_synthetic_lr_prompt(
     flaw_type: str = "causal",
     difficulty: str = "medium",
     prompt_version: str = DEFAULT_PROMPT_VERSION,
+    correct_position: str = "C",
 ) -> str:
     if flaw_type not in SUPPORTED_FLAW_TYPES:
         raise ValueError(f"Unsupported flaw_type: {flaw_type}")
@@ -44,18 +45,57 @@ Use one of these causal-flaw patterns:
 - ignoring possible reverse causation
 - inferring a broad causal rule from limited evidence
 
-The correct answer must precisely describe the causal flaw.
-The wrong answers should be plausible LSAT-style flaw descriptions, but they must not match the stimulus.
+The correct answer must precisely describe the causal flaw actually committed in the stimulus.
 """.strip()
+
+        distractor_guidance = """
+Answer choice roles (assign each of the 5 choices to exactly one role):
+
+CORRECT: precisely names the causal flaw actually committed in the stimulus. Uses standard LSAT phrasing (e.g. "takes for granted that a correlation is sufficient to establish causation"; "fails to consider that the causal relationship may run in the opposite direction"; "overlooks the possibility that a third factor causes both").
+
+TRAP-A (adjacent causal flaw): names a DIFFERENT causal flaw than the one committed. If the stimulus commits correlation-as-causation, this distractor might name reverse-causation, or ignoring-an-alternative-cause. The wording sounds causal and LSAT-appropriate, but the flaw named is not the one actually committed.
+
+TRAP-B (right family, wrong scope): names a causal flaw but overreaches or underreaches. Example: "assumes that the causal relationship holds in ALL cases" when the stimulus only claims a single instance, or "concludes that no other factor could contribute" when the stimulus makes a weaker claim.
+
+TRAP-C (surface-plausible non-flaw): describes a real feature of the argument that is NOT the flaw — e.g. "relies on a small sample" when sample size isn't the issue, or "uses ambiguous terminology" when the terms are clear. Must be tempting on skim but not the actual defect.
+
+WEAK: an obviously wrong distractor — either irrelevant to the argument, or a meta-critique like "uses complex language" or "makes an unsupported factual claim" that doesn't attack the reasoning. This is the easiest to eliminate. Every LSAT item has one of these.
+
+The CORRECT position is specified in the Requirements section above. Assign TRAP-A, TRAP-B, TRAP-C, and WEAK to the other four positions in any order. Do NOT label choices with role names in the output.
+""".strip()
+
     elif flaw_type == "necessary_vs_sufficient":
         flaw_guidance = """
 Write a Logical Reasoning flaw question in which the argument confuses a necessary condition with a sufficient condition, or reverses a conditional relationship.
 
-The correct answer must precisely describe the conditional flaw.
-The wrong answers should be plausible LSAT-style flaw descriptions, but they must not match the stimulus.
+Use one of these conditional-flaw patterns:
+- treating a necessary condition as if it were sufficient (having condition X is required, therefore having X guarantees the outcome)
+- treating a sufficient condition as if it were necessary (X guarantees the outcome, therefore only X can produce the outcome)
+- affirming the consequent (if P then Q; Q is true; therefore P)
+- denying the antecedent (if P then Q; not P; therefore not Q)
+
+The correct answer must precisely describe the conditional flaw actually committed in the stimulus.
 """.strip()
+
+        distractor_guidance = """
+Answer choice roles (assign each of the 5 choices to exactly one role):
+
+CORRECT: precisely names the conditional flaw actually committed. Uses standard LSAT phrasing (e.g. "treats a condition that is necessary for X as if it were sufficient for X"; "mistakes a sufficient condition for a necessary one"; "confuses a claim about what must be true with a claim about what is enough to be true").
+
+TRAP-A (adjacent conditional flaw): names the OPPOSITE conditional confusion. If the stimulus confuses necessary-as-sufficient, this distractor names sufficient-as-necessary, or vice versa. Both are conditional flaws, so it sounds right on skim.
+
+TRAP-B (right family, wrong scope): names a conditional flaw but overreaches — e.g. "assumes there is only one way to achieve the outcome" when the argument doesn't claim uniqueness, or "concludes the condition is always required" when the stimulus makes a narrower claim.
+
+TRAP-C (surface-plausible non-flaw): describes something true about the argument that is NOT the flaw — e.g. "generalizes from a single case" when the argument isn't generalizing, or "assumes the audience shares a definition" when the terms are unambiguous.
+
+WEAK: an obviously wrong distractor — irrelevant to the argument, or a meta-critique like "uses emotional appeal" or "relies on outdated evidence" that doesn't attack the conditional reasoning.
+
+The CORRECT position is specified in the Requirements section above. Assign TRAP-A, TRAP-B, TRAP-C, and WEAK to the other four positions in any order. Do NOT label choices with role names in the output.
+""".strip()
+
     else:
         raise ValueError(f"Unsupported flaw_type: {flaw_type}")
+    
 
     difficulty_guidance = """
 Difficulty guidance:
@@ -103,6 +143,9 @@ Requirements:
 - The flaw must match the target flaw type.
 - Use exactly one LSAT-style flaw question stem.
 - Provide exactly five answer choices labeled A through E.
+- Each of the five choices must fill a distinct role from the distractor guidance below.
+- Place the CORRECT answer at position {correct_position}. The other four positions receive the TRAP-A, TRAP-B, TRAP-C, and WEAK roles in any order.
+- Distractors must attack the SAME reasoning family as the correct answer (do not use unrelated flaws like "anecdotal evidence" unless one is designated as WEAK).
 - Provide exactly one correct answer.
 - Do not include any explanation.
 - Do not include markdown.
@@ -114,6 +157,8 @@ Requirements:
 {difficulty_guidance}
 
 {flaw_guidance}
+
+{distractor_guidance}
 
 {format_guidance}
 """.strip()
@@ -141,6 +186,7 @@ def generate_synthetic_lr(
     temperature: float = 0.7,
     max_tokens: int = 1024,
     model: str | None = None,
+    correct_position: str | None = None,
 ) -> tuple[str, GenerationMeta]:
     """Generate one synthetic LR item via the provided LLMClient.
 
@@ -151,11 +197,20 @@ def generate_synthetic_lr(
     or keyword hint can still do so; the client resolves the actual model
     used and records it on the returned metadata.
     """
+    import random
     client = client or get_llm_client()
+
+    if correct_position is None:
+        correct_position = random.choice(["A", "B", "C", "D", "E"])
+    correct_position = correct_position.upper()
+    if correct_position not in {"A", "B", "C", "D", "E"}:
+        raise ValueError(f"correct_position must be A-E, got {correct_position}")
+
     prompt = build_synthetic_lr_prompt(
         flaw_type=flaw_type,
         difficulty=difficulty,
         prompt_version=prompt_version,
+        correct_position=correct_position,
     )
 
     request = GenerationRequest(

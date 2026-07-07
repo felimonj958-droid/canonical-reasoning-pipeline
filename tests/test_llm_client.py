@@ -1,3 +1,4 @@
+from src.generate.synthetic_lr import DEFAULT_PROMPT_VERSION
 from src.generate.synthetic_lr import generate_synthetic_lr
 from src.llm_client.base import GenerationRequest, GenerationResponse
 
@@ -47,6 +48,6 @@ def test_synthetic_lr_uses_injected_client():
     assert meta.model == "fake-model-v0"
     assert meta.flaw_type == "causal"
     assert meta.difficulty == "easy"
-    assert meta.prompt_version == "lr_flaw_v1"
+    assert meta.prompt_version == DEFAULT_PROMPT_VERSION
     assert meta.prompt_tokens == 42
     assert meta.completion_tokens == 99
