@@ -2,9 +2,12 @@
 
 ## Current state
 
+
 The text-lane vertical slice is complete and manually verified. The repository can ingest one Logical Reasoning text payload through the API, map it into the canonical record shape, validate it, route it, persist it, and return the saved record.
 
-The synthetic Logical Reasoning lane is now a first-class slice that maps into the same canonical record + persistence flow as OCR/text lanes and includes a first-pass content-quality layer.
+
+The synthetic Logical Reasoning lane is now a first-class slice that maps into the same canonical record + persistence flow as OCR/text lanes and includes a first-pass content-quality layer. Prompt v2 (per-flaw distractor role guidance + randomized correct-answer position) lifts the 100-item OpenAI batch to **19.32/25 mean** and **61% high-quality rate** (up from 18.66 / 36% on v1), judged by gpt-4o against the calibrated rubric.
+
 
 ## Verified on
 
