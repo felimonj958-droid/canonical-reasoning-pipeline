@@ -6,9 +6,9 @@ def _guess_paired_text_path(source_file):
     stem = image_path.stem
 
     candidates = [
-        Path("data/pt62/lr2") / f"{stem}.txt",
-        Path("data/pt62/lr2") / f"{stem.replace('.jpeg', '')}.txt",
-        Path("data/pt62/lr2") / f"{stem.replace('_clean', '_clean')}.txt",
+        Path("data/sample_text") / f"{stem}.txt",
+        Path("data/sample_text") / f"{stem.replace('.jpeg', '')}.txt",
+        Path("data/sample_text") / f"{stem.replace('_clean', '_clean')}.txt",
     ]
 
     for candidate in candidates:

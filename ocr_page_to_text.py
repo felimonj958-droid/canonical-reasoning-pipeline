@@ -18,10 +18,10 @@ def main():
         sys.exit(1)
 
     # ---- NEW: derive pt / section and output path ----
-    # Expect filenames like pt62_lr2_q02_clean.jpeg
-    stem = image_path.stem                      # 'pt62_lr2_q02_clean'
-    parts = stem.split("_")                     # ['pt62','lr2','q02','clean']
-    pt_id = parts[0]                            # 'pt62'
+    # Expect filenames like reasoning_set_a_q02_clean.jpeg
+    stem = image_path.stem                      # 'reasoning_set_a_q02_clean'
+    parts = stem.split("_")                     # ['reasoning','set','a','q02','clean']
+    pt_id = parts[0]                            # 'reasoning'
     section_id = parts[1]                       # 'lr2'
 
     out_dir = Path("data") / pt_id / section_id

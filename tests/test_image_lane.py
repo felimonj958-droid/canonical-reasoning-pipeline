@@ -5,7 +5,7 @@ from src.normalize.run_image_lane import run_image_lane
 
 def test_run_image_lane_routes_multi_question_image_to_review():
     record, out_path, review_path = run_image_lane(
-        "raw_images/pt62_lr2_q01_clean.jpeg",
+        "tests/fixtures/sample_reasoning_image.jpeg",
         {
             "prep_test": "PT62",
             "section": "logical_reasoning",

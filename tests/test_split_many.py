@@ -5,7 +5,7 @@ from src.normalize.split_lsat import split_many_lsat_questions
 
 
 def test_split_many_lsat_questions_page_text():
-    raw = Path("data/pt62/lr2/pt62_lr2_p01.txt").read_text(encoding="utf-8")
+    raw = Path("tests/fixtures/sample_generated_text.txt").read_text(encoding="utf-8")
     cleaned = normalize(raw)
 
     chunks = split_many_lsat_questions(cleaned)

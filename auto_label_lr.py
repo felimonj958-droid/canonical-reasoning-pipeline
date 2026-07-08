@@ -3,7 +3,7 @@ from pathlib import Path
 import csv
 
 # Reuse the same CSV and model setup
-LR_QUESTIONS_PATH = Path("lr_questions.csv")
+LR_QUESTIONS_PATH = Path("data/lsat/lr_questions.csv")
 
 client = OpenAI(
     base_url="http://127.0.0.1:1234/v1",

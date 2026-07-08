@@ -9,7 +9,7 @@ client = OpenAI(
     api_key="lm-studio"
 )
 
-LR_QUESTIONS_PATH = Path("lr_questions.csv")
+LR_QUESTIONS_PATH = Path("data/lsat/lr_questions.csv")
 LR_ATTEMPTS_PATH = Path("lr_attempts.csv")
 RC_QUESTIONS_PATH = Path("rc_questions.csv")
 RC_ATTEMPTS_PATH = Path("rc_attempts.csv")

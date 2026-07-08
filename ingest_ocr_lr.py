@@ -3,7 +3,7 @@ import csv
 import sys
 import re
 
-LR_QUESTIONS_PATH = Path("lr_questions.csv")
+LR_QUESTIONS_PATH = Path("data/lsat/lr_questions.csv")
 
 
 def load_existing_ids():

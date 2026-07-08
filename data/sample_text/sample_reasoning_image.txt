@@ -1,0 +1,25 @@
+Questions 1-3
+
+1. A recent study found that employees who work remotely report higher job satisfaction than employees who work entirely in offices. However, the study surveyed only employees at technology companies.
+
+(A) Technology companies are more likely than other companies to offer flexible schedules.
+(B) Many employees prefer working in offices to working remotely.
+(C) Some technology companies require employees to work on-site.
+(D) Job satisfaction is difficult to measure objectively.
+(E) Remote workers often save money on commuting.
+
+2. Which one of the following, if true, most weakens the argument?
+
+(A) Employees at non-technology companies who work remotely report lower job satisfaction than those at technology companies.
+(B) Remote workers are generally less productive than office workers.
+(C) Technology companies pay higher salaries than most other companies.
+(D) Office workers tend to collaborate more often in person.
+(E) Many employees value workplace amenities.
+
+3. The argument depends on assuming which one of the following?
+
+(A) Job satisfaction is unrelated to salary.
+(B) Employees at technology companies are representative of employees generally.
+(C) Office workers never work from home.
+(D) Technology companies have better managers than other companies.
+(E) Remote work always increases productivity.

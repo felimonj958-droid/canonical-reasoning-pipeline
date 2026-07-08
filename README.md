@@ -28,6 +28,14 @@ References to "LR" and "RC" in this repository describe the general genre of
 logical reasoning and reading comprehension tasks, not any specific
 proprietary exam.
 
+### Data & Evaluation Artifacts
+
+- `data/evaluations/` contains JSON outputs from LLM-as-judge runs over synthetic LSAT-style items.
+- `data/reports/` contains human-readable batch reports (Markdown) summarizing these evaluations.
+
+These artifacts reference LSAT standards and phrasing for quality comparison,
+but they do not embed or redistribute official LSAT content.
+
 ## Identity
 
 The primary identity of this repository is:

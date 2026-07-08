@@ -1,13 +1,3 @@
-question_id,section_index,question_type,difficulty,skills,text_file,text_start,text_end,correct_answer
-demo_lr_1,1,,,"",pt_demo_lr.txt,0,999,B
-pt_demo_lr_Q01,1,,,,pt_demo_lr.txt,0,535,
-
-pt62_lr2_p01_Q01,2,,,,pt62_lr2_p01.txt,0,1343,
-pt62_lr2_q01_clean_Q01,2,,,,pt62_lr2_q01_clean.txt,0,855,
-pt62_lr2_q02_clean_Q01,2,,,,pt62_lr2_q02_clean.txt,0,853,
-pt62_lr2_q02_clean_Q02,2,,,,pt62_lr2_q02_clean.txt,853,3219,
-pt62_lr2_q02_clean_Q03,2,,,,pt62_lr2_q02_clean.txt,3219,4229,
-pt62_lr2_q07_clean_Q01,2,,,,pt62_lr2_q07_clean.txt,0,826,
-pt62_lr2_q07_clean_Q02,2,,,,pt62_lr2_q07_clean.txt,826,1727,
-pt62_lr2_q07_clean_Q03,2,,,,pt62_lr2_q07_clean.txt,1727,2807,
-pt62_lr2_q07_clean_Q04,2,,,,pt62_lr2_q07_clean.txt,2807,3661,
+question_id,section,source_file,start_idx,end_idx
+sample_reasoning_q01,1,sample_generated_text.txt,0,250
+sample_reasoning_q02,1,sample_generated_text.txt,251,520
