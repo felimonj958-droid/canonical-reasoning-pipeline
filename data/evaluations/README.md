@@ -1,4 +1,7 @@
-Batch evaluation outputs over synthetic LSAT-style items.
+# Evaluations
 
-Judge notes may compare items to LSAT standards (e.g., "not verbatim LSAT phrasing"),
-but no official exam questions or passages are stored here.
+This directory contains batch evaluation outputs over synthetic LSAT-style items.
+
+Judge notes may compare generated items to LSAT-style standards or phrasing quality, but no official exam questions, passages, answer keys, or source images are stored here.
+
+These artifacts are intended for calibration, quality tracking, and release-note support for the synthetic pipeline.

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from fastapi.testclient import TestClient
 
 from src.api.main import app
@@ -7,6 +8,8 @@ from src.persist import filesystem_store
 
 
 client = TestClient(app)
+
+AUTH_HEADERS = {"Authorization": f"Bearer {os.environ['API_TOKEN']}"}
 
 
 def test_ingest_ocr_text_valid_record(monkeypatch, tmp_path):
@@ -46,7 +49,7 @@ def test_ingest_ocr_text_valid_record(monkeypatch, tmp_path):
         },
     }
 
-    response = client.post("/ingest/ocr-text", json=payload)
+    response = client.post("/ingest/ocr-text", json=payload, headers=AUTH_HEADERS)
 
     assert response.status_code == 200
 
@@ -99,7 +102,11 @@ def test_ingest_ocr_text_malformed_record_routes_to_review(monkeypatch, tmp_path
         },
     }
 
-    response = client.post("/ingest/ocr-text", json=payload)
+    response = client.post(
+        "/ingest/ocr-text",
+        json=payload,
+        headers={"Authorization": f"Bearer {os.environ['API_TOKEN']}"},
+    )
 
     assert response.status_code == 200
 

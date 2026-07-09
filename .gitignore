@@ -67,3 +67,5 @@ logs/
 # ---- Review queue (generated triage output, not source) ----
 data/review_queue/
 !data/review_queue/.gitkeep
+.env.local
+.env.*.local

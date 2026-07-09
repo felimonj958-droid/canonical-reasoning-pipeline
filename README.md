@@ -45,6 +45,30 @@ The FastAPI endpoints are protected with a static Bearer token read from the `AP
 
 If `API_TOKEN` is missing or the Bearer token does not match, protected endpoints will return an authorization error.[web:507][web:511]
 
+### Trying the API in the browser
+
+1. Start the server:
+
+   ```bash
+   python -m uvicorn src.api.main:app --reload
+   ```
+
+2. Open `http://127.0.0.1:8000/docs` in a browser.
+
+3. Click **Authorize**, paste your `API_TOKEN` as the Bearer token, and hit **Authorize**.
+
+4. Expand `POST /ingest/ocr-text`, click **Try it out**, and send a sample JSON payload.
+
+Once the server is running and `API_TOKEN` is set, you can test the ingest endpoint either from `/docs` or with `curl`. A minimal payload like the example above will be accepted, validated, and routed into the `data/review_queue/` directory with `status="needs_review"` when required fields (stimulus, question stem, choices, etc.) are missing, which is expected for incomplete records.
+
+Common responses from `POST /ingest/ocr-text`:
+
+- `401 Unauthorized`: missing or incorrect `API_TOKEN` in the `Authorization` header.
+- `422 Unprocessable Entity`: JSON body does not match the request schema (e.g., required fields missing).
+- `200 OK` with `status="needs_review"`: record ingested but incomplete; routed into `data/review_queue/...`.
+
+Ingested records that fail validation or are incomplete are persisted under `data/review_queue/` with a `status="needs_review"` payload, and are never promoted into `data/normalized/records/` without passing the same canonical validation used for synthetic runs.
+
 ## Quickstart
 
 From repo root:
@@ -347,6 +371,37 @@ python -m uvicorn src.api.main:app --reload
 ```
 
 Use `python -m src.normalize.run_synthetic_lr_batch` as the primary public entrypoint for synthetic LR generation. The API and ingestion/OCR routes are secondary infrastructure.
+
+## Troubleshooting
+
+A few common issues and how to interpret them:
+
+- `401 Unauthorized` from API routes  
+  The `Authorization` header is missing or the Bearer token does not match `API_TOKEN`.  
+  - Ensure `.env` is loaded in your shell (`set -a; source .env; set +a`).  
+  - Confirm `API_TOKEN` in `.env` matches what you paste into `/docs` → **Authorize** or pass via `curl` as `Authorization: Bearer ${API_TOKEN}`.[web:507][web:582]
+
+- `422 Unprocessable Entity` from `POST /ingest/ocr-text`  
+  The request body does not match the expected Pydantic model; FastAPI returns 422 when required fields are missing or have the wrong type.[web:579][web:580]  
+  - Check the `detail` array in the JSON response — it lists which fields are missing or invalid (for example, `source_file`, `raw_text`, or `normalized_text`).  
+  - Use `/docs` to inspect the request schema and adjust your JSON payload accordingly (e.g., include `source_file`, `raw_text`, and `normalized_text` for simple text-lane tests).
+
+- `status="needs_review"` with a `saved_path` under `data/review_queue/...`  
+  The record was ingested and validated, but is incomplete or failed canonical checks (for example, missing LR stimuli, question stem, or answer choices).  
+  - This is expected for quick smoke-test payloads and for incomplete ingests.  
+  - These records are not promoted to `data/normalized/records/` unless they pass the same validation as synthetic batches.
+
+- `dvc status` shows `changed outs` for `data/normalized/records.dvc`  
+  The canonical records directory has changed relative to the last DVC snapshot (new or modified JSON files).[web:523][web:593]  
+  - If the changes are intentional and should ship, run:
+    ```bash
+    dvc add data/normalized/records
+    git add data/normalized/records.dvc
+    git commit -m "data: <what changed>"
+    ```  
+  - If not, revert local changes before running `dvc checkout` to restore the dataset for a previous commit.
+
+If you encounter other errors, start by checking the full JSON error body and the relevant section of this README (API token setup, MLflow, DVC, or ingestion) before changing code.
 
 ## Roadmap
 

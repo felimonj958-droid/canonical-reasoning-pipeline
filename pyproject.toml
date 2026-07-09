@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "canonical-reasoning-pipeline"
+version = "0.1.0"
+description = "Synthetic-first canonical reasoning pipeline for logical reasoning and reading comprehension records"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic>=2",
+  "httpx",
+  "openai",
+  "ollama",
+  "mlflow",
+  "dvc",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "ruff",
+  "black",
+  "isort",
+]
+
+[project.scripts]
+crp-api = "src.api.main:main"
+crp-batch = "src.normalize.run_synthetic_lr_batch:main"
+
+[tool.setuptools]
+py-modules = []
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]

@@ -290,8 +290,7 @@ def _write_summary(
     out_path.write_text(json.dumps(payload, indent=2, default=str))
     return out_path
 
-
-if __name__ == "__main__":
+def main():
     import argparse
 
     parser = argparse.ArgumentParser(description="Run synthetic LR generation batch.")
@@ -299,13 +298,30 @@ if __name__ == "__main__":
         "--n-per-config",
         type=int,
         default=1,
-        help="Number of items to generate per (flaw_type, difficulty) config. Default: 1 (dry-run).",
+        help="Number of items to generate per (flaw_type, difficulty) config. Default: 1.",
+    )
+    parser.add_argument(
+        "--no-persist",
+        action="store_true",
+        help="Do not write batch summary artifacts to disk.",
+    )
+    parser.add_argument(
+        "--no-track",
+        action="store_true",
+        help="Disable MLflow tracking for this run.",
     )
     args = parser.parse_args()
 
-    batch = run_synthetic_lr_batch(n_per_config=args.n_per_config, persist=True)
+    batch = run_synthetic_lr_batch(
+        n_per_config=args.n_per_config,
+        persist=not args.no_persist,
+        track=not args.no_track,
+    )
     print("=== Summary ===")
     for k, v in batch["summary"].items():
         print(f"{k}: {v}")
     if batch.get("summary_path"):
         print(f"\nSummary written to: {batch['summary_path']}")
+
+if __name__ == "__main__":
+    main()
