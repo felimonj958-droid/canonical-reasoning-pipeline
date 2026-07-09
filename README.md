@@ -9,6 +9,60 @@ record schema, deterministic validation, review-queue routing, and versioned
 dataset releases. Ingestion of external text and image sources exists as
 secondary infrastructure used for internal calibration only.
 
+## API token setup
+
+The FastAPI endpoints are protected with a static Bearer token read from the `API_TOKEN` environment variable.[web:507][web:508]
+
+1. Copy the example environment file:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Set a local token in `.env`:
+   ```env
+   API_TOKEN=change-me-local-dev-token
+   ```
+
+3. Load the variables into your shell before running the API or tests:
+   ```bash
+   set -a
+   source .env
+   set +a
+   ```
+
+4. Start the API:
+   ```bash
+   uvicorn src.api.main:app --reload
+   ```
+
+5. Call protected endpoints with the token in the `Authorization` header using the `Bearer` scheme:
+   ```bash
+   curl -X POST http://127.0.0.1:8000/ingest/ocr-text \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer ${API_TOKEN}" \
+     -d @payload.json
+   ```
+
+If `API_TOKEN` is missing or the Bearer token does not match, protected endpoints will return an authorization error.[web:507][web:511]
+
+## Quickstart
+
+From repo root:
+
+```bash
+pytest -q
+python -m src.normalize.run_synthetic_lr_batch
+python -m uvicorn src.api.main:app --reload
+```
+
+Recommended reading order:
+
+1. `PROJECT_STATUS.md` for the latest milestone and batch results
+2. `data/reports/` for evaluation summaries
+3. `src/normalize/run_synthetic_lr_batch.py` for the primary synthetic LR entrypoint
+
+The synthetic LR batch is the current primary public workflow. API ingestion and OCR-related components remain secondary infrastructure.
+
 ## Notice and scope
 
 This project is **not affiliated with, endorsed by, or sponsored by LSAC**, and
@@ -31,10 +85,9 @@ proprietary exam.
 ### Data & Evaluation Artifacts
 
 - `data/evaluations/` contains JSON outputs from LLM-as-judge runs over synthetic LSAT-style items.
-- `data/reports/` contains human-readable batch reports (Markdown) summarizing these evaluations.
+- `data/reports/` contains Markdown batch reports summarizing these evaluations.
 
-These artifacts reference LSAT standards and phrasing for quality comparison,
-but they do not embed or redistribute official LSAT content.
+These artifacts may reference LSAT-style quality standards and phrasing for comparison, but they do not embed or redistribute official LSAT questions, passages, answer keys, or images.
 
 ## Identity
 
@@ -289,8 +342,11 @@ From repo root:
 ```bash
 cd ~/Documents/canonical-reasoning-pipeline
 pytest -q
+python -m src.normalize.run_synthetic_lr_batch
 python -m uvicorn src.api.main:app --reload
 ```
+
+Use `python -m src.normalize.run_synthetic_lr_batch` as the primary public entrypoint for synthetic LR generation. The API and ingestion/OCR routes are secondary infrastructure.
 
 ## Roadmap
 
@@ -328,3 +384,9 @@ The current synthetic corpus is a mix of:
 
 Scaffold records are not training-quality synthetic data and are excluded
 from any dataset release.
+
+## License and contributions
+
+See `LICENSE` for usage terms.
+
+This repository is currently maintained as a portfolio and research codebase. Small fixes and documentation improvements are welcome, but the roadmap and primary design direction are currently owner-driven.
