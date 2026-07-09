@@ -87,6 +87,32 @@ Recommended reading order:
 
 The synthetic LR batch is the current primary public workflow. API ingestion and OCR-related components remain secondary infrastructure.
 
+## Docker
+
+### Build locally
+
+```bash
+docker build -t canonical-reasoning-pipeline:local .
+```
+
+### Run locally
+
+```bash
+docker run --rm -p 8000:8000 --env-file .env canonical-reasoning-pipeline:local
+```
+
+Then open:
+
+- `http://127.0.0.1:8000/docs`
+- `http://127.0.0.1:8000/openapi.json`
+
+### Inspect the local image
+
+```bash
+docker image ls canonical-reasoning-pipeline:local
+docker image inspect canonical-reasoning-pipeline:local
+```
+
 ## Notice and scope
 
 This project is **not affiliated with, endorsed by, or sponsored by LSAC**, and
@@ -400,6 +426,8 @@ A few common issues and how to interpret them:
     git commit -m "data: <what changed>"
     ```  
   - If not, revert local changes before running `dvc checkout` to restore the dataset for a previous commit.
+  - `docker build` fails with `failed to read dockerfile: open Dockerfile: no such file or directory`  
+  Ensure a file named `Dockerfile` exists in the repo root, or pass `-f <path>` explicitly when building.[web:609][web:610]
 
 If you encounter other errors, start by checking the full JSON error body and the relevant section of this README (API token setup, MLflow, DVC, or ingestion) before changing code.
 
