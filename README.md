@@ -9,6 +9,16 @@ record schema, deterministic validation, review-queue routing, and versioned
 dataset releases. Ingestion of external text and image sources exists as
 secondary infrastructure used for internal calibration only.
 
+### Demo
+
+A short recording of the API in action is available here: https://drive.google.com/file/d/1MfuNHaA8uXMr-jhmPBFKPFNiiFlxKaXp/view?usp=sharing.
+
+The demo shows:
+- authenticated API access,
+- live POST request handling,
+- persistence into the canonical pipeline,
+- and a second example routed through the review path.
+
 ## API token setup
 
 The FastAPI endpoints are protected with a static Bearer token read from the `API_TOKEN` environment variable.[web:507][web:508]
