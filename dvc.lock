@@ -1,0 +1,17 @@
+schema: '2.0'
+stages:
+  synthetic_lr_batch:
+    cmd: python -m src.normalize.run_synthetic_lr_batch --n-per-config 1 
+      --num-candidates 2
+    deps:
+    - path: src
+      hash: md5
+      md5: a5c2e42589edc191068351ec4efc250b.dir
+      size: 256249
+      nfiles: 90
+    outs:
+    - path: data/normalized/batches
+      hash: md5
+      md5: 43f109cb2cc87cae4f17e9014ab17dce.dir
+      size: 4300
+      nfiles: 1

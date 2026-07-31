@@ -84,6 +84,7 @@ def run_synthetic_lr_batch(
     track: bool = True,
     experiment: str = "synthetic_lr",
     summary_dir: str | Path = "data/normalized/batches",
+    num_candidates: int = 1,
 ) -> dict:
     """Run a small sweep across flaw types and difficulties.
 
@@ -118,7 +119,10 @@ def run_synthetic_lr_batch(
         "git_sha": get_git_sha(),
         "pipeline": "synthetic_lr",
     }
-    run_name = f"batch_{backend_name}_{n_per_config}per_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    run_name = (
+        f"batch_{backend_name}_{n_per_config}per_"
+        f"{num_candidates}cand_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    )
 
     with MLflowTracker(
         experiment=experiment,
@@ -131,6 +135,7 @@ def run_synthetic_lr_batch(
                 "backend": backend_name,
                 "model": model_name,
                 "n_per_config": n_per_config,
+                "num_candidates": num_candidates,
                 "num_configs": len(configs),
                 "config_names": ",".join(f"{f}:{d}" for f, d in configs),
                 "persist": persist,
@@ -165,6 +170,7 @@ def run_synthetic_lr_batch(
                             client=client,
                             model=model,
                             persist=persist,
+                            num_candidates=num_candidates,
                         )
                     except Exception as exc:
                         error_name = type(exc).__name__
@@ -214,6 +220,9 @@ def run_synthetic_lr_batch(
                             "quality_flags": list(cq.get("flags") or []),
                             "saved_path": out.get("saved_path"),
                             "error": out.get("error"),
+                            "selected_candidate_index": out.get("selected_candidate_index"),
+                            "selection_reason": out.get("selection_reason"),
+                            "candidate_scores": out.get("candidate_scores"),
                         }
                     )
 
@@ -248,6 +257,7 @@ def run_synthetic_lr_batch(
             "backend_counts": dict(backend_counts),
             "generation_metrics": batch_gen_metrics,
             "total_items": len(results),
+            "num_candidates": num_candidates,
         }
 
         # Batch-level rollup metrics
@@ -310,12 +320,19 @@ def main():
         action="store_true",
         help="Disable MLflow tracking for this run.",
     )
+    parser.add_argument(
+        "--num-candidates",
+        type=int,
+        default=1,
+        help="Number of candidates to generate per item before selection. Default: 1.",
+    )
     args = parser.parse_args()
 
     batch = run_synthetic_lr_batch(
         n_per_config=args.n_per_config,
         persist=not args.no_persist,
         track=not args.no_track,
+        num_candidates=args.num_candidates,
     )
     print("=== Summary ===")
     for k, v in batch["summary"].items():

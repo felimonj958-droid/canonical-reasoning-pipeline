@@ -1,0 +1,7 @@
+stages:
+  synthetic_lr_batch:
+    cmd: python -m src.normalize.run_synthetic_lr_batch --n-per-config 1 --num-candidates 2
+    deps:
+      - src
+    outs:
+      - data/normalized/batches

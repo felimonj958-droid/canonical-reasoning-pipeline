@@ -1,5 +1,4 @@
-"""
-Ollama backend for the LLMClient protocol.
+"""Ollama backend for the LLMClient protocol.
 
 Wraps the local Ollama generation logic behind the provider-agnostic
 LLMClient interface. The `ollama` package is imported lazily so this
@@ -20,10 +19,18 @@ class OllamaClient:
 
     backend_name = "ollama"
 
-    def __init__(self, default_model: str = "qwen3:8b", host: Optional[str] = None):
+    def __init__(
+        self,
+        default_model: str = "qwen3:8b",
+        host: Optional[str] = None,
+        timeout_seconds: float | None = None,
+        keep_alive: str | None = None,
+    ):
         self.default_model = default_model
-        self.host = host  # e.g. "http://localhost:11434"; None = library default
-        self._client = None  # cached lazily on first _get_client()
+        self.host = host
+        self.timeout_seconds = timeout_seconds
+        self.keep_alive = keep_alive
+        self._client = None
 
     def _get_client(self):
         """Import ollama lazily so this file is importable without it.
@@ -43,7 +50,14 @@ class OllamaClient:
                 "to a different backend."
             ) from exc
 
-        self._client = ollama.Client(host=self.host) if self.host else ollama
+        if self.host:
+            kwargs = {"host": self.host}
+            if self.timeout_seconds is not None:
+                kwargs["timeout"] = self.timeout_seconds
+            self._client = ollama.Client(**kwargs)
+        else:
+            self._client = ollama
+
         return self._client
 
     def generate(self, request: GenerationRequest) -> GenerationResponse:
@@ -58,7 +72,10 @@ class OllamaClient:
         options = {
             "temperature": request.temperature,
             "num_predict": request.max_tokens,
+            "think": False,
         }
+        if self.keep_alive is not None:
+            options["keep_alive"] = self.keep_alive
         options.update(request.extra or {})
 
         started = time.perf_counter()

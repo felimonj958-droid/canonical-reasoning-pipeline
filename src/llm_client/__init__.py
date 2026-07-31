@@ -36,6 +36,8 @@ def get_llm_client(backend: Optional[str] = None) -> LLMClient:
         LLM_BACKEND       "ollama" (default) or "openai"
         OLLAMA_MODEL      default model for Ollama (default: qwen3:8b)
         OLLAMA_HOST       optional Ollama host URL
+        OLLAMA_TIMEOUT_SECONDS optional client timeout in seconds
+        OLLAMA_KEEP_ALIVE   optional keep-alive setting for generated requests
         OPENAI_MODEL      default model for OpenAI (default: gpt-4o-mini)
         OPENAI_API_KEY    OpenAI API key (required for openai backend)
         OPENAI_BASE_URL   optional; use to target OpenAI-compatible APIs
@@ -46,7 +48,16 @@ def get_llm_client(backend: Optional[str] = None) -> LLMClient:
     if resolved == "ollama":
         model = os.environ.get("OLLAMA_MODEL", "qwen3:8b")
         host = os.environ.get("OLLAMA_HOST") or None
-        return OllamaClient(default_model=model, host=host)
+        timeout_raw = os.environ.get("OLLAMA_TIMEOUT_SECONDS")
+        keep_alive = os.environ.get("OLLAMA_KEEP_ALIVE") or None
+        timeout_seconds = float(timeout_raw) if timeout_raw else None
+        return OllamaClient(
+            default_model=model,
+            host=host,
+            timeout_seconds=timeout_seconds,
+            keep_alive=keep_alive,
+        )
+
 
     if resolved == "openai":
         model = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")
