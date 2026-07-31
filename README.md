@@ -223,8 +223,12 @@ Synthetic generation runs through a provider-agnostic `LLMClient` layer
 under `src/llm_client/`. The active backend is selected at runtime via
 the `LLM_BACKEND` environment variable.
 
+
+
 Supported backends:
 
+	 openai  — primary backend for the current demo branch.
+•	 ollama  — retained for future local/offline experimentation, not the primary path.
 - `ollama` (default) — local generation via the Ollama runtime. Intended
   for offline experimentation on constrained hardware.
 - `openai` — OpenAI Chat Completions API. Intended as the default for

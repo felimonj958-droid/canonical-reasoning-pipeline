@@ -4,7 +4,13 @@
 
 Milestone: best-of-N synthetic LR orchestration
 The synthetic LR lane now supports multi-candidate generation and deterministic selection before canonical mapping. The batch harness threads num_candidates through to the lane, and batch artifacts record candidate-level diagnostics for traceability.
+
+	best-of-N synthetic LR orchestration is complete,
+•	DVC pipeline wiring is complete,
+•	OpenAI is the current demo backend,
+•	Ollama is no longer the active demo path.[githubusercontent]
 Verified
+
 
 tests/test_run_synthetic_lr_lane.py
 
