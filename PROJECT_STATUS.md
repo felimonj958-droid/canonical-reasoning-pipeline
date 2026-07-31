@@ -2,6 +2,19 @@
 
 ## Current state
 
+Milestone: best-of-N synthetic LR orchestration
+The synthetic LR lane now supports multi-candidate generation and deterministic selection before canonical mapping. The batch harness threads num_candidates through to the lane, and batch artifacts record candidate-level diagnostics for traceability.
+Verified
+
+tests/test_run_synthetic_lr_lane.py
+
+tests/test_run_synthetic_lr_batch.py
+
+tests/test_run_synthetic_lr_batch_persist.py
+
+full suite: 83 passed, 1 skipped
+
+
 
 The text-lane vertical slice is complete and manually verified. The repository can ingest one Logical Reasoning text payload through the API, map it into the canonical record shape, validate it, route it, persist it, and return the saved record.
 

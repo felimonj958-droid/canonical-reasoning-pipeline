@@ -213,6 +213,10 @@ LLM judge (gpt-4o, anchored 5-dimension rubric):
 Latest report and eval JSON live under `data/reports/` and
 `data/evaluations/`. Full milestone log in `PROJECT_STATUS.md`.
 
+The synthetic LR lane now supports best-of-
+𝑁
+N generation at the orchestration layer. For each (flaw_type, difficulty) config, the lane can sample multiple candidates, score them deterministically using structural validity and content-quality signals, and persist only the selected winner. Batch summaries record candidate scores and the selected candidate index for debugging and experiment traceability.
+
 ## Generation backends
 
 Synthetic generation runs through a provider-agnostic `LLMClient` layer
