@@ -50,7 +50,7 @@ def map_synthetic_lr_to_record(
     # composing the fallback source_uri, so it reflects reality rather
     # than a hardcoded backend name.
     backend_name = (
-        generation_meta.backend if generation_meta is not None else "ollama"
+        generation_meta.backend if generation_meta is not None else "openai"
     )
     default_source_file = f"synthetic://{backend_name}"
 

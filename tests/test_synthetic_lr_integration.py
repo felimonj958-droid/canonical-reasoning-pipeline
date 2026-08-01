@@ -8,7 +8,7 @@ pytestmark = pytest.mark.integration
 
 def test_generate_and_parse_synthetic_lr_live():
     raw = generate_synthetic_lr(
-        model="qwen3:8b",
+        model="gpt-4o-mini",
         flaw_type="causal",
         difficulty="medium",
     )

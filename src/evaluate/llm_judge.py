@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 from src.evaluate.judge_rubric import JudgeScore, build_judge_prompt
-from src.llm_client import LLMClient, get_llm_client
+from src.llm_client import GenerationRequest, LLMClient, get_llm_client
 
 
 @dataclass
@@ -28,14 +28,13 @@ class JudgeResult:
 
 def _extract_json_block(text: str) -> str:
     """Extract the first {...} JSON object from LLM output, tolerating fences and prose."""
-    # Strip markdown fences if present
     text = re.sub(r"^```(?:json)?\s*", "", text.strip())
     text = re.sub(r"\s*```$", "", text)
 
-    # Find first balanced {...}
     start = text.find("{")
     if start == -1:
         return text
+
     depth = 0
     for i in range(start, len(text)):
         if text[i] == "{":
@@ -44,6 +43,7 @@ def _extract_json_block(text: str) -> str:
             depth -= 1
             if depth == 0:
                 return text[start : i + 1]
+
     return text[start:]
 
 
@@ -71,15 +71,11 @@ def judge_record(
 
     t0 = time.perf_counter()
     try:
-        # Use the same generate interface as the generator
-        # LLMClient.generate signature: (prompt, system=None, temperature=None, max_tokens=None, ...)
-        from src.llm_client.base import GenerationRequest
-
         req = GenerationRequest(
             prompt=prompt,
             model=judge_model,
             system=system_prompt or "You are a strict LSAT evaluator. Return valid JSON only.",
-            temperature=0.0,  # deterministic judging
+            temperature=0.0,
             max_tokens=400,
         )
         response = client.generate(req)

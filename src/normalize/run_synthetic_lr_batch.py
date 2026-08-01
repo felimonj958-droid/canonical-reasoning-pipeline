@@ -88,7 +88,8 @@ def run_synthetic_lr_batch(
 ) -> dict:
     """Run a small sweep across flaw types and difficulties.
 
-    Uses the LLM_BACKEND env var (default: ollama) via get_llm_client().
+    Uses the LLM_BACKEND env var (default: openai) via get_llm_client().
+
 
     MLflow instrumentation:
     - One parent run per batch (params: backend, model, n_per_config, configs, git_sha)
@@ -201,7 +202,6 @@ def run_synthetic_lr_batch(
                         quality_flag_counts[flag] += 1
 
                     # Collect generation metadata if present
-                                        # Collect generation metadata if present
                     gen_meta = out.get("generation_meta")
                     if gen_meta is not None:
                         # Tag parent run once with the actual model served

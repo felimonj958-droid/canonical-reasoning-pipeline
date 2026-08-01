@@ -69,7 +69,7 @@ def test_aggregate_multiple_records():
 def test_aggregate_handles_missing_tokens():
     # Some backends might not report token counts
     meta_list = [
-        FakeGenMeta("ollama", "qwen3:8b", None, None, 45.0),
+        FakeGenMeta("openai", "gpt-4o-mini", None, None, 45.0),
         FakeGenMeta("openai", "gpt-4o-mini", 400, 150, 2.3),
     ]
     result = _aggregate_generation_metrics(meta_list)

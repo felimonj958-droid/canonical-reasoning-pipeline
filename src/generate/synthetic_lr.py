@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import re
-import subprocess  # kept for legacy tests only; new flow uses LLMClient
+import subprocess
+from dataclasses import dataclass
+from typing import Optional
 
 from src.llm_client import GenerationRequest, LLMClient, get_llm_client
 from src.persist.models import GenerationMeta
@@ -95,7 +97,6 @@ The CORRECT position is specified in the Requirements section above. Assign TRAP
 
     else:
         raise ValueError(f"Unsupported flaw_type: {flaw_type}")
-    
 
     difficulty_guidance = """
 Difficulty guidance:
@@ -188,18 +189,9 @@ def generate_synthetic_lr(
     model: str | None = None,
     correct_position: str | None = None,
 ) -> tuple[str, GenerationMeta]:
-    """Generate one synthetic LR item via the provided LLMClient.
-
-    Returns (cleaned_text, generation_metadata). The metadata is designed
-    to attach to the canonical record's `generation` field.
-
-    Backward compatibility: legacy callers passing `model=` as a positional
-    or keyword hint can still do so; the client resolves the actual model
-    used and records it on the returned metadata.
-    """
-    import random
     client = client or get_llm_client()
 
+    import random
     if correct_position is None:
         correct_position = random.choice(["A", "B", "C", "D", "E"])
     correct_position = correct_position.upper()
@@ -236,40 +228,6 @@ def generate_synthetic_lr(
         latency_seconds=response.latency_seconds,
     )
     return cleaned, meta
-
-
-def generate_synthetic_lr_via_subprocess(
-    model: str = "qwen3:8b",
-    flaw_type: str = "causal",
-    difficulty: str = "medium",
-) -> str:
-    """Legacy subprocess-based Ollama call.
-
-    Preserved only for tests or scripts that shell out to `ollama run`
-    directly. New code should use `generate_synthetic_lr(client=...)`.
-    """
-    prompt = build_synthetic_lr_prompt(
-        flaw_type=flaw_type,
-        difficulty=difficulty,
-        prompt_version=DEFAULT_PROMPT_VERSION,
-    )
-
-    try:
-        result = subprocess.run(
-            ["ollama", "run", model, prompt],
-            capture_output=True,
-            text=True,
-            check=True,
-            timeout=300,
-        )
-    except subprocess.TimeoutExpired as exc:
-        raise RuntimeError("Ollama generation timed out") from exc
-    except subprocess.CalledProcessError as exc:
-        raise RuntimeError(f"Ollama generation failed: {exc.stderr}") from exc
-
-    return clean_synthetic_lr_output(result.stdout.strip())
-
-
 def parse_synthetic_lr_output(text: str) -> dict:
     cleaned_text = clean_synthetic_lr_output(text)
 

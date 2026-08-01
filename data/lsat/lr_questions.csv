@@ -1,3 +1,0 @@
-question_id,section,source_file,start_idx,end_idx
-sample_reasoning_q01,1,sample_generated_text.txt,0,250
-sample_reasoning_q02,1,sample_generated_text.txt,251,520

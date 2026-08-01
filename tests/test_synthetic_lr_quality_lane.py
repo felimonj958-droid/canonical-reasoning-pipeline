@@ -5,7 +5,7 @@ from src.persist.models import GenerationMeta
 def _fake_generation_meta(**kwargs):
     return GenerationMeta(
         backend="fake",
-        model="qwen3:8b",
+        model="gpt-4o-mini",
         flaw_type=kwargs.get("flaw_type", "causal"),
         difficulty=kwargs.get("difficulty", "medium"),
         prompt_version=kwargs.get("prompt_version", "lr_flaw_v1"),

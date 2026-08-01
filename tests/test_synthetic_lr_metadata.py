@@ -5,7 +5,7 @@ from src.persist.models import GenerationMeta
 def _fake_generation_meta(**kwargs):
     return GenerationMeta(
         backend="fake",
-        model="qwen3:8b",
+        model="gpt-4o-mini",
         flaw_type=kwargs.get("flaw_type", "causal"),
         difficulty=kwargs.get("difficulty", "medium"),
         prompt_version=kwargs.get("prompt_version", "lr_flaw_v1"),
@@ -59,7 +59,7 @@ def test_synthetic_lr_lane_sets_generation_metadata(monkeypatch):
     )
 
     result = run_synthetic_lr_lane(
-        model="qwen3:8b",
+        model="gpt-4o-mini",
         flaw_type="causal",
         difficulty="medium",
         persist=False,
@@ -73,13 +73,13 @@ def test_synthetic_lr_lane_sets_generation_metadata(monkeypatch):
     assert record.lsat.question_type == "causal"
     assert record.lsat.difficulty == "medium"
     assert record.source.source_uri is not None
-    assert "model=qwen3:8b" in record.source.source_uri
+    assert "model=gpt-4o-mini" in record.source.source_uri
     assert "prompt_version=lr_flaw_v1" in record.source.source_uri
 
     # New assertions: canonical generation metadata is attached to the record
     assert record.generation is not None
     assert record.generation.backend == "fake"
-    assert record.generation.model == "qwen3:8b"
+    assert record.generation.model == "gpt-4o-mini"
     assert record.generation.flaw_type == "causal"
     assert record.generation.difficulty == "medium"
     assert record.generation.prompt_version == "lr_flaw_v1"

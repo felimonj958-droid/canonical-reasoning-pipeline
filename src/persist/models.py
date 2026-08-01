@@ -108,7 +108,7 @@ class GenerationMeta(BaseModel):
     Present on synthetic records; absent (None) on ingested records.
     """
 
-    backend: str                      # e.g. "ollama", "openai"
+    backend: str                      # e.g. "openai", "unknown"
     model: str                        # e.g. "qwen3:8b", "gpt-4o-mini"
     flaw_type: Optional[str] = None
     difficulty: Optional[str] = None

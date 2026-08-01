@@ -54,7 +54,7 @@ def test_run_synthetic_lr_batch_aggregates_results(monkeypatch):
     )
 
     result = run_synthetic_lr_batch(
-        model="qwen3:8b",
+        model="gpt-4o-mini",
         n_per_config=1,
         persist=False,
     )

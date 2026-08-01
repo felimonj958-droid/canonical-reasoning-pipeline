@@ -5,13 +5,14 @@ from src.persist.models import GenerationMeta
 def _fake_generation_meta(**kwargs):
     return GenerationMeta(
         backend="fake",
-        model="qwen3:8b",
+        model="gpt-4o-mini",
         flaw_type=kwargs.get("flaw_type", "causal"),
         difficulty=kwargs.get("difficulty", "medium"),
         prompt_version=kwargs.get("prompt_version", "lr_flaw_v1"),
         temperature=0.7,
         max_tokens=1024,
     )
+
 
 
 def test_run_synthetic_lr_lane_returns_canonical_record_for_valid_payload(monkeypatch):
@@ -68,7 +69,8 @@ Correct Answer: A
     assert record.content.correct_answer == "A"
     assert record.generation is not None
     assert record.generation.backend == "fake"
-    assert record.generation.model == "qwen3:8b"
+    assert "model=gpt-4o-mini" in record.source.source_uri
+    assert record.generation.model == "gpt-4o-mini"
 
 
 def test_run_synthetic_lr_lane_returns_review_result_for_invalid_payload(monkeypatch):
