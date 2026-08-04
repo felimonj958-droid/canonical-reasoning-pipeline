@@ -1,246 +1,216 @@
-# Tests Overview
+# canonical-reasoning-pipeline
 
-This directory is organized by live production seam rather than by implementation detail. Each test module maps to one part of the runtime pipeline, so the test suite also serves as a compact reference for how the codebase is wired together.
+A synthetic-first canonical reasoning pipeline for generating, validating, routing, persisting, and evaluating structured reasoning records. The active workflow is OpenAI-primary and centered on stable canonical record contracts rather than legacy OCR-ingest assumptions.
 
-## Test philosophy
+## What this project does
 
-The test suite is intentionally lean:
+This repository provides an end-to-end pipeline for synthetic Logical Reasoning item generation and evaluation:
 
-- one module per meaningful runtime seam,
-- focused coverage instead of duplicate legacy tests,
-- heavy use of mocks where external services would otherwise make tests slow or brittle,
-- clear separation between generation, normalization, validation, persistence, evaluation, API, and tracking.
+1. Generate or receive reasoning content.
+2. Validate the payload structure and content quality.
+3. Map the payload into a canonical record.
+4. Route the record to normalized storage or the review queue.
+5. Persist records and batch metadata.
+6. Evaluate saved records with an LLM judge.
+7. Track batch generation and evaluation runs with MLflow.
 
-## Folder contents
+## Repository structure
 
-### `conftest.py`
-Shared fixtures and pytest configuration used across the suite.
+The repo is organized around a small number of live runtime layers:
 
-### `fixtures/`
-Static sample inputs used by tests, including text artifacts for synthetic LR generation and parsing.
+- `src/generate/` — synthetic LR generation, parsing, validation, and content-quality checks.
+- `src/normalize/` — lane orchestration, canonical mapping, and batch generation.
+- `src/validate/` — canonical validation and review routing.
+- `src/persist/` — canonical record models and filesystem persistence.
+- `src/evaluate/` — LLM-as-judge scoring and batch evaluation.
+- `src/api/` — FastAPI service surface for record creation.
+- `src/llm_client/` — backend abstraction for model calls.
+- `src/tracking/` — MLflow tracking wrapper and Git SHA helper.
+- `tests/` — test modules mapped to live runtime seams.
+- `data/` — normalized records, batch summaries, evaluation outputs, reports, review queue items, and samples.
 
-### `test_api_records.py`
-API route coverage for canonical record creation and review routing.
+## Core dependency chain
 
-Main dependency chain:
-- `src.api.main`
-- `src.persist.filesystem_store`
-
-Key runtime seam:
-- `POST /records` behavior
-
-### `test_batch_cost_metrics.py`
-Batch cost and latency aggregation helpers.
-
-Main dependency chain:
-- `src.normalize.run_synthetic_lr_batch`
-
-Key functions covered:
-- `_estimate_cost_usd`
-- `_aggregate_generation_metrics`
-- batch metric aggregation behavior
-
-### `test_canonical_mapper.py`
-Canonical mapping behavior for record construction.
-
-Main dependency chain:
-- `src.normalize.canonical_mapper`
-
-### `test_classification_chunking.py`
-Classification chunking and payload preparation helpers.
-
-Main dependency chain:
-- `src.classify.chunking`
-
-This area is more auxiliary than the synthetic LR core, but it still documents a distinct preprocessing seam.
-
-### `test_content_quality_checks.py`
-Heuristic quality gates for synthetic LR outputs.
-
-Main dependency chain:
-- `src.generate.content_quality_checks`
-
-Key functions covered:
-- `run_content_quality_checks`
-- individual content checks such as templating, meta-language, choice quality, and flaw leakage
-
-### `test_evaluation_aggregation.py`
-Aggregation logic for judge results and evaluation cost estimation.
-
-Main dependency chain:
-- `src.evaluate.judge_rubric`
-- `src.evaluate.llm_judge`
-- `src.evaluate.run_evaluation`
-
-Key functions covered:
-- `aggregate_scores`
-- `_estimate_judge_cost`
-
-### `test_llm_client.py`
-Integration point for injecting a fake LLM client into generation.
-
-Main dependency chain:
-- `src.generate.synthetic_lr`
-- `src.llm_client.base`
-
-### `test_llm_judge.py`
-Single-record judge behavior and JSON extraction.
-
-Main dependency chain:
-- `src.evaluate.judge_rubric`
-- `src.evaluate.llm_judge`
-
-Key functions covered:
-- `build_judge_prompt`
-- `_extract_json_block`
-- `judge_record`
-
-### `test_mlflow_tracker.py`
-Tracking wrapper behavior and Git SHA helper.
-
-Main dependency chain:
-- `src.tracking.mlflow_tracker`
-
-### `test_openai_client.py`
-OpenAI backend client behavior and environment handling.
-
-Main dependency chain:
-- `src.llm_client.openai_client`
-- `src.llm_client`
-
-### `test_run_synthetic_lr_batch.py`
-Batch orchestration, candidate threading, selection metadata, and summary writing.
-
-Main dependency chain:
-- `src.normalize.run_synthetic_lr_batch`
-- `src.normalize.run_synthetic_lr_lane`
-- `src.tracking`
-
-### `test_run_synthetic_lr_lane.py`
-Single-lane orchestration and routing outcomes for valid, invalid, low-quality, and sampling records.
-
-Main dependency chain:
-- `src.normalize.run_synthetic_lr_lane`
-- `src.generate.synthetic_lr`
-- `src.generate.validation`
-- `src.generate.content_quality_checks`
-- `src.normalize.synthetic_mapper`
-- `src.persist.filesystem_store`
-- `src.validate.confidence_checks`
-- `src.validate.review_routing`
-
-### `test_synthetic_lr.py`
-Prompt generation and cleaning behavior for synthetic LR content.
-
-Main dependency chain:
-- `src.generate.synthetic_lr`
-
-### `test_synthetic_lr_integration.py`
-Lightweight integration coverage for end-to-end generation and parsing.
-
-Main dependency chain:
-- `src.generate.synthetic_lr`
-
-### `test_synthetic_lr_persistence.py`
-Persistence-specific behavior, if retained as a distinct seam.
-
-Main dependency chain:
-- `src.persist.filesystem_store`
-
-### `test_synthetic_lr_review_routing.py`
-Review-routing behavior for low-quality or invalid synthetic LR records.
-
-Main dependency chain:
-- `src.normalize.synthetic_mapper`
-- `src.persist.models`
-- `src.validate.review_routing`
-
-### `test_synthetic_lr_validation.py`
-Structural validation for synthetic LR payloads.
-
-Main dependency chain:
-- `src.generate.validation`
-
-## Dependency map
-
-The tests roughly mirror the live pipeline:
+The live synthetic LR path runs in this order:
 
 `src.generate -> src.normalize -> src.validate -> src.persist`
 
-The evaluation tests cover the parallel scoring path:
+The evaluation path runs in parallel:
 
 `src.evaluate -> src.llm_client -> src.tracking`
 
-The API tests cover the service wrapper over the same canonical flow:
+The API reuses the same canonical pipeline code:
 
 `src.api -> src.normalize / src.validate / src.persist`
 
-## What the tests tell you
+## Active runtime flow
 
-This suite is not only for correctness; it also shows where the active seams are:
+The main lane executes as:
 
-- generation and parsing are validated separately from canonical mapping,
-- canonical mapping is validated separately from review routing,
-- batch orchestration is validated separately from per-record lane logic,
-- evaluation is validated separately from generation,
-- external service calls are isolated through mocks or small fixtures.
+`generate_synthetic_lr -> clean_synthetic_lr_output -> parse_synthetic_lr_output -> validate_synthetic_lr_payload -> run_content_quality_checks -> map_synthetic_lr_to_record -> validate_record -> choose_destination -> save_record`
 
-## Useful commands
+The batch runner wraps the lane and writes a summary:
 
-List tests:
+`run_synthetic_lr_batch -> run_synthetic_lr_lane -> MLflowTracker -> batch summary JSON`
 
+The evaluation runner consumes batch summaries and saved records:
+
+`evaluate_batch -> _load_records_from_batch_summary -> judge_record -> aggregate_scores -> MLflowTracker`
+
+## API surface
+
+The service layer exposes a small authenticated FastAPI app for creating canonical records.
+
+Main routes:
+- `GET /` — service status.
+- `GET /health` — application health.
+- `GET /records/health` — records-router health.
+- `POST /records` — create and persist a canonical record.
+
+The API expects an `API_TOKEN` bearer token in the request header.
+
+Example:
 ```bash
-find tests -maxdepth 2 -type f | sort
+-H "Authorization: Bearer $API_TOKEN"
 ```
 
-Run the full suite:
+## Data layout
+
+The `data/` directory contains the main artifacts produced and consumed by the pipeline:
+
+- `data/normalized/records/` — canonical saved records.
+- `data/normalized/batches/` — batch summaries from generation runs.
+- `data/review_queue/` — routed review items, split by reason.
+- `data/evaluations/` — JSON outputs from judge evaluation runs.
+- `data/reports/` — human-readable evaluation reports.
+- `data/sample_text/` — small sample text artifacts.
+
+The most important data dependencies are:
+
+- batch summaries point to saved records,
+- evaluation files depend on batch summaries and normalized records,
+- reports summarize evaluation output,
+- review queue files capture items rejected from normalized storage.
+
+## Evaluation workflow
+
+Evaluation is handled by `src/evaluate/` and is centered on a judge rubric plus per-record scoring.
+
+The evaluation loop:
+- reads a batch summary,
+- loads each record referenced by `saved_path`,
+- scores each record with the judge,
+- aggregates score totals, dimensions, and flaw-type breakdowns,
+- logs metrics and artifacts to MLflow,
+- writes a JSON evaluation artifact to `data/evaluations/`.
+
+The most important evaluation signal right now is `distractor_plausibility`, which has been the most consistent weak point in recent smoke runs.
+
+## Test strategy
+
+The test suite is intentionally lean and organized by live production seam rather than by implementation detail.
+
+Examples of coverage:
+- API record creation and routing.
+- Synthetic LR generation and parsing.
+- Lane orchestration and batch summaries.
+- Validation and review routing.
+- Persistence behavior.
+- LLM judge parsing and aggregation.
+- MLflow tracking behavior.
+- OpenAI client behavior.
+
+The test layout is documented in `tests/README.md`.
+
+## Current stage
+
+The repository is in a lean **OpenAI-primary synthetic LR stage**:
+
+- synthetic LR generation is the main public workflow,
+- the canonical record pipeline is wired end to end,
+- multi-candidate lane selection is implemented,
+- batch generation, evaluation, and MLflow tracking are working,
+- DVC is in use for canonical-record reproducibility work,
+- legacy OCR/text-ingest and deprecated Ollama-era runtime paths are no longer part of the active repo surface.
+
+## Quickstart
+
+From the repo root:
 
 ```bash
 pytest -q
+python -m src.normalize.run_synthetic_lr_batch
+python -m src.evaluate.run_evaluation <batch_summary_path>
+python -m uvicorn src.api.main:app --reload
 ```
 
-Run the synthetic LR core slice:
+## API token setup
+
+The FastAPI endpoints are protected with a static Bearer token read from the `API_TOKEN` environment variable.
 
 ```bash
-pytest -q tests/test_run_synthetic_lr_lane.py tests/test_run_synthetic_lr_batch.py tests/test_batch_cost_metrics.py tests/test_synthetic_lr_review_routing.py
+cp .env.example .env
+set -a
+source .env
+set +a
+uvicorn src.api.main:app --reload
 ```
 
-Run the generation and evaluation slices:
+## Docker
+
+Build locally:
 
 ```bash
-pytest -q tests/test_synthetic_lr.py tests/test_synthetic_lr_integration.py tests/test_synthetic_lr_validation.py tests/test_content_quality_checks.py tests/test_llm_judge.py tests/test_evaluation_aggregation.py
+docker build -t canonical-reasoning-pipeline:local .
 ```
 
-Run the API and persistence slices:
+Run locally:
 
 ```bash
-pytest -q tests/test_api_records.py tests/test_synthetic_lr_persistence.py
+docker run --rm -p 8000:8000 --env-file .env canonical-reasoning-pipeline:local
 ```
 
-Inspect imports:
+## Generation backend
 
-```bash
-grep -R "from src\|import src" -n tests | sort
-```
+Synthetic generation runs through a provider-agnostic `LLMClient` layer under `src/llm_client/`.
 
-Inspect test names:
+Current backend:
+- `openai`
 
-```bash
-python - <<'PY'
-from pathlib import Path
-import re
-for f in sorted(Path('tests').rglob('*.py')):
-    text = f.read_text()
-    tests = re.findall(r'^\s*def\s+(test_[a-zA-Z0-9_]+)\s*\(', text, flags=re.M)
-    if tests:
-        print(f'\n{f}')
-        for t in tests:
-            print(f'  - {t}')
-PY
-```
+Key environment variables:
+- `LLM_BACKEND`
+- `OPENAI_API_KEY`
+- `OPENAI_MODEL`
+- `OPENAI_BASE_URL`
+- `JUDGE_MODEL`
 
-## Notes
+## Experiment tracking
 
-- `__pycache__` is ignored and should not be documented as part of the living test surface.
-- If a test no longer covers a distinct seam, it should be merged or removed rather than preserved as duplication.
-- Keep this README aligned with the active runtime surface so it continues to double as a map of the repository.
+Synthetic-generation batches and evaluation runs are tracked in MLflow. Runs are stored locally under `mlruns/` and are not committed to Git.
+
+Tracking includes:
+- parent batch runs,
+- nested per-config runs,
+- generation-metric aggregation,
+- evaluation metrics,
+- token usage,
+- estimated cost,
+- persisted artifacts.
+
+## Documentation map
+
+If you want more detail, read these in order:
+
+1. `src/README.md`
+2. `src/normalize/README.md`
+3. `src/evaluate/README.md`
+4. `src/api/README.md`
+5. `data/README.md`
+6. `data/evaluations/README.md`
+7. `tests/README.md`
+
+## Notice and scope
+
+This project is not affiliated with, endorsed by, or sponsored by LSAC, and it does not redistribute official LSAT questions, answer keys, images, or other copyrighted materials.
+
+Public repository contents are synthetic artifacts, code, tests, schemas, documentation, metadata, and evaluation outputs consistent with that synthetic-first scope.
