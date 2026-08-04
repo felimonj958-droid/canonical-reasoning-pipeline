@@ -1,0 +1,135 @@
+{
+  "run_name": "eval_batch_openai_1per_1cand_20260803_145225_20260804_082935",
+  "source_batch": "batch_openai_1per_1cand_20260803_145225",
+  "judge_model": "gpt-4o-2024-08-06",
+  "aggregates": {
+    "items_evaluated": 3,
+    "items_scored": 3,
+    "items_parse_error": 0,
+    "items_runtime_error": 0,
+    "score_total_mean": 21.67,
+    "score_total_median": 22,
+    "score_total_min": 21,
+    "score_total_max": 22,
+    "high_quality_count": 3,
+    "high_quality_rate": 1.0,
+    "dimension_means": {
+      "argument_coherence": 4,
+      "flaw_fidelity": 5,
+      "question_stem_quality": 4,
+      "distractor_plausibility": 3.67,
+      "correct_answer_precision": 5
+    },
+    "flaw_type_breakdown": {
+      "causal": {
+        "items_scored": 1,
+        "score_total_mean": 22,
+        "high_quality_count": 1,
+        "high_quality_rate": 1.0,
+        "dimension_means": {
+          "argument_coherence": 4,
+          "flaw_fidelity": 5,
+          "question_stem_quality": 4,
+          "distractor_plausibility": 4,
+          "correct_answer_precision": 5
+        }
+      },
+      "necessary_vs_sufficient": {
+        "items_scored": 1,
+        "score_total_mean": 21,
+        "high_quality_count": 1,
+        "high_quality_rate": 1.0,
+        "dimension_means": {
+          "argument_coherence": 4,
+          "flaw_fidelity": 5,
+          "question_stem_quality": 4,
+          "distractor_plausibility": 3,
+          "correct_answer_precision": 5
+        }
+      },
+      "sampling": {
+        "items_scored": 1,
+        "score_total_mean": 22,
+        "high_quality_count": 1,
+        "high_quality_rate": 1.0,
+        "dimension_means": {
+          "argument_coherence": 4,
+          "flaw_fidelity": 5,
+          "question_stem_quality": 4,
+          "distractor_plausibility": 4,
+          "correct_answer_precision": 5
+        }
+      }
+    }
+  },
+  "judge_cost_usd": 0.010517,
+  "judge_tokens_total": 3421,
+  "load_stats": {
+    "results_seen": 3,
+    "missing_saved_path": 0,
+    "missing_file": 0,
+    "load_error": 0
+  },
+  "results": [
+    {
+      "record_id": "4c54e611-105f-4e76-a0b0-cb3191c4576d",
+      "status": "scored",
+      "flaw_type": "causal",
+      "difficulty": "easy",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The item is slightly template-like, but the flaw is clearly causal and the distractors require reasoning to eliminate."
+      },
+      "score_total": 22,
+      "notes": "The item is slightly template-like, but the flaw is clearly causal and the distractors require reasoning to eliminate.",
+      "error": "",
+      "prompt_tokens": 1044,
+      "completion_tokens": 79,
+      "latency_seconds": 2.3715366670221556
+    },
+    {
+      "record_id": "f6042248-8691-41a7-8a8a-4d38899ae894",
+      "status": "scored",
+      "flaw_type": "necessary_vs_sufficient",
+      "difficulty": "easy",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 3,
+        "correct_answer_precision": 5,
+        "notes": "Distractor plausibility is the weakest dimension as some choices are easily dismissible due to their lack of relevance to the necessary_vs_sufficient flaw."
+      },
+      "score_total": 21,
+      "notes": "Distractor plausibility is the weakest dimension as some choices are easily dismissible due to their lack of relevance to the necessary_vs_sufficient flaw.",
+      "error": "",
+      "prompt_tokens": 1044,
+      "completion_tokens": 86,
+      "latency_seconds": 3.6968914160097484
+    },
+    {
+      "record_id": "a4948dfb-fa31-4110-803b-85143d64d99e",
+      "status": "scored",
+      "flaw_type": "sampling",
+      "difficulty": "easy",
+      "score": {
+        "argument_coherence": 4,
+        "flaw_fidelity": 5,
+        "question_stem_quality": 4,
+        "distractor_plausibility": 4,
+        "correct_answer_precision": 5,
+        "notes": "The weakest dimension is question_stem_quality, as the stem is clean but not verbatim LSAT phrasing; however, the item overall avoids being too template-like and requires reasoning over pattern recognition."
+      },
+      "score_total": 22,
+      "notes": "The weakest dimension is question_stem_quality, as the stem is clean but not verbatim LSAT phrasing; however, the item overall avoids being too template-like and requires reasoning over pattern recognition.",
+      "error": "",
+      "prompt_tokens": 1071,
+      "completion_tokens": 97,
+      "latency_seconds": 1.5282305419968907
+    }
+  ]
+}

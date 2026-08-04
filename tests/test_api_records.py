@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+
 from fastapi.testclient import TestClient
 
 from src.api.main import app
@@ -12,7 +13,7 @@ client = TestClient(app)
 AUTH_HEADERS = {"Authorization": f"Bearer {os.environ['API_TOKEN']}"}
 
 
-def test_ingest_ocr_text_valid_record(monkeypatch, tmp_path):
+def test_create_record_valid_record(monkeypatch, tmp_path):
     normalized_dir = tmp_path / "normalized" / "records"
     review_dir = tmp_path / "review_queue"
 
@@ -21,9 +22,10 @@ def test_ingest_ocr_text_valid_record(monkeypatch, tmp_path):
 
     payload = {
         "modality": "digital_text",
-        "source_file": "data/raw_text/sample_lr.txt",
-        "prep_test": "PT62",
-        "section": "logical_reasoning",
+        "source_file": "data/raw_text/sample_reasoning.txt",
+        "content_group": "logical_reasoning",
+        "item_type": "strengthen",
+        "difficulty": "medium",
         "section_number": 2,
         "question_number": 14,
         "raw_text": (
@@ -39,6 +41,9 @@ def test_ingest_ocr_text_valid_record(monkeypatch, tmp_path):
         "segments": {
             "stimulus": "A city council member argues that traffic will improve if parking fees are raised.",
             "question_stem": "Which one of the following is most strongly supported?",
+            "item_type": "strengthen",
+            "difficulty": "medium",
+            "correct_answer": "B",
             "answer_choices": [
                 {"label": "A", "text": "Choice A"},
                 {"label": "B", "text": "Choice B"},
@@ -49,7 +54,7 @@ def test_ingest_ocr_text_valid_record(monkeypatch, tmp_path):
         },
     }
 
-    response = client.post("/ingest/ocr-text", json=payload, headers=AUTH_HEADERS)
+    response = client.post("/records", json=payload, headers=AUTH_HEADERS)
 
     assert response.status_code == 200
 
@@ -62,12 +67,16 @@ def test_ingest_ocr_text_valid_record(monkeypatch, tmp_path):
     assert saved_path.exists()
 
     record = body["record"]
-    assert record["lsat"]["section"] == "logical_reasoning"
+    assert record["metadata"]["content_group"] == "logical_reasoning"
+    assert record["metadata"]["item_type"] == "strengthen"
+    assert record["metadata"]["difficulty"] == "medium"
     assert record["validation"]["status"] == "valid"
+    assert record["validation"]["errors"] == []
+    assert record["content"]["correct_answer"] == "B"
     assert len(record["content"]["answer_choices"]) == 5
 
 
-def test_ingest_ocr_text_malformed_record_routes_to_review(monkeypatch, tmp_path):
+def test_create_record_malformed_record_routes_to_review(monkeypatch, tmp_path):
     normalized_dir = tmp_path / "normalized" / "records"
     review_dir = tmp_path / "review_queue"
 
@@ -76,9 +85,10 @@ def test_ingest_ocr_text_malformed_record_routes_to_review(monkeypatch, tmp_path
 
     payload = {
         "modality": "digital_text",
-        "source_file": "data/raw_text/sample_lr_bad.txt",
-        "prep_test": "PT62",
-        "section": "logical_reasoning",
+        "source_file": "data/raw_text/sample_reasoning_bad.txt",
+        "content_group": "logical_reasoning",
+        "item_type": "strengthen",
+        "difficulty": "medium",
         "section_number": 2,
         "question_number": 15,
         "raw_text": (
@@ -94,6 +104,8 @@ def test_ingest_ocr_text_malformed_record_routes_to_review(monkeypatch, tmp_path
         "segments": {
             "stimulus": "An editorial claims that public transit use will increase if fares are lowered.",
             "question_stem": "Which one of the following is most strongly supported?",
+            "item_type": "strengthen",
+            "difficulty": "medium",
             "answer_choices": [
                 {"label": "A", "text": "Choice A"},
                 {"label": "B", "text": "Choice B"},
@@ -102,11 +114,7 @@ def test_ingest_ocr_text_malformed_record_routes_to_review(monkeypatch, tmp_path
         },
     }
 
-    response = client.post(
-        "/ingest/ocr-text",
-        json=payload,
-        headers={"Authorization": f"Bearer {os.environ['API_TOKEN']}"},
-    )
+    response = client.post("/records", json=payload, headers=AUTH_HEADERS)
 
     assert response.status_code == 200
 
@@ -118,6 +126,7 @@ def test_ingest_ocr_text_malformed_record_routes_to_review(monkeypatch, tmp_path
     assert saved_path.exists()
 
     record = body["record"]
+    assert record["metadata"]["content_group"] == "logical_reasoning"
     assert record["validation"]["status"] == "needs_review"
     assert "invalid_choice_count" in record["validation"]["errors"]
     assert "invalid_choice_labels" in record["validation"]["errors"]

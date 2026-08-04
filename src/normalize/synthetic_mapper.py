@@ -7,7 +7,7 @@ from src.persist.models import (
     CanonicalRecord,
     ContentInfo,
     GenerationMeta,
-    LSATInfo,
+    RecordMetadata,
     SourceInfo,
 )
 
@@ -20,11 +20,8 @@ def map_synthetic_lr_to_record(
 ) -> CanonicalRecord:
     """Map a parsed synthetic LR payload into a CanonicalRecord.
 
-    - `source_meta` carries source/prompt provenance (file, section,
-      difficulty, flaw_type, prompt_version, model_name). It shapes the
-      SourceInfo and LSATInfo sections of the record.
-    - `generation_meta` is the Pydantic GenerationMeta produced by the
-      LLMClient layer (backend, model actually used, token counts, latency)
+    - `source_meta` carries source/prompt provenance and record-shaping fields.
+    - `generation_meta` is the GenerationMeta produced by the LLM client layer
       and is attached to record.generation.
     """
     source_meta = source_meta or {}
@@ -46,12 +43,7 @@ def map_synthetic_lr_to_record(
     ]
     normalized_text = "\n".join(part for part in normalized_parts if part)
 
-    # Prefer the actual backend/model recorded on generation_meta when
-    # composing the fallback source_uri, so it reflects reality rather
-    # than a hardcoded backend name.
-    backend_name = (
-        generation_meta.backend if generation_meta is not None else "openai"
-    )
+    backend_name = generation_meta.backend if generation_meta is not None else "openai"
     default_source_file = f"synthetic://{backend_name}"
 
     source_uri = source_meta.get("source_uri")
@@ -85,16 +77,21 @@ def map_synthetic_lr_to_record(
 
     source = SourceInfo(**source_kwargs)
 
-    lsat = LSATInfo(
-        prep_test=source_meta.get("prep_test"),
-        section=source_meta.get("section", "logical_reasoning"),
+    metadata = RecordMetadata(
+        source_set=source_meta.get("prep_test") or source_meta.get("source_set"),
+        content_group=source_meta.get("section", "logical_reasoning"),
         section_number=source_meta.get("section_number"),
         question_number=source_meta.get("question_number"),
         passage_id=source_meta.get("passage_id"),
-        question_type=source_meta.get("question_type")
-        or source_meta.get("flaw_type"),
+        item_type=source_meta.get("question_type") or source_meta.get("flaw_type"),
         difficulty=source_meta.get("difficulty"),
     )
+
+    if generation_meta is not None:
+        if metadata.item_type is None:
+            metadata.item_type = generation_meta.flaw_type
+        if metadata.difficulty is None:
+            metadata.difficulty = generation_meta.difficulty
 
     content = ContentInfo(
         passage=None,
@@ -109,7 +106,7 @@ def map_synthetic_lr_to_record(
 
     return CanonicalRecord(
         source=source,
-        lsat=lsat,
+        metadata=metadata,
         content=content,
         generation=generation_meta,
     )

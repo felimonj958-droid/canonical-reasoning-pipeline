@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 
 Modality = Literal["image", "digital_text", "generated_text"]
-Section = Literal["logical_reasoning", "reading_comprehension", "logic_games", "unknown"]
+ContentGroup = Literal["logical_reasoning", "reading_comprehension", "logic_games", "unknown"]
 AnswerLabel = Literal["A", "B", "C", "D", "E"]
 ValidationStatus = Literal["valid", "needs_review", "rejected"]
 ClassificationStrategy = Literal["straight", "chunked", "hierarchical", "long_context"]
@@ -42,7 +42,7 @@ class OCRInfo(BaseModel):
 class ClassificationLabel(BaseModel):
     name: str
     score: float
-    label_type: Literal["section", "question_type", "topic", "skill", "difficulty"]
+    label_type: Literal["content_group", "item_type", "topic", "skill", "difficulty"]
 
 
 class ClassificationChunk(BaseModel):
@@ -80,14 +80,14 @@ class SourceInfo(BaseModel):
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 
-class LSATInfo(BaseModel):
-    exam: str = "LSAT"
-    prep_test: Optional[str] = None
-    section: Section = "unknown"
+class RecordMetadata(BaseModel):
+    domain: str = "law_admissions_reasoning"
+    content_group: ContentGroup = "unknown"
+    source_set: Optional[str] = None
     section_number: Optional[int] = None
     question_number: Optional[int] = None
     passage_id: Optional[str] = None
-    question_type: Optional[str] = None
+    item_type: Optional[str] = None
     difficulty: Optional[str] = None
 
 
@@ -103,13 +103,8 @@ class ContentInfo(BaseModel):
 
 
 class GenerationMeta(BaseModel):
-    """Metadata about how a synthetic record was generated.
-
-    Present on synthetic records; absent (None) on ingested records.
-    """
-
-    backend: str                      # e.g. "openai", "unknown"
-    model: str                        # e.g. "qwen3:8b", "gpt-4o-mini"
+    backend: str
+    model: str
     flaw_type: Optional[str] = None
     difficulty: Optional[str] = None
     prompt_version: Optional[str] = None
@@ -124,9 +119,9 @@ class CanonicalRecord(BaseModel):
     record_id: str = Field(default_factory=lambda: str(uuid4()))
     schema_version: str = "1.0.0"
     source: SourceInfo
-    lsat: LSATInfo
+    metadata: RecordMetadata
     content: ContentInfo
     ocr: OCRInfo = Field(default_factory=OCRInfo)
     classification: ClassificationInfo = Field(default_factory=ClassificationInfo)
     validation: ValidationInfo = Field(default_factory=ValidationInfo)
-    generation: Optional[GenerationMeta] = None  # synthetic records only
+    generation: Optional[GenerationMeta] = None

@@ -7,7 +7,11 @@ import time
 from dataclasses import dataclass
 from typing import Optional
 
-from src.evaluate.judge_rubric import JudgeScore, build_judge_prompt
+from src.evaluate.judge_rubric import (
+    JudgeScore,
+    _resolve_canonical_metadata,
+    build_judge_prompt,
+)
 from src.llm_client import GenerationRequest, LLMClient, get_llm_client
 
 
@@ -24,6 +28,8 @@ class JudgeResult:
     completion_tokens: int = 0
     latency_seconds: float = 0.0
     judge_model: str = ""
+    flaw_type: str = ""
+    difficulty: str = ""
 
 
 def _extract_json_block(text: str) -> str:
@@ -59,6 +65,7 @@ def judge_record(
     """
     client = client or get_llm_client()
     record_id = record_dict.get("record_id", "unknown")
+    flaw_type, difficulty = _resolve_canonical_metadata(record_dict)
 
     try:
         prompt = build_judge_prompt(record_dict)
@@ -67,6 +74,8 @@ def judge_record(
             record_id=record_id,
             status="runtime_error",
             error=f"prompt_build_failed: {exc}",
+            flaw_type=flaw_type,
+            difficulty=difficulty,
         )
 
     t0 = time.perf_counter()
@@ -85,6 +94,8 @@ def judge_record(
             status="runtime_error",
             error=f"generate_failed: {type(exc).__name__}: {exc}",
             latency_seconds=time.perf_counter() - t0,
+            flaw_type=flaw_type,
+            difficulty=difficulty,
         )
 
     latency = time.perf_counter() - t0
@@ -104,6 +115,8 @@ def judge_record(
             completion_tokens=getattr(response, "completion_tokens", 0) or 0,
             latency_seconds=latency,
             judge_model=getattr(response, "model", "") or "",
+            flaw_type=flaw_type,
+            difficulty=difficulty,
         )
 
     return JudgeResult(
@@ -115,4 +128,6 @@ def judge_record(
         completion_tokens=getattr(response, "completion_tokens", 0) or 0,
         latency_seconds=latency,
         judge_model=getattr(response, "model", "") or "",
+        flaw_type=flaw_type,
+        difficulty=difficulty,
     )

@@ -133,6 +133,8 @@ def test_judge_record_happy_path_with_mocked_client():
     assert result.prompt_tokens == 300
     assert result.completion_tokens == 60
     assert result.judge_model == "gpt-4o-mini-2024-07-18"
+    assert result.flaw_type == "hasty_generalization"
+    assert result.difficulty == "easy"
 
 
 def test_judge_record_parse_error_when_bad_json():
@@ -149,6 +151,8 @@ def test_judge_record_parse_error_when_bad_json():
     assert result.status == "parse_error"
     assert result.score is None
     assert "parse_failed" in result.error
+    assert result.flaw_type == "hasty_generalization"
+    assert result.difficulty == "easy"
 
 
 def test_judge_record_runtime_error_when_client_raises():
@@ -160,3 +164,5 @@ def test_judge_record_runtime_error_when_client_raises():
     assert result.status == "runtime_error"
     assert result.score is None
     assert "api down" in result.error
+    assert result.flaw_type == "hasty_generalization"
+    assert result.difficulty == "easy"

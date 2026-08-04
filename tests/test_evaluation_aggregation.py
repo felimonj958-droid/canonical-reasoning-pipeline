@@ -9,9 +9,9 @@ from src.evaluate.run_evaluation import (
 )
 
 
-def _mk_result(record_id: str, dims: tuple[int, ...], status: str = "scored") -> JudgeResult:
+def _mk_result(record_id: str, dims: tuple[int, ...], status: str = "scored", flaw_type: str = "causal") -> JudgeResult:
     if status != "scored":
-        return JudgeResult(record_id=record_id, status=status)
+        return JudgeResult(record_id=record_id, status=status, flaw_type=flaw_type)
     score = JudgeScore(
         argument_coherence=dims[0],
         flaw_fidelity=dims[1],
@@ -20,7 +20,7 @@ def _mk_result(record_id: str, dims: tuple[int, ...], status: str = "scored") ->
         correct_answer_precision=dims[4],
         notes="test",
     )
-    return JudgeResult(record_id=record_id, status="scored", score=score)
+    return JudgeResult(record_id=record_id, status="scored", score=score, flaw_type=flaw_type)
 
 
 def test_aggregate_empty_list():
@@ -28,6 +28,7 @@ def test_aggregate_empty_list():
     assert result["items_evaluated"] == 0
     assert result["items_scored"] == 0
     assert result["high_quality_count"] == 0
+    assert result["flaw_type_breakdown"] == {}
 
 
 def test_aggregate_all_high_quality():
@@ -46,7 +47,7 @@ def test_aggregate_all_high_quality():
 def test_aggregate_mixed_quality():
     results = [
         _mk_result("r1", (5, 5, 5, 5, 5)),  # 25 — high
-        _mk_result("r2", (3, 3, 3, 3, 3)),  # 15 — low
+        _mk_result("r2", (3, 3, 3, 3, 3), flaw_type="sampling"),  # 15 — low
         _mk_result("r3", (5, 4, 4, 4, 4)),  # 21 — high
     ]
     agg = aggregate_scores(results)
@@ -82,6 +83,19 @@ def test_dimension_means_are_computed():
     assert means["question_stem_quality"] == 3.0
     assert means["distractor_plausibility"] == 2.0
     assert means["correct_answer_precision"] == 1.0
+
+
+def test_flaw_type_breakdown_is_computed():
+    results = [
+        _mk_result("r1", (5, 5, 5, 5, 5), flaw_type="causal"),
+        _mk_result("r2", (3, 3, 3, 3, 3), flaw_type="sampling"),
+        _mk_result("r3", (4, 4, 4, 4, 4), flaw_type="causal"),
+    ]
+    agg = aggregate_scores(results)
+    breakdown = agg["flaw_type_breakdown"]
+    assert breakdown["causal"]["items_scored"] == 2
+    assert breakdown["sampling"]["items_scored"] == 1
+    assert breakdown["causal"]["high_quality_count"] == 2
 
 
 def test_judge_cost_gpt_4o_mini():

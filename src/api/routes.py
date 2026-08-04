@@ -13,18 +13,19 @@ from src.validate.confidence_checks import validate_record
 from src.validate.review_routing import choose_destination
 
 
-router = APIRouter(prefix="/ingest", tags=["ingest"])
+router = APIRouter(prefix="/records", tags=["records"])
 
 
-class OCRTextIngestRequest(BaseModel):
+class CreateRecordRequest(BaseModel):
     modality: str = "digital_text"
     source_file: str
     page_ref: Optional[str] = None
     image_ref: Optional[str] = None
     capture_device: Optional[str] = None
     ocr_engine: Optional[str] = None
-    prep_test: Optional[str] = None
-    section: str = "unknown"
+    content_group: Optional[str] = None
+    item_type: Optional[str] = None
+    difficulty: Optional[str] = None
     section_number: Optional[int] = None
     question_number: Optional[int] = None
     raw_text: str
@@ -33,12 +34,12 @@ class OCRTextIngestRequest(BaseModel):
 
 
 @router.get("/health")
-def ingest_health():
+def records_health():
     return {"status": "ok"}
 
 
-@router.post("/ocr-text")
-def ingest_ocr_text(payload: OCRTextIngestRequest):
+@router.post("")
+def create_record(payload: CreateRecordRequest):
     source_manifest = SimpleNamespace(
         modality=payload.modality,
         source_file=payload.source_file,
@@ -49,8 +50,9 @@ def ingest_ocr_text(payload: OCRTextIngestRequest):
         ocr_engine=payload.ocr_engine,
         ocr_run_id=None,
         created_at=datetime.now(timezone.utc),
-        prep_test=payload.prep_test,
-        section=payload.section,
+        content_group=payload.content_group,
+        item_type=payload.item_type,
+        difficulty=payload.difficulty,
         section_number=payload.section_number,
         question_number=payload.question_number,
     )

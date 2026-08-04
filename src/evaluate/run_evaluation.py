@@ -12,9 +12,8 @@ from typing import Optional
 from src.evaluate.judge_rubric import (
     HIGH_QUALITY_THRESHOLD,
     RUBRIC_DIMENSIONS,
-    JudgeScore,
 )
-from src.evaluate.llm_judge import judge_record, JudgeResult
+from src.evaluate.llm_judge import JudgeResult, judge_record
 from src.llm_client import get_llm_client
 from src.tracking import MLflowTracker, get_git_sha
 
@@ -47,24 +46,34 @@ def _estimate_judge_cost(model: str, prompt_tokens: int, completion_tokens: int)
     )
 
 
-def _load_records_from_batch_summary(batch_summary_path: Path) -> list[dict]:
+def _load_records_from_batch_summary(batch_summary_path: Path) -> tuple[list[dict], dict]:
     """Load canonical records referenced by a batch summary JSON."""
     payload = json.loads(batch_summary_path.read_text())
     results = payload.get("results", [])
 
     records = []
+    stats = {
+        "results_seen": len(results),
+        "missing_saved_path": 0,
+        "missing_file": 0,
+        "load_error": 0,
+    }
+
     for r in results:
         saved_path = r.get("saved_path")
         if not saved_path:
+            stats["missing_saved_path"] += 1
             continue
         p = Path(saved_path)
         if not p.exists():
+            stats["missing_file"] += 1
             continue
         try:
             records.append(json.loads(p.read_text()))
         except Exception:
-            continue
-    return records
+            stats["load_error"] += 1
+
+    return records, stats
 
 
 def aggregate_scores(judge_results: list[JudgeResult]) -> dict:
@@ -83,13 +92,37 @@ def aggregate_scores(judge_results: list[JudgeResult]) -> dict:
             "high_quality_count": 0,
             "high_quality_rate": 0.0,
             "dimension_means": {dim: 0.0 for dim in RUBRIC_DIMENSIONS},
+            "flaw_type_breakdown": {},
         }
+
+    by_flaw_type = Counter()
+    grouped = {}
+    for r in scored:
+        ft = r.flaw_type or "unknown"
+        by_flaw_type[ft] += 1
+        grouped.setdefault(ft, []).append(r)
 
     totals = [r.score.total for r in scored]
     dim_means = {}
     for dim in RUBRIC_DIMENSIONS:
         values = [getattr(r.score, dim) for r in scored]
         dim_means[dim] = round(statistics.mean(values), 2)
+
+    flaw_type_breakdown = {}
+    for ft, items in grouped.items():
+        totals_ft = [r.score.total for r in items]
+        flaw_type_breakdown[ft] = {
+            "items_scored": len(items),
+            "score_total_mean": round(statistics.mean(totals_ft), 2),
+            "high_quality_count": sum(1 for t in totals_ft if t >= HIGH_QUALITY_THRESHOLD),
+            "high_quality_rate": round(
+                sum(1 for t in totals_ft if t >= HIGH_QUALITY_THRESHOLD) / len(totals_ft), 3
+            ),
+            "dimension_means": {
+                dim: round(statistics.mean(getattr(r.score, dim) for r in items), 2)
+                for dim in RUBRIC_DIMENSIONS
+            },
+        }
 
     return {
         "items_evaluated": len(judge_results),
@@ -105,6 +138,7 @@ def aggregate_scores(judge_results: list[JudgeResult]) -> dict:
             sum(1 for t in totals if t >= HIGH_QUALITY_THRESHOLD) / len(totals), 3
         ),
         "dimension_means": dim_means,
+        "flaw_type_breakdown": flaw_type_breakdown,
     }
 
 
@@ -131,7 +165,7 @@ def evaluate_batch(
     if not batch_summary_path.exists():
         raise FileNotFoundError(f"Batch summary not found: {batch_summary_path}")
 
-    records = _load_records_from_batch_summary(batch_summary_path)
+    records, load_stats = _load_records_from_batch_summary(batch_summary_path)
     if limit:
         records = records[:limit]
 
@@ -182,7 +216,9 @@ def evaluate_batch(
         # Cost + latency aggregates
         prompt_tokens_total = sum(r.prompt_tokens for r in judge_results)
         completion_tokens_total = sum(r.completion_tokens for r in judge_results)
-        judge_model_for_cost = next((r.judge_model for r in judge_results if r.judge_model), "unknown")
+        judge_model_for_cost = next(
+            (r.judge_model for r in judge_results if r.judge_model), "unknown"
+        )
         judge_cost = _estimate_judge_cost(
             judge_model_for_cost, prompt_tokens_total, completion_tokens_total
         )
@@ -205,6 +241,14 @@ def evaluate_batch(
                     round(statistics.mean(latencies_ms), 2) if latencies_ms else 0.0
                 ),
                 **{f"dim_{k}_mean": v for k, v in aggregates["dimension_means"].items()},
+                **{
+                    f"ft_{ft.replace('-', '_')}_items_scored": stats["items_scored"]
+                    for ft, stats in aggregates.get("flaw_type_breakdown", {}).items()
+                },
+                **{
+                    f"ft_{ft.replace('-', '_')}_hq_rate": stats["high_quality_rate"]
+                    for ft, stats in aggregates.get("flaw_type_breakdown", {}).items()
+                },
             }
         )
 
@@ -220,10 +264,13 @@ def evaluate_batch(
             "aggregates": aggregates,
             "judge_cost_usd": round(judge_cost, 6),
             "judge_tokens_total": prompt_tokens_total + completion_tokens_total,
+            "load_stats": load_stats,
             "results": [
                 {
                     "record_id": r.record_id,
                     "status": r.status,
+                    "flaw_type": r.flaw_type,
+                    "difficulty": r.difficulty,
                     "score": r.score.model_dump() if r.score else None,
                     "score_total": r.score.total if r.score else None,
                     "notes": r.score.notes if r.score else "",

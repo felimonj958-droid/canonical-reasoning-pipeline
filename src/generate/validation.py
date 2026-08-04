@@ -27,8 +27,12 @@ def validate_synthetic_lr_payload(payload: dict) -> dict:
     if len(set(normalized_texts)) != len(normalized_texts):
         errors.append("duplicate_choice_text")
 
-    if correct not in {"A", "B", "C", "D", "E"}:
-        errors.append("invalid_correct_answer")
+    if not correct:
+        errors.append("missing_correct_answer")
+    elif correct not in {"A", "B", "C", "D", "E"}:
+        errors.append("invalid_correct_answer_label")
+
+
 
     return {
         "status": "valid" if not errors else "needs_review",

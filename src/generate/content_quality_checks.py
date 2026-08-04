@@ -50,6 +50,33 @@ LSAT_STEM_PATTERNS = [
     r"which one of the following.*parallel reasoning",
 ]
 
+COMMON_FLAW_PHRASES = [
+    "takes for granted that",
+    "fails to consider that",
+    "overlooks the possibility that",
+    "confuses",
+    "mistakes",
+    "presumes without providing justification",
+    "fails to establish that",
+    "treats as sufficient",
+    "treats as necessary",
+]
+
+SURFACE_PATTERN_WORDS = {
+    "wording",
+    "phrasing",
+    "language",
+    "tone",
+    "complex",
+    "unclear",
+    "vague",
+    "emotional",
+    "biased",
+    "persuasive",
+    "descriptive",
+}
+
+
 
 
 
@@ -76,6 +103,9 @@ def run_content_quality_checks(payload: dict) -> ContentQualityResult:
     flags.extend(check_question_style(question))
     flags.extend(check_argument_signals(stimulus, metrics))
     flags.extend(check_choice_quality(choices, metrics))
+    flags.extend(check_choice_templating(choices, metrics))
+    flags.extend(check_flaw_label_leakage(choices, metrics))
+    flags.extend(check_reasoning_centeredness(stimulus, choices, metrics))
 
     score = compute_quality_score(flags)
 
@@ -85,9 +115,19 @@ def run_content_quality_checks(payload: dict) -> ContentQualityResult:
         "near_duplicate_choices",
     }
 
-    status = "review" if hard_fail_flags.intersection(flags) else (
-        "pass" if score >= 0.70 else "review"
-    )
+    review_heavy_flags = {
+        "choices_template_like",
+        "repetitive_flaw_framing",
+        "choices_too_surface_level",
+        "choices_nearly_rewritten",
+        "choices_overly_parallel",
+    }
+
+    status = "review" if (
+        hard_fail_flags.intersection(flags)
+        or review_heavy_flags.intersection(flags)
+    ) else ("pass" if score >= 0.75 else "review")
+
 
 
     return ContentQualityResult(
@@ -214,7 +254,125 @@ def check_choice_quality(choices: list[dict], metrics: dict) -> list[str]:
     if first_words and len(set(first_words)) == 1:
         flags.append("choices_share_opening_phrase")
 
+    pairwise_prefix_overlap = 0
+    for i, text_i in enumerate(cleaned_texts):
+        for j, text_j in enumerate(cleaned_texts):
+            if j <= i:
+                continue
+            if (
+                len(text_i) >= 40
+                and len(text_j) >= 40
+                and text_i[:40] == text_j[:40]
+            ):
+                pairwise_prefix_overlap += 1
+
     metrics["choice_count"] = len(choices)
+    metrics["pairwise_choice_prefix_overlap"] = pairwise_prefix_overlap
+
+    if pairwise_prefix_overlap >= 2:
+        flags.append("choices_nearly_rewritten")
+
+    return flags
+
+def check_choice_templating(choices: list[dict], metrics: dict) -> list[str]:
+    flags: list[str] = []
+
+    texts = [
+        (choice.get("text") or "").strip().lower()
+        for choice in choices
+        if (choice.get("text") or "").strip()
+    ]
+    if not texts:
+        return flags
+
+    opening_spans = []
+    normalized_skeletons = []
+
+    for text in texts:
+        tokens = text.split()
+        opening_spans.append(" ".join(tokens[:5]))
+
+        skeleton = text
+        for phrase in COMMON_FLAW_PHRASES:
+            skeleton = skeleton.replace(phrase, "__FLAW_FRAME__")
+        normalized_skeletons.append(skeleton)
+
+    metrics["choice_opening_spans"] = opening_spans
+    metrics["shared_opening_span_count"] = (
+        max(opening_spans.count(span) for span in set(opening_spans))
+        if opening_spans
+        else 0
+    )
+    metrics["normalized_choice_skeletons"] = normalized_skeletons
+
+    if len(set(opening_spans)) <= 2 and len(opening_spans) >= 4:
+        flags.append("choices_overly_parallel")
+
+    if len(set(normalized_skeletons)) <= 2 and len(normalized_skeletons) >= 4:
+        flags.append("choices_template_like")
+
+    return flags
+
+def check_flaw_label_leakage(choices: list[dict], metrics: dict) -> list[str]:
+    flags: list[str] = []
+
+    texts = [
+        (choice.get("text") or "").strip().lower()
+        for choice in choices
+        if (choice.get("text") or "").strip()
+    ]
+    if not texts:
+        return flags
+
+    phrase_hits: dict[str, int] = {}
+    repeated_frames = 0
+
+    for phrase in COMMON_FLAW_PHRASES:
+        count = sum(1 for text in texts if phrase in text)
+        if count:
+            phrase_hits[phrase] = count
+        if count >= 4:
+            repeated_frames += 1
+
+    metrics["repeated_flaw_phrase_counts"] = phrase_hits
+
+    if repeated_frames > 0:
+        flags.append("repetitive_flaw_framing")
+
+    return flags
+
+def check_reasoning_centeredness(
+    stimulus: str,
+    choices: list[dict],
+    metrics: dict,
+) -> list[str]:
+    flags: list[str] = []
+
+    texts = [
+        (choice.get("text") or "").strip().lower()
+        for choice in choices
+        if (choice.get("text") or "").strip()
+    ]
+    if not texts:
+        return flags
+
+    surface_count = 0
+    for text in texts:
+        if any(word in text for word in SURFACE_PATTERN_WORDS):
+            surface_count += 1
+
+    metrics["surface_level_choice_count"] = surface_count
+
+    if surface_count >= 3:
+        flags.append("choices_too_surface_level")
+
+    stimulus_tokens = set(re.findall(r"\b[a-z]+\b", (stimulus or "").lower()))
+    overlap_scores = []
+    for text in texts:
+        choice_tokens = set(re.findall(r"\b[a-z]+\b", text))
+        overlap_scores.append(len(stimulus_tokens.intersection(choice_tokens)))
+
+    metrics["stimulus_choice_token_overlap"] = overlap_scores
 
     return flags
 
@@ -234,7 +392,13 @@ def compute_quality_score(flags: list[str]) -> float:
         "weak_argument_signals": 0.15,
         "near_duplicate_choices": 0.25,
         "choices_share_opening_phrase": 0.10,
+        "choices_nearly_rewritten": 0.20,
+        "choices_overly_parallel": 0.15,
+        "choices_template_like": 0.20,
+        "repetitive_flaw_framing": 0.20,
+        "choices_too_surface_level": 0.15,
     }
+
 
     score = 1.0
     for flag in set(flags):

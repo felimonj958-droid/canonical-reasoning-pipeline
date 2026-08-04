@@ -69,3 +69,6 @@ data/review_queue/
 !data/review_queue/.gitkeep
 .env.local
 .env.*.local
+
+__pycache__/
+*.pyc

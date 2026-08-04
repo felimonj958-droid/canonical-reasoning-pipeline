@@ -1,9 +1,7 @@
 from __future__ import annotations
 
 import re
-import subprocess
-from dataclasses import dataclass
-from typing import Optional
+
 
 from src.llm_client import GenerationRequest, LLMClient, get_llm_client
 from src.persist.models import GenerationMeta
@@ -12,7 +10,9 @@ from src.persist.models import GenerationMeta
 SUPPORTED_FLAW_TYPES = {
     "causal",
     "necessary_vs_sufficient",
+    "sampling",
 }
+
 
 SUPPORTED_DIFFICULTIES = {
     "easy",
@@ -66,6 +66,7 @@ WEAK: an obviously wrong distractor — either irrelevant to the argument, or a 
 The CORRECT position is specified in the Requirements section above. Assign TRAP-A, TRAP-B, TRAP-C, and WEAK to the other four positions in any order. Do NOT label choices with role names in the output.
 """.strip()
 
+
     elif flaw_type == "necessary_vs_sufficient":
         flaw_guidance = """
 Write a Logical Reasoning flaw question in which the argument confuses a necessary condition with a sufficient condition, or reverses a conditional relationship.
@@ -95,8 +96,39 @@ WEAK: an obviously wrong distractor — irrelevant to the argument, or a meta-cr
 The CORRECT position is specified in the Requirements section above. Assign TRAP-A, TRAP-B, TRAP-C, and WEAK to the other four positions in any order. Do NOT label choices with role names in the output.
 """.strip()
 
+    elif flaw_type == "sampling":
+        flaw_guidance = """
+Write a Logical Reasoning flaw question in which the argument makes an error about drawing a conclusion from an unrepresentative, biased, or insufficient sample.
+
+Use one of these sampling-flaw patterns:
+- treating a small or biased sample as representative of the whole population
+- assuming the sample is representative without justification
+- ignoring that the sample may be self-selected, skewed, or otherwise unrepresentative
+- drawing a broad general conclusion from a limited or distorted set of observations
+
+The correct answer must precisely describe the sampling flaw actually committed in the stimulus.
+""".strip()
+
+        distractor_guidance = """
+Answer choice roles (assign each of the 5 choices to exactly one role):
+
+CORRECT: precisely names the sampling flaw actually committed. Uses standard LSAT phrasing (e.g. "treats a sample that is not shown to be representative as if it were representative of the whole"; "draws a general conclusion on the basis of an insufficient or biased sample"; "fails to consider that the sample may be unrepresentative").
+
+TRAP-A (adjacent sampling flaw): names a DIFFERENT sampling flaw than the one committed. If the stimulus relies on self-selection bias, this distractor might describe small sample size instead, or vice versa. It should sound statistically plausible and LSAT-appropriate, but it must not match the actual flaw.
+
+TRAP-B (right family, wrong scope): names a sampling flaw but overstates or understates it. Example: "assumes the conclusion holds in every possible case" when the actual flaw is only unjustified generalization beyond the sample, or "relies on too few examples" when the real issue is representativeness rather than count.
+
+TRAP-C (surface-plausible non-flaw): describes a real feature of the argument that is NOT the flaw — e.g. "uses survey evidence" or "mentions only one study" when the actual defect is the sample's bias, not merely the presence of survey or study evidence.
+
+WEAK: an obviously wrong distractor — irrelevant to the reasoning, or a meta-critique like "uses technical terminology" or "fails to define every term precisely" that does not identify the reasoning flaw.
+
+The CORRECT position is specified in the Requirements section above. Assign TRAP-A, TRAP-B, TRAP-C, and WEAK to the other four positions in any order. Do NOT label choices with role names in the output.
+""".strip()
+
     else:
         raise ValueError(f"Unsupported flaw_type: {flaw_type}")
+
+
 
     difficulty_guidance = """
 Difficulty guidance:
@@ -110,6 +142,18 @@ Use an LSAT-style flaw question stem. Prefer one of these forms:
 - Which one of the following most accurately describes a flaw in the argument?
 - The reasoning in the argument is most vulnerable to criticism on the grounds that it
 - Which one of the following most accurately expresses the flaw in the reasoning above?
+""".strip()
+   
+    anti_template_guidance = """
+Anti-template requirements:
+- The item must be solvable by analyzing the argument's reasoning, not by recognizing a repeated answer-choice pattern.
+- Do not make the correct answer identifiable by a familiar stock flaw label alone.
+- Vary the phrasing, syntax, and abstraction level of the answer choices so they do not read like templated rewrites of one another.
+- Do not make all five answer choices start with the same phrase unless that phrasing is genuinely necessary.
+- Avoid making the correct answer the only highly specific choice or the only highly abstract choice.
+- At least two incorrect answers should be plausible on a quick skim but wrong on close reasoning.
+- Include at least one near-miss distractor in the same reasoning family as the correct answer that misdescribes the actual flaw.
+- The stimulus should require interpretation of meaning or argumentative intent, not just mechanical matching to a memorized flaw template.
 """.strip()
 
     format_guidance = """
@@ -151,6 +195,10 @@ Requirements:
 - Do not include any explanation.
 - Do not include markdown.
 - Keep everything in plain text.
+- The item must reward logical analysis of the argument rather than recognition of a repeated wording template.
+- Answer choices must differ enough in phrasing and argumentative focus that the item cannot be solved by superficial pattern matching.
+- Do not use repetitive stock flaw labels across all five choices.
+- Do not make distractors obviously wrong by tone, length, or genericity alone.
 - Follow the output format exactly.
 
 {stem_guidance}
@@ -161,7 +209,10 @@ Requirements:
 
 {distractor_guidance}
 
+{anti_template_guidance}
+
 {format_guidance}
+
 """.strip()
 
 

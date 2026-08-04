@@ -58,3 +58,22 @@ def test_validate_synthetic_lr_payload_detects_duplicate_choice_text():
 
     assert result["status"] == "needs_review"
     assert "duplicate_choice_text" in result["errors"]
+
+def test_validate_synthetic_lr_payload_sampling_happy_path():
+    payload = {
+        "stimulus": "A survey of only one neighborhood found that most residents use public transit, so the city should expand transit citywide.",
+        "question": "Which answer choice best describes the flaw in the reasoning?",
+        "answer_choices": [
+            {"label": "A", "text": "The argument relies on a sample that is too small or unrepresentative."},
+            {"label": "B", "text": "The argument assumes a causal relationship from a correlation."},
+            {"label": "C", "text": "The argument confuses sufficient and necessary conditions."},
+            {"label": "D", "text": "The argument attacks the speaker's motives."},
+            {"label": "E", "text": "The argument uses ambiguous terminology."},
+        ],
+        "correct_answer": "A",
+    }
+
+    result = validate_synthetic_lr_payload(payload)
+
+    assert result["status"] == "valid"
+    assert result["errors"] == []

@@ -13,7 +13,6 @@ from src.normalize.run_synthetic_lr_batch import (
 
 @dataclass
 class FakeGenMeta:
-    """Minimal stand-in for GenerationMeta — avoids importing pydantic model."""
     backend: str
     model: str
     prompt_tokens: int | None
@@ -22,15 +21,12 @@ class FakeGenMeta:
 
 
 def test_estimate_cost_known_model():
-    # gpt-4o-mini: $0.15/M input + $0.60/M output
     cost = _estimate_cost_usd("gpt-4o-mini", prompt_tokens=1_000_000, completion_tokens=1_000_000)
     assert cost == pytest.approx(0.75)
 
 
 def test_estimate_cost_realistic_values():
-    # 4 items x ~400 in + ~150 out
     cost = _estimate_cost_usd("gpt-4o-mini", prompt_tokens=392, completion_tokens=156)
-    # 392 * 0.15 / 1M + 156 * 0.60 / 1M = 0.0000588 + 0.0000936 ≈ 0.000152
     assert cost == pytest.approx(0.000152, abs=1e-6)
 
 
@@ -67,7 +63,6 @@ def test_aggregate_multiple_records():
 
 
 def test_aggregate_handles_missing_tokens():
-    # Some backends might not report token counts
     meta_list = [
         FakeGenMeta("openai", "gpt-4o-mini", None, None, 45.0),
         FakeGenMeta("openai", "gpt-4o-mini", 400, 150, 2.3),
@@ -88,7 +83,6 @@ def test_aggregate_handles_missing_latency():
 
 
 def test_aggregate_single_item_percentiles():
-    # statistics.quantiles requires >=2 values, so we fall back to the value itself
     meta_list = [
         FakeGenMeta("openai", "gpt-4o-mini", 400, 150, 2.3),
     ]

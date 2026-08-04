@@ -1,5 +1,53 @@
-from src.generate.content_quality_checks import run_content_quality_checks
+from src.generate.content_quality_checks import (
+    check_question_style,
+    run_content_quality_checks,
+)
 
+
+class TestQuestionStyle:
+    def test_accepts_vulnerable_to_criticism_stem(self):
+        stem = "The reasoning in the argument is most vulnerable to criticism on the grounds that it"
+        flags = check_question_style(stem)
+        assert flags == []
+
+    def test_accepts_flaw_describes_stem(self):
+        stem = "Which one of the following most accurately describes a flaw in the argument?"
+        flags = check_question_style(stem)
+        assert flags == []
+
+    def test_flags_non_lsat_stem(self):
+        stem = "How do you feel about this argument?"
+        flags = check_question_style(stem)
+        assert flags == ["question_not_lsat_style"]
+
+
+class TestRunContentQualityChecks:
+    def test_flags_meta_language_and_routes_to_review(self):
+        payload = {
+            "stimulus": (
+                "As an AI, here is your LSAT question. A teacher concludes that online "
+                "quizzes improve learning because students who took them scored better "
+                "on the final exam."
+            ),
+            "question": "What do you think about this argument?",
+            "answer_choices": [
+                {
+                    "label": "A",
+                    "text": "The students who took online quizzes also attended extra tutoring sessions.",
+                },
+                {"label": "B", "text": "Some students dislike final exams."},
+                {"label": "C", "text": "Tutoring can be expensive."},
+                {"label": "D", "text": "Many teachers use online tools."},
+                {"label": "E", "text": "Some students prefer shorter quizzes."},
+            ],
+            "correct_answer": "A",
+        }
+
+        result = run_content_quality_checks(payload)
+
+        assert result.status == "review"
+        assert "meta_language_detected" in result.flags
+        assert "question_not_lsat_style" in result.flags
 
 def test_content_quality_passes_reasonable_lr_item():
     payload = {

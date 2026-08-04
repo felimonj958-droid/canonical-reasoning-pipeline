@@ -5,7 +5,7 @@ A record scoring >= 20 is considered "high quality" for portfolio metrics.
 """
 from __future__ import annotations
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field
 
 
 RUBRIC_DIMENSIONS = [
@@ -48,16 +48,38 @@ class JudgeScore(BaseModel):
         return {dim: getattr(self, dim) for dim in RUBRIC_DIMENSIONS}
 
 
+def _resolve_canonical_metadata(record_dict: dict) -> tuple[str, str]:
+    metadata = record_dict.get("metadata") or {}
+    generation = record_dict.get("generation") or {}
+    lsat = record_dict.get("lsat") or {}
+
+    flaw_type = (
+        metadata.get("flaw_type")
+        or metadata.get("question_type")
+        or record_dict.get("flaw_type")
+        or generation.get("flaw_type")
+        or lsat.get("question_type")
+        or "unknown"
+    )
+
+    difficulty = (
+        metadata.get("difficulty")
+        or record_dict.get("difficulty")
+        or generation.get("difficulty")
+        or lsat.get("difficulty")
+        or "unknown"
+    )
+
+    return str(flaw_type), str(difficulty)
+
+
 JUDGE_PROMPT_TEMPLATE = """You are a strict LSAT prep expert evaluating a synthetic Logical Reasoning item against real LSAT quality.
 
 CALIBRATION RULES:
-- Score against REAL LSAT items, not a curve of synthetic items.
-- Reserve 5 for items indistinguishable from an official LSAT question.
-- Reserve 4 for items that would pass a professional LSAT prep review with minor edits.
-- Score 3 for items that are recognizably LSAT-shaped but have real weaknesses.
-- Score 1-2 for items with structural or logical defects.
-- If you are uncertain between two adjacent scores, choose the LOWER one.
-- It is expected that many synthetic items will score 3 or lower. Do not inflate.
+- Score the item against the canonical flaw_type stored in metadata, not against whichever surface wording looks closest.
+- If the item is mislabeled, penalize flaw_fidelity even when the stimulus is otherwise coherent.
+- Distinguish causal, necessary_vs_sufficient, and sampling as separate flaw families.
+- Penalize answer choices that are memorable because they reuse the same flaw phrasing across items rather than because they require reasoning.
 
 Score each of these 5 dimensions (integers 1-5):
 
@@ -74,27 +96,30 @@ Score each of these 5 dimensions (integers 1-5):
    3 = argument commits the flaw weakly or with muddled premises
    4 = argument commits the flaw clearly with minor slippage
    5 = textbook instance of the claimed flaw, comparable to real LSAT items
+   - causal: conclude causation from correlation, sequence, or weak evidence.
+   - necessary_vs_sufficient: treat a requirement as enough, or a condition as guaranteed.
+   - sampling: generalize from a sample without support for representativeness.
 
 3. question_stem_quality
    1 = stem is malformed, missing, or not an LSAT stem
    2 = stem is LSAT-adjacent but awkward or non-standard
-   3 = stem uses a valid LSAT template but has small phrasing issues
+   3 = stem uses a valid LSAT template but has small phrasing issues or feels mechanically slotted into a weak item
    4 = stem is a clean, standard LSAT flaw-question stem
-   5 = stem is verbatim or near-verbatim LSAT phrasing
+   5 = stem is verbatim or near-verbatim LSAT phrasing and fits the item naturally
 
 4. distractor_plausibility
-   1 = distractors are obviously wrong or nonsensical
-   2 = distractors are mostly easy to eliminate on skim
-   3 = at least one distractor is tempting; others are weak
-   4 = most distractors are tempting and defeatable on analysis
-   5 = distractors mirror real LSAT trap patterns (partial truth, wrong scope, right idea/wrong flaw)
+   1 = distractors are obviously wrong, formulaic, or distinguishable by surface pattern alone
+   2 = distractors are mostly easy to eliminate on skim because of repetitive wording, genericity, or template-like structure
+   3 = at least one distractor is tempting, but answer-choice phrasing still gives away the item too easily
+   4 = most distractors are tempting and require close reasoning to defeat; wording is varied enough to avoid template recognition
+   5 = distractors mirror real LSAT trap patterns while remaining non-repetitive, interpretation-sensitive, and distinguishable only through careful logical analysis
 
 5. correct_answer_precision
    1 = correct answer is wrong, ambiguous, or restates the stimulus
    2 = correct answer names the wrong flaw or is too broad
    3 = correct answer names the flaw but is imprecise or overreaches
    4 = correct answer identifies the flaw cleanly with minor imprecision
-   5 = correct answer surgically names the flaw in LSAT-style phrasing
+   5 = correct answer surgically names the flaw in LSAT-style phrasing and is identifiable because it best captures the actual reasoning flaw, not because the other choices are formulaic, repetitive, or mechanically eliminable
 
 Return ONLY a JSON object (no markdown fences, no prose before or after):
 {{
@@ -103,7 +128,7 @@ Return ONLY a JSON object (no markdown fences, no prose before or after):
   "question_stem_quality": <int 1-5>,
   "distractor_plausibility": <int 1-5>,
   "correct_answer_precision": <int 1-5>,
-  "notes": "<one-sentence rationale citing the weakest dimension>"
+  "notes": "<one-sentence rationale citing the weakest dimension; mention if the item is too template-like, if choices are memorably repetitive, or if the item rewards pattern recognition over reasoning>"
 }}
 
 --- ITEM ---
@@ -130,12 +155,8 @@ def build_judge_prompt(record_dict: dict) -> str:
     required fields: stimulus, question, answer_choices, correct_answer,
     generation (with flaw_type + difficulty), or a top-level flaw_type/difficulty.
     """
-    # Handle both nested (canonical) and flat structures
-    gen = record_dict.get("generation") or {}
-    flaw_type = record_dict.get("flaw_type") or gen.get("flaw_type") or "unknown"
-    difficulty = record_dict.get("difficulty") or gen.get("difficulty") or "unknown"
+    flaw_type, difficulty = _resolve_canonical_metadata(record_dict)
 
-    # Support both nested (canonical) and flat structures.
     content = record_dict.get("content") or {}
 
     stimulus = (content.get("stimulus") or record_dict.get("stimulus") or "").strip()

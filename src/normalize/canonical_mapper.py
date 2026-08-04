@@ -1,8 +1,10 @@
+from __future__ import annotations
+
 from src.persist.models import (
     AnswerChoice,
     CanonicalRecord,
     ContentInfo,
-    LSATInfo,
+    RecordMetadata,
     SourceInfo,
 )
 
@@ -16,18 +18,23 @@ def map_to_record(source_manifest, raw_text, normalized_text, segments, ocr=None
     source = SourceInfo(
         modality=source_manifest.modality,
         source_file=source_manifest.source_file,
-        page_ref=source_manifest.page_ref,
-        image_ref=source_manifest.image_ref,
-        capture_device=source_manifest.capture_device,
-        ocr_engine=source_manifest.ocr_engine,
+        source_uri=getattr(source_manifest, "source_uri", None),
+        page_ref=getattr(source_manifest, "page_ref", None),
+        image_ref=getattr(source_manifest, "image_ref", None),
+        capture_device=getattr(source_manifest, "capture_device", None),
+        ocr_engine=getattr(source_manifest, "ocr_engine", None),
+        ocr_run_id=getattr(source_manifest, "ocr_run_id", None),
         created_at=source_manifest.created_at,
     )
 
-    lsat = LSATInfo(
-        prep_test=source_manifest.prep_test,
-        section=source_manifest.section or "unknown",
-        section_number=source_manifest.section_number,
-        question_number=source_manifest.question_number,
+    metadata = RecordMetadata(
+        content_group=getattr(source_manifest, "content_group", "unknown") or "unknown",
+        source_set=getattr(source_manifest, "source_set", None),
+        section_number=getattr(source_manifest, "section_number", None),
+        question_number=getattr(source_manifest, "question_number", None),
+        passage_id=segments.get("passage_id"),
+        item_type=getattr(source_manifest, "item_type", None) or segments.get("item_type"),
+        difficulty=getattr(source_manifest, "difficulty", None) or segments.get("difficulty"),
     )
 
     content = ContentInfo(
@@ -43,7 +50,6 @@ def map_to_record(source_manifest, raw_text, normalized_text, segments, ocr=None
 
     return CanonicalRecord(
         source=source,
-        lsat=lsat,
+        metadata=metadata,
         content=content,
     )
-

@@ -7,7 +7,7 @@ from fastapi import Depends, FastAPI, HTTPException, Request, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from src.api.routes import router as ingest_router
+from src.api.routes import router as records_router
 
 
 MAX_REQUEST_BYTES = int(os.getenv("MAX_REQUEST_BYTES", "1000000"))
@@ -40,16 +40,20 @@ def require_api_token(
         )
 
 
-app = FastAPI(title="Canonical Reasoning Pipeline", version="0.1.0")
+app = FastAPI(
+    title="Canonical Reasoning Pipeline API",
+    version="0.1.0",
+    description="API for creating, validating, routing, and storing canonical reasoning records.",
+)
 app.add_middleware(ContentSizeLimitMiddleware)
 
-app.include_router(ingest_router, dependencies=[Depends(require_api_token)])
+app.include_router(records_router, dependencies=[Depends(require_api_token)])
 
 
 @app.get("/")
 def root():
     return {
-        "message": "LSAT pipeline API is running",
+        "message": "Canonical reasoning pipeline API is running",
         "docs": "/docs",
     }
 
